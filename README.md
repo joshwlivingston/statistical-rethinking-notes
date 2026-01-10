@@ -1,5 +1,4 @@
 # Statistical Rethinking (2nd Edition)
-## Notes, Code, and Exercises
 
 This repo contains my notes and code as I work through 
 [Richard McElreath's](https://github.com/rmcelreath) 2025 
