@@ -29,3 +29,9 @@ these steps to install:
 # Experiemntal branch contains new tools for 2nd edition
 devtools::install_github("rmcelreath/rethinking",ref="Experimental")
 ```
+
+## Attribution
+
+This repository contains my work and solutions for the course
+[Statistical Rethinking (2025 Edition)](https://github.com/rmcelreath/stat_rethinking_2025), 
+which is licensed under CC0 1.0 Universal.
