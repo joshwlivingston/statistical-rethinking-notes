@@ -138,15 +138,12 @@ levels of the hierarchy to produce better estimates for units within a level.
 
 Four common applications of partial pooling:
 
-1. Adjust for repeat sampling
-  - Multiple observations from the same unit
-2. Adjust for imbalanced sampling
-  - Observation X sampled 10x more than Y
-3. Study variation
-  - Useful when question includes variations among a level within the hierarchy
-4. Avoid averaging 
-  - Features are often pre-averaged for traditional models, destorying the 
-    data's variation
+1. Adjust for repeat sampling (multiple observations from the same unit)
+2. Adjust for imbalanced sampling (observation X sampled 10x more than Y)
+3. Study variation (useful when question includes variations among a level
+   within the hierarchy)
+4. Avoid averaging (features are often pre-averaged for traditional models,
+   destorying the data's variation)
 
 McElreath argues that "multilevel regression deserves to be the default form of
 regression," and that research involving single-level models must justify the
