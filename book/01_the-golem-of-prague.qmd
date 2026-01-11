@@ -76,7 +76,7 @@ Consequently, claims of science's definitiveness are usually exaggerated and
 possibly societally harmful. Kitcher (2011), *Science in a Democratic Society*,
 is a good intro to the sociology of science.
 
-## Tools for golem engineering
+## 1.3: Tools for golem engineering
 
 Scientific research is often broader in scope than testing alone; models fill
 this gap. In addition to serving testing, models can make predictions and
@@ -116,4 +116,83 @@ allowing noisy images to be reconstructed using modeled probabilities.
 
 ### 1.3.2: Model comparison and prediction
 
+>Fitting is easy; prediction is hard.
 
+**Cross-validation** and **information criteria** are two metrics used to
+estimate predictive accuracy and evaluate possibility of overfitting:
+
+- **Cross-validation** provides provide fit estimates over different resamples
+  of the data.
+- **Information criteria** are measures that
+  ["balance model fit with model complexity"](https://bookdown.org/mike/data_analysis/information-criteria-for-model-selection.html#information-criteria-for-model-selection).
+
+Recall that multiple process models can exist for a statistical model. Thus,
+it is always necessary to compare multiple statistical models for a given
+problem.
+
+### 1.3.3: Multilevel models
+
+**Multilevel models** are hierarchical bayesian models that utilize
+**partial pooling**, a statistical technique that uses information across
+levels of the hierarchy to produce better estimates for units within a level.
+
+Four common applications of partial pooling:
+
+1. Adjust for repeat sampling
+  - Multiple observations from the same unit
+2. Adjust for imbalanced sampling
+  - Observation X sampled 10x more than Y
+3. Study variation
+  - Useful when question includes variations among a level within the hierarchy
+4. Avoid averaging 
+  - Features are often pre-averaged for traditional models, destorying the 
+    data's variation
+
+McElreath argues that "multilevel regression deserves to be the default form of
+regression," and that research involving single-level models must justify the
+decision to *not* use a multilevel model. Particularly, the researcher must
+demonstrate lack of variation in treatment effects among observations.
+
+Multilevel models are not new! From 1960 to 1978 John Tukey developed
+multilevel models for NBC from that were used for election forecasting.
+
+### 1.3.4: Graphical causal models
+
+>A statistical model is an amazing assocation engine
+
+Flawed causal models and confounding variables can often lead to better
+*prediction*, due to assocation's predictive power. This often means that
+scientists can be systematically miseld by predictive accuracy.
+
+Thus, being mindful of the underlying causal assumptions is a mandatory
+component of statistical modeling. This is most often achieved through
+construction of a causal model, from which multiple statistical models can be
+developed.
+
+**Graphical causal models**, such as **directed acyclic graphs** (DAGs), are
+helpful tools allowing for the visualization of causal relationships. DAGs are
+developed outside of the data, usually in deep consulation with domain experts.
+
+Today's dominating method of causal inference is the **causal salad**, wherein
+control variables are carefully *tossed* into the models, toward the aim of
+developing a causal narrative. When designing a model to be later used for
+interventions, it is important that the causal relationships, especially the
+controlling effects, are explainable.
+
+## 1.4: Summary
+
+McElreath makes the argument that instead of working with a plethora of
+black-box models, we should aim to develop the skills to analyze null
+hypotheses. The tools introduced -- Bayesian data analysis, model comparison,
+multilevel modeling, and graphical causal models -- serve this aim.
+
+### Chapter Outline
+
+- Chapters 2-3: Intro to Bayesian inference
+- Chapters 4-8: Multiple linear regression
+- Chapters 9-12: Generalized linear models
+- Chapters 13-16: Multilevel models
+- Chapter 17: Address issues from 1st edition
+
+Each chapter ends with exercises across difficulty levels. The more difficult
+problems introduce new material and challenges.
