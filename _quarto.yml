@@ -17,7 +17,7 @@ website:
         href: homework/index.qmd
     right:
       - icon: github
-        href: https://github.com/joshwlivingston/statistical-rethinking
+        href: https://github.com/joshwlivingston/statistical-rethinking-notes
         aria-label: GitHub
   sidebar:
     - title: "Book Notes"

@@ -1,7 +1,7 @@
-# Statistical Rethinking (2nd Edition)
+# Notes on Statistical Rethinking
 
 This repo contains my 
-[notes and code](https://joshwlivingston.github.io/statistical-rethinking/) as
+[notes and code](https://joshwlivingston.github.io/statistical-rethinking-notes/) as
 I work through
 [Richard McElreath's](https://github.com/rmcelreath) 2025 
 [course](https://github.com/rmcelreath/stat_rethinking_2025) on his book
