@@ -11,12 +11,17 @@ publishing the
 online.
 
 ## Organization
-The repoistory is organized into separate quarto files,  which can each be 
-locally rendered.
+The repoistory is organized into separate quarto files, which are stitched
+together in `_quarto.yml`.
 
 - `book/`: contains notes and exercises directly from the textbook
 - `course/`: contains notes from pre-recorded lecutres and slides
 - `homework/`: contains homework solutions
+
+To view the site locally, use the command line:
+```
+quarto preview
+```
 
 ## Setup
 The examples in the book require installation of the 

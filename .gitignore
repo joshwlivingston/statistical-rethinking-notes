@@ -1,0 +1,25 @@
+# Quarto website output
+_site/
+.quarto/
+index.html
+
+# R/RStudio files
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*~
+
+# Cache directories
+_cache/
+_freeze/
+/.quarto/
+**/*.quarto_ipynb

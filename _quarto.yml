@@ -1,0 +1,51 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Statistical Rethinking (2nd Edition)"
+  description: "Notes and code from Richard McElreath's Statistical Rethinking course"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Book Notes"
+        href: book/index.qmd
+      - text: "Course"
+        href: course/index.qmd
+      - text: "Homework"
+        href: homework/index.qmd
+    right:
+      - icon: github
+        href: https://github.com/rmcelreath/stat_rethinking_2025
+        aria-label: GitHub
+  sidebar:
+    - title: "Book Notes"
+      style: "docked"
+      search: true
+      contents:
+        - book/index.qmd
+        - book/01_the-golem-of-prague.qmd
+    - title: "Course"
+      contents:
+        - course/index.qmd
+    - title: "Homework"
+      contents:
+        - homework/index.qmd
+  page-footer:
+    center: |
+      An unofficial companion to [Statistical Rethinking](https://xcelab.net/rm/) by Richard McElreath
+  
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-location: right
+    toc-depth: 3
+    code-fold: true
+    code-summary: "Show code"
+    code-overflow: wrap
+    
+execute:
+  freeze: auto

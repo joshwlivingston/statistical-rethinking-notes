@@ -1,0 +1,9 @@
+---
+title: "Book Notes"
+---
+
+This section contains my notes and exercises as I work through the *Statistical Rethinking* textbook.
+
+## Chapters
+
+1. [The Golem of Prague](01_the-golem-of-prague.qmd)

@@ -1,0 +1,7 @@
+---
+title: "Homework Solutions"
+---
+
+This section contains my solutions to the course homework assignments.
+
+*Homework solutions will be added as assignments are completed.*

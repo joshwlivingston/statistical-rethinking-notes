@@ -1,0 +1,7 @@
+---
+title: "Course Notes"
+---
+
+This section contains notes from the pre-recorded lectures and slides.
+
+*Course content will be added as lectures are completed.*
