@@ -1,6 +1,8 @@
 # Statistical Rethinking (2nd Edition)
 
-This repo contains my notes and code as I work through 
+This repo contains my 
+[notes and code](https://joshwlivingston.github.io/statistical-rethinking/) as
+I work through
 [Richard McElreath's](https://github.com/rmcelreath) 2025 
 [course](https://github.com/rmcelreath/stat_rethinking_2025) on his book
 [*Statistical Rethinking*](https://xcelab.net/rm/). A course in Bayesian
