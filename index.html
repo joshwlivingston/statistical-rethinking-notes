@@ -144,7 +144,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/joshwlivingston/statistical-rethinking"> <i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/joshwlivingston/statistical-rethinking-notes"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -164,7 +164,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#statistical-rethinking-2nd-edition" id="toc-statistical-rethinking-2nd-edition" class="nav-link active" data-scroll-target="#statistical-rethinking-2nd-edition">Statistical Rethinking (2nd Edition)</a>
+  <li><a href="#notes-on-statistical-rethinking" id="toc-notes-on-statistical-rethinking" class="nav-link active" data-scroll-target="#notes-on-statistical-rethinking">Notes on Statistical Rethinking</a>
   <ul class="collapse">
   <li><a href="#organization" id="toc-organization" class="nav-link" data-scroll-target="#organization">Organization</a></li>
   <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
@@ -179,9 +179,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="statistical-rethinking-2nd-edition" class="level1">
-<h1>Statistical Rethinking (2nd Edition)</h1>
-<p>This repo contains my <a href="https://joshwlivingston.github.io/statistical-rethinking/">notes and code</a> as I work through <a href="https://github.com/rmcelreath">Richard McElreath’s</a> 2025 <a href="https://github.com/rmcelreath/stat_rethinking_2025">course</a> on his book <a href="https://xcelab.net/rm/"><em>Statistical Rethinking</em></a>. A course in Bayesian statistics, <em>Rethinking</em> is code-heavy and meant to be read sequentially, not as a reference. McElreath offers his flipped instruction course locally, also publishing the <a href="https://www.youtube.com/watch?v=FdnMWdICdRs&amp;list=PLDcUM9US4XdPz-KxHM4XHt7uUVGWWVSus">lectures</a> online.</p>
+<section id="notes-on-statistical-rethinking" class="level1">
+<h1>Notes on Statistical Rethinking</h1>
+<p>This repo contains my <a href="https://joshwlivingston.github.io/statistical-rethinking-notes/">notes and code</a> as I work through <a href="https://github.com/rmcelreath">Richard McElreath’s</a> 2025 <a href="https://github.com/rmcelreath/stat_rethinking_2025">course</a> on his book <a href="https://xcelab.net/rm/"><em>Statistical Rethinking</em></a>. A course in Bayesian statistics, <em>Rethinking</em> is code-heavy and meant to be read sequentially, not as a reference. McElreath offers his flipped instruction course locally, also publishing the <a href="https://www.youtube.com/watch?v=FdnMWdICdRs&amp;list=PLDcUM9US4XdPz-KxHM4XHt7uUVGWWVSus">lectures</a> online.</p>
 <section id="organization" class="level2">
 <h2 class="anchored" data-anchor-id="organization">Organization</h2>
 <p>The repoistory is organized into separate quarto files, which are stitched together in <code>_quarto.yml</code>.</p>
@@ -285,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/joshwlivingston\.github\.io\/statistical-rethinking\/");
+        var filterRegex = new RegExp("https:\/\/joshwlivingston\.github\.io\/statistical-rethinking-notes\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

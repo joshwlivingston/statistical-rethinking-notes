@@ -13,28 +13,28 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Statistical Rethinking (2nd Edition)",
+    "title": "Notes on Statistical Rethinking",
     "section": "",
     "text": "This repo contains my notes and code as I work through Richard McElreath’s 2025 course on his book Statistical Rethinking. A course in Bayesian statistics, Rethinking is code-heavy and meant to be read sequentially, not as a reference. McElreath offers his flipped instruction course locally, also publishing the lectures online.\n\n\nThe repoistory is organized into separate quarto files, which are stitched together in _quarto.yml.\n\nbook/: contains notes and exercises directly from the textbook\ncourse/: contains notes from pre-recorded lecutres and slides\nhomework/: contains homework solutions\n\nTo view the site locally, use the command line:\nquarto preview\n\n\n\nThe examples in the book require installation of the {rethinking} R package. Follow these steps to install:\n\nDownload {cmdstanr} from mc-stan.org\nDownload {rethinking}:\n\n# Experiemntal branch contains new tools for 2nd edition\ndevtools::install_github(\"rmcelreath/rethinking\",ref=\"Experimental\")\n\n\n\nThis repository contains my work and solutions for the course Statistical Rethinking (2025 Edition), which is licensed under CC0 1.0 Universal."
   },
   {
     "objectID": "index.html#organization",
     "href": "index.html#organization",
-    "title": "Statistical Rethinking (2nd Edition)",
+    "title": "Notes on Statistical Rethinking",
     "section": "",
     "text": "The repoistory is organized into separate quarto files, which are stitched together in _quarto.yml.\n\nbook/: contains notes and exercises directly from the textbook\ncourse/: contains notes from pre-recorded lecutres and slides\nhomework/: contains homework solutions\n\nTo view the site locally, use the command line:\nquarto preview"
   },
   {
     "objectID": "index.html#setup",
     "href": "index.html#setup",
-    "title": "Statistical Rethinking (2nd Edition)",
+    "title": "Notes on Statistical Rethinking",
     "section": "",
     "text": "The examples in the book require installation of the {rethinking} R package. Follow these steps to install:\n\nDownload {cmdstanr} from mc-stan.org\nDownload {rethinking}:\n\n# Experiemntal branch contains new tools for 2nd edition\ndevtools::install_github(\"rmcelreath/rethinking\",ref=\"Experimental\")"
   },
   {
     "objectID": "index.html#attribution",
     "href": "index.html#attribution",
-    "title": "Statistical Rethinking (2nd Edition)",
+    "title": "Notes on Statistical Rethinking",
     "section": "",
     "text": "This repository contains my work and solutions for the course Statistical Rethinking (2025 Edition), which is licensed under CC0 1.0 Universal."
   },
