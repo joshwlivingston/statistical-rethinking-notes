@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "LICENSE.html",
-    "href": "LICENSE.html",
-    "title": "MIT License",
-    "section": "",
-    "text": "MIT License\nCopyright (c) 2026 Josh Livingston\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
-  },
-  {
     "objectID": "homework/index.html",
     "href": "homework/index.html",
     "title": "Homework Solutions",
@@ -18,24 +11,32 @@
     ]
   },
   {
-    "objectID": "book/index.html",
-    "href": "book/index.html",
-    "title": "Book Notes",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Statistical Rethinking (2nd Edition)",
     "section": "",
-    "text": "This section contains my notes and exercises as I work through the Statistical Rethinking textbook.",
-    "crumbs": [
-      "Book Notes"
-    ]
+    "text": "This repo contains my notes and code as I work through Richard McElreath’s 2025 course on his book Statistical Rethinking. A course in Bayesian statistics, Rethinking is code-heavy and meant to be read sequentially, not as a reference. McElreath offers his flipped instruction course locally, also publishing the lectures online.\n\n\nThe repoistory is organized into separate quarto files, which are stitched together in _quarto.yml.\n\nbook/: contains notes and exercises directly from the textbook\ncourse/: contains notes from pre-recorded lecutres and slides\nhomework/: contains homework solutions\n\nTo view the site locally, use the command line:\nquarto preview\n\n\n\nThe examples in the book require installation of the {rethinking} R package. Follow these steps to install:\n\nDownload {cmdstanr} from mc-stan.org\nDownload {rethinking}:\n\n# Experiemntal branch contains new tools for 2nd edition\ndevtools::install_github(\"rmcelreath/rethinking\",ref=\"Experimental\")\n\n\n\nThis repository contains my work and solutions for the course Statistical Rethinking (2025 Edition), which is licensed under CC0 1.0 Universal."
   },
   {
-    "objectID": "book/index.html#chapters",
-    "href": "book/index.html#chapters",
-    "title": "Book Notes",
-    "section": "Chapters",
-    "text": "Chapters\n\nThe Golem of Prague",
-    "crumbs": [
-      "Book Notes"
-    ]
+    "objectID": "index.html#organization",
+    "href": "index.html#organization",
+    "title": "Statistical Rethinking (2nd Edition)",
+    "section": "",
+    "text": "The repoistory is organized into separate quarto files, which are stitched together in _quarto.yml.\n\nbook/: contains notes and exercises directly from the textbook\ncourse/: contains notes from pre-recorded lecutres and slides\nhomework/: contains homework solutions\n\nTo view the site locally, use the command line:\nquarto preview"
+  },
+  {
+    "objectID": "index.html#setup",
+    "href": "index.html#setup",
+    "title": "Statistical Rethinking (2nd Edition)",
+    "section": "",
+    "text": "The examples in the book require installation of the {rethinking} R package. Follow these steps to install:\n\nDownload {cmdstanr} from mc-stan.org\nDownload {rethinking}:\n\n# Experiemntal branch contains new tools for 2nd edition\ndevtools::install_github(\"rmcelreath/rethinking\",ref=\"Experimental\")"
+  },
+  {
+    "objectID": "index.html#attribution",
+    "href": "index.html#attribution",
+    "title": "Statistical Rethinking (2nd Edition)",
+    "section": "",
+    "text": "This repository contains my work and solutions for the course Statistical Rethinking (2025 Edition), which is licensed under CC0 1.0 Universal."
   },
   {
     "objectID": "book/01_the-golem-of-prague.html",
@@ -93,6 +94,33 @@
     ]
   },
   {
+    "objectID": "book/index.html",
+    "href": "book/index.html",
+    "title": "Book Notes",
+    "section": "",
+    "text": "This section contains my notes and exercises as I work through the Statistical Rethinking textbook.",
+    "crumbs": [
+      "Book Notes"
+    ]
+  },
+  {
+    "objectID": "book/index.html#chapters",
+    "href": "book/index.html#chapters",
+    "title": "Book Notes",
+    "section": "Chapters",
+    "text": "Chapters\n\nThe Golem of Prague",
+    "crumbs": [
+      "Book Notes"
+    ]
+  },
+  {
+    "objectID": "LICENSE.html",
+    "href": "LICENSE.html",
+    "title": "MIT License",
+    "section": "",
+    "text": "MIT License\nCopyright (c) 2026 Josh Livingston\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+  },
+  {
     "objectID": "course/index.html",
     "href": "course/index.html",
     "title": "Course Notes",
@@ -102,33 +130,5 @@
       "Course",
       "Course Notes"
     ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Statistical Rethinking (2nd Edition)",
-    "section": "",
-    "text": "This repo contains my notes and code as I work through Richard McElreath’s 2025 course on his book Statistical Rethinking. A course in Bayesian statistics, Rethinking is code-heavy and meant to be read sequentially, not as a reference. McElreath offers his flipped instruction course locally, also publishing the lectures online.\n\n\nThe repoistory is organized into separate quarto files, which are stitched together in _quarto.yml.\n\nbook/: contains notes and exercises directly from the textbook\ncourse/: contains notes from pre-recorded lecutres and slides\nhomework/: contains homework solutions\n\nTo view the site locally, use the command line:\nquarto preview\n\n\n\nThe examples in the book require installation of the {rethinking} R package. Follow these steps to install:\n\nDownload {cmdstanr} from mc-stan.org\nDownload {rethinking}:\n\n# Experiemntal branch contains new tools for 2nd edition\ndevtools::install_github(\"rmcelreath/rethinking\",ref=\"Experimental\")\n\n\n\nThis repository contains my work and solutions for the course Statistical Rethinking (2025 Edition), which is licensed under CC0 1.0 Universal."
-  },
-  {
-    "objectID": "index.html#organization",
-    "href": "index.html#organization",
-    "title": "Statistical Rethinking (2nd Edition)",
-    "section": "",
-    "text": "The repoistory is organized into separate quarto files, which are stitched together in _quarto.yml.\n\nbook/: contains notes and exercises directly from the textbook\ncourse/: contains notes from pre-recorded lecutres and slides\nhomework/: contains homework solutions\n\nTo view the site locally, use the command line:\nquarto preview"
-  },
-  {
-    "objectID": "index.html#setup",
-    "href": "index.html#setup",
-    "title": "Statistical Rethinking (2nd Edition)",
-    "section": "",
-    "text": "The examples in the book require installation of the {rethinking} R package. Follow these steps to install:\n\nDownload {cmdstanr} from mc-stan.org\nDownload {rethinking}:\n\n# Experiemntal branch contains new tools for 2nd edition\ndevtools::install_github(\"rmcelreath/rethinking\",ref=\"Experimental\")"
-  },
-  {
-    "objectID": "index.html#attribution",
-    "href": "index.html#attribution",
-    "title": "Statistical Rethinking (2nd Edition)",
-    "section": "",
-    "text": "This repository contains my work and solutions for the course Statistical Rethinking (2025 Edition), which is licensed under CC0 1.0 Universal."
   }
 ]
