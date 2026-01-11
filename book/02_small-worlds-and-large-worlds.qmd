@@ -1,1 +1,21 @@
 # Chapter 2: Small Worlds and Large Worlds
+
+Statistical modeling exists dualistically, in a *small world* (contained by the
+model's inherent logic) and a *big world* (the context in which the model will
+live).
+
+In the small world, it is important to make sure the model is valid,
+consistent, and well-behaved.
+
+The large world is the broader context in which the finalized model will exist. 
+It is important to note that the statistical model *always* underrepresents the
+full context of the large world. Out of sample data emerge, and a model's
+logical inconsistencies can surface.
+
+Adapting to the large world is a straightforward process, for nature.
+For Bayesian models, the process is much more complex. It is difficult to beat
+natural heuristics once a model identifies what to look for.
+
+Chapter 2 focuses on the small world.
+
+## 2.1: The garden of forking data
