@@ -73,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -352,6 +381,15 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">2.3.1: Variables</a></li>
   <li><a href="#definitions" id="toc-definitions" class="nav-link" data-scroll-target="#definitions">2.3.2: Definitions</a></li>
   </ul></li>
+  <li><a href="#making-the-model-go" id="toc-making-the-model-go" class="nav-link" data-scroll-target="#making-the-model-go">2.4: Making the model go</a>
+  <ul class="collapse">
+  <li><a href="#bayes-theorem" id="toc-bayes-theorem" class="nav-link" data-scroll-target="#bayes-theorem">2.4.1: Bayes’ theorem</a></li>
+  <li><a href="#motors" id="toc-motors" class="nav-link" data-scroll-target="#motors">2.4.2: Motors</a></li>
+  </ul></li>
+  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a>
+  <ul class="collapse">
+  <li><a href="#a2.4.1-bayes-theorem" id="toc-a2.4.1-bayes-theorem" class="nav-link" data-scroll-target="#a2.4.1-bayes-theorem">A2.4.1: Bayes’ theorem</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -413,9 +451,63 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="unobserved-variables" class="level4">
 <h4 class="anchored" data-anchor-id="unobserved-variables">2.3.2.2: Unobserved variables</h4>
-
-
+<p>To “count” an <strong>unobserved variable</strong> (a <em>parameter</em>), assign it a <em>prior</em>, then <em>update</em> the prior as the model learns from the <em>data</em>.</p>
+<p>The <em>prior</em> is part of the model; thus, it should be developed within the same cyclic development of the rest of the model.</p>
+<p><em>Priors</em> are arbitrary, a choice made by the scientist. So, it is important to test many <em>priors</em>. This does not mean that the scientist has undue influence over the model. If the chocsen <em>prior</em> is bad, the model will be bad.</p>
 </section>
+</section>
+</section>
+<section id="making-the-model-go" class="level2">
+<h2 class="anchored" data-anchor-id="making-the-model-go">2.4: Making the model go</h2>
+<p>Once the components have been established, the Bayesian model will update the prior distributions until the <strong>posterior distribution</strong> is determined. The <em>posterior</em> contains the probability distribution of different <em>parameters</em>, conditioned on the data and model.</p>
+<section id="bayes-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="bayes-theorem">2.4.1: Bayes’ theorem</h3>
+<p>Note that the following equations are equivalent:</p>
+<p><span class="math display">\[
+\Pr(A,B) = \Pr(A|B)\Pr(B) \tag{2.1}
+\]</span></p>
+<p><span class="math display">\[
+\Pr(A,B) = \Pr(B|A)\Pr(A) \tag{2.2}
+\]</span></p>
+<p>Both equations represent the joint probability space of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. <span class="math inline">\((2.1)\)</span> does so by first asking “what is the probability of <span class="math inline">\(B\)</span>?” Then, let’s suppose <span class="math inline">\(B\)</span> occurs. Now, <span class="math inline">\(B\)</span> having occurred, “what is the probability of <span class="math inline">\(A\)</span>?” Multiply the two results together.</p>
+<p><span class="math inline">\((2.2)\)</span> follows the same sequence but in reverse.</p>
+<p>The result is logical equivalence:</p>
+<p><span class="math display">\[
+\Pr(A|B)\Pr(B) = \Pr(B|A)\Pr(A) \tag{2.3}
+\]</span></p>
+<p>Note that this equivalence can also be reached mathematically, via the definition of conditional probability (in the discrete case) or conditional density (continuous).</p>
+<p><strong>Bayes’ theorem</strong> wonderfully exploits this equivalence:</p>
+<p><span class="math display">\[
+\Pr(B|A) = \frac{\Pr(A|B)\Pr(B)}{\Pr(A)} \tag{2.4}
+\]</span></p>
+<p>Why is the *Bayes’ theorem expression better? The answer lies in practice:</p>
+<ul>
+<li><span class="math inline">\(\Pr(B|A)\)</span> is difficult to measure directly.</li>
+<li><span class="math inline">\(\Pr(A|B)\)</span> is the modeled <em>likelihood</em>.</li>
+<li><span class="math inline">\(\Pr(B)\)</span> is simply the <em>prior</em>.</li>
+<li><span class="math inline">\(\Pr(A)\)</span> (see <a href="#appendix">appendix</a>) is not needed, due to the implied proportionality:</li>
+</ul>
+<p><span class="math display">\[
+\Pr(A) \propto \Pr(A|B)\Pr(B) \tag{2.5}
+\]</span></p>
+<p>This means that the <em>posterior</em> is proportional to the <em>likelihood</em> multiplied by the <em>prior</em>. Since we choose the <em>prior</em>, we simply have to calculate the <em>likelihood</em> to find the shape of the <em>posterior</em>. We don’t need the exact density values; any needed estimation can be performed on the proportional density.</p>
+</section>
+<section id="motors" class="level3">
+<h3 class="anchored" data-anchor-id="motors">2.4.2: Motors</h3>
+<p>…</p>
+</section>
+</section>
+<section id="appendix" class="level2">
+<h2 class="anchored" data-anchor-id="appendix">Appendix</h2>
+<section id="a2.4.1-bayes-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="a2.4.1-bayes-theorem">A2.4.1: Bayes’ theorem</h3>
+<p>Note that <span class="math inline">\(\Pr(A)\)</span> measurable via the <a href="https://en.wikipedia.org/wiki/Law_of_total_probability">Law of Total Probability</a>:</p>
+<p><span class="math display">\[
+\Pr(A) = \mathbb{E}[\Pr(A|B)] = \int{\Pr(A|B)\Pr(B)dB} \tag{2.4}
+\]</span></p>
+<p><span class="math inline">\(\mathbb{E}[\Pr{A|B}]\)</span> is also referred to as the <strong>marginal likelihood</strong>.</p>
+
+
 </section>
 </section>
 </section>
