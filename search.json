@@ -40,7 +40,40 @@
     "href": "book/02_small-worlds-and-large-worlds.html",
     "title": "Chapter 2: Small Worlds and Large Worlds",
     "section": "",
-    "text": "Statistical modeling exists dualistically, in a small world (contained by the model’s inherent logic) and a big world (the context in which the model will live).\nIn the small world, it is important to make sure the model is valid, consistent, and well-behaved.\nThe large world is the broader context in which the finalized model will exist. It is important to note that the statistical model always underrepresents the full context of the large world. Out of sample data emerge, and a model’s logical inconsistencies can surface.\nAdapting to the large world is a straightforward process, for nature. For Bayesian models, the process is much more complex. It is difficult to beat natural heuristics once a model identifies what to look for.\nChapter 2 focuses on the small world.",
+    "text": "Statistical modeling exists dualistically, in a small world (contained by the model’s inherent logic) and a big world (the context in which the model will live).\nIn the small world, it is important to make sure the model is valid, consistent, and well-behaved.\nThe large world is the broader context in which the finalized model will exist. It is important to note that the statistical model always underrepresents the full context of the large world. Out of sample data emerge, and a model’s logical inconsistencies can surface.\nAdapting to the large world is a straightforward process, for nature. For Bayesian models, the process is much more complex. It is difficult to beat natural heuristics once a model identifies what to look for.\nChapter 2 focuses on the small world.\n\n\nBayesian analysis lends itself to continually exploring alternatives. In this sense, Bayesian analysis creates a series of data “forks” in its quest to deduce.\n\n\n\nDevelopment of a Bayesian model is best done cyclically:\n\nCreate a data story\nUpdate\nEvaluate\nRepeat\n\n\n\nThe first step is to develop a story, built on either associations or causality, about the data, particularly its variation. Data stories involve descriptions of the large world, as well as the small world sampling process. This story is then put into formal terms of probability.\nRecall that any model may map back to multiple stories. Thus, model success does not necessarily imply confirmation of the story.\n\n\n\nYou create a Bayesian model with an initial estimate, your prior. Then, as you sample data, your model learns from the new data, updating itself.\n\n\n\nThe nature of Bayesian models guarantees that, within the small world, the model will achieve perfect inference. This means that extra care must be taken to evaluate the model within the large world, where small world success does not necessarily translate.\nRemember that a model’s assumptions are never 100% correct. Failure to disprove a model is therefore an error of science, not a sign of success.\n\n\n\n\n\n\nIn the context of Bayesian models, variables refer to either observable data or unobservable parameters.\n\n\n\nThe definitions of the relationships among variables constitute a model.\n\n\nTo “count” an observed variable, we assign it a probability distribution, known as a likelihood.",
+    "crumbs": [
+      "Book Notes",
+      "Chapter 2: Small Worlds and Large Worlds"
+    ]
+  },
+  {
+    "objectID": "book/02_small-worlds-and-large-worlds.html#the-garden-of-forking-data",
+    "href": "book/02_small-worlds-and-large-worlds.html#the-garden-of-forking-data",
+    "title": "Chapter 2: Small Worlds and Large Worlds",
+    "section": "",
+    "text": "Bayesian analysis lends itself to continually exploring alternatives. In this sense, Bayesian analysis creates a series of data “forks” in its quest to deduce.",
+    "crumbs": [
+      "Book Notes",
+      "Chapter 2: Small Worlds and Large Worlds"
+    ]
+  },
+  {
+    "objectID": "book/02_small-worlds-and-large-worlds.html#building-a-model",
+    "href": "book/02_small-worlds-and-large-worlds.html#building-a-model",
+    "title": "Chapter 2: Small Worlds and Large Worlds",
+    "section": "",
+    "text": "Development of a Bayesian model is best done cyclically:\n\nCreate a data story\nUpdate\nEvaluate\nRepeat\n\n\n\nThe first step is to develop a story, built on either associations or causality, about the data, particularly its variation. Data stories involve descriptions of the large world, as well as the small world sampling process. This story is then put into formal terms of probability.\nRecall that any model may map back to multiple stories. Thus, model success does not necessarily imply confirmation of the story.\n\n\n\nYou create a Bayesian model with an initial estimate, your prior. Then, as you sample data, your model learns from the new data, updating itself.\n\n\n\nThe nature of Bayesian models guarantees that, within the small world, the model will achieve perfect inference. This means that extra care must be taken to evaluate the model within the large world, where small world success does not necessarily translate.\nRemember that a model’s assumptions are never 100% correct. Failure to disprove a model is therefore an error of science, not a sign of success.",
+    "crumbs": [
+      "Book Notes",
+      "Chapter 2: Small Worlds and Large Worlds"
+    ]
+  },
+  {
+    "objectID": "book/02_small-worlds-and-large-worlds.html#components-of-the-model",
+    "href": "book/02_small-worlds-and-large-worlds.html#components-of-the-model",
+    "title": "Chapter 2: Small Worlds and Large Worlds",
+    "section": "",
+    "text": "In the context of Bayesian models, variables refer to either observable data or unobservable parameters.\n\n\n\nThe definitions of the relationships among variables constitute a model.\n\n\nTo “count” an observed variable, we assign it a probability distribution, known as a likelihood.",
     "crumbs": [
       "Book Notes",
       "Chapter 2: Small Worlds and Large Worlds"

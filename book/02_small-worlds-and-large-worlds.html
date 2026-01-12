@@ -341,6 +341,17 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#chapter-2-small-worlds-and-large-worlds" id="toc-chapter-2-small-worlds-and-large-worlds" class="nav-link active" data-scroll-target="#chapter-2-small-worlds-and-large-worlds">Chapter 2: Small Worlds and Large Worlds</a>
   <ul class="collapse">
   <li><a href="#the-garden-of-forking-data" id="toc-the-garden-of-forking-data" class="nav-link" data-scroll-target="#the-garden-of-forking-data">2.1: The garden of forking data</a></li>
+  <li><a href="#building-a-model" id="toc-building-a-model" class="nav-link" data-scroll-target="#building-a-model">2.2: Building a model</a>
+  <ul class="collapse">
+  <li><a href="#a-data-story" id="toc-a-data-story" class="nav-link" data-scroll-target="#a-data-story">2.2.1: A data story</a></li>
+  <li><a href="#bayesian-updating" id="toc-bayesian-updating" class="nav-link" data-scroll-target="#bayesian-updating">2.2.2: Bayesian updating</a></li>
+  <li><a href="#evaluate" id="toc-evaluate" class="nav-link" data-scroll-target="#evaluate">2.2.3: Evaluate</a></li>
+  </ul></li>
+  <li><a href="#components-of-the-model" id="toc-components-of-the-model" class="nav-link" data-scroll-target="#components-of-the-model">2.3: Components of the model</a>
+  <ul class="collapse">
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">2.3.1: Variables</a></li>
+  <li><a href="#definitions" id="toc-definitions" class="nav-link" data-scroll-target="#definitions">2.3.2: Definitions</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -354,15 +365,58 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="chapter-2-small-worlds-and-large-worlds" class="level1">
 <h1>Chapter 2: Small Worlds and Large Worlds</h1>
-<p>Statistical modeling exists dualistically, in a <em>small world</em> (contained by the model’s inherent logic) and a <em>big world</em> (the context in which the model will live).</p>
-<p>In the small world, it is important to make sure the model is valid, consistent, and well-behaved.</p>
-<p>The large world is the broader context in which the finalized model will exist. It is important to note that the statistical model <em>always</em> underrepresents the full context of the large world. Out of sample data emerge, and a model’s logical inconsistencies can surface.</p>
-<p>Adapting to the large world is a straightforward process, for nature. For Bayesian models, the process is much more complex. It is difficult to beat natural heuristics once a model identifies what to look for.</p>
-<p>Chapter 2 focuses on the small world.</p>
+<p>Statistical modeling exists dualistically, in a <strong>small world</strong> (contained by the model’s inherent logic) and a <strong>big world</strong> (the context in which the model will live).</p>
+<p>In the <em>small world</em>, it is important to make sure the model is valid, consistent, and well-behaved.</p>
+<p>The <em>large world</em> is the broader context in which the finalized model will exist. It is important to note that the statistical model <em>always</em> underrepresents the full context of the <em>large world</em>. Out of sample data emerge, and a model’s logical inconsistencies can surface.</p>
+<p>Adapting to the <em>large world</em> is a straightforward process, for nature. For Bayesian models, the process is much more complex. It is difficult to beat natural heuristics once a model identifies what to look for.</p>
+<p>Chapter 2 focuses on the <em>small world</em>.</p>
 <section id="the-garden-of-forking-data" class="level2">
 <h2 class="anchored" data-anchor-id="the-garden-of-forking-data">2.1: The garden of forking data</h2>
+<p>Bayesian analysis lends itself to continually exploring alternatives. In this sense, Bayesian analysis creates a series of data “forks” in its quest to deduce.</p>
+</section>
+<section id="building-a-model" class="level2">
+<h2 class="anchored" data-anchor-id="building-a-model">2.2: Building a model</h2>
+<p>Development of a Bayesian model is best done cyclically:</p>
+<ol type="1">
+<li>Create a <strong>data story</strong></li>
+<li>Update</li>
+<li>Evaluate</li>
+<li>Repeat</li>
+</ol>
+<section id="a-data-story" class="level3">
+<h3 class="anchored" data-anchor-id="a-data-story">2.2.1: A data story</h3>
+<p>The first step is to develop a story, built on either associations or causality, about the data, particularly its variation. <em>Data stories</em> involve descriptions of the <em>large world</em>, as well as the <em>small world</em> sampling process. This story is then put into formal terms of probability.</p>
+<p>Recall that any model may map back to multiple stories. Thus, model success does not necessarily imply confirmation of the story.</p>
+</section>
+<section id="bayesian-updating" class="level3">
+<h3 class="anchored" data-anchor-id="bayesian-updating">2.2.2: Bayesian updating</h3>
+<p>You create a Bayesian model with an initial estimate, your <strong>prior</strong>. Then, as you sample data, your model learns from the new data, <em>updating</em> itself.</p>
+</section>
+<section id="evaluate" class="level3">
+<h3 class="anchored" data-anchor-id="evaluate">2.2.3: Evaluate</h3>
+<p>The nature of Bayesian models guarantees that, within the <em>small world</em>, the model will achieve perfect inference. This means that extra care must be taken to evaluate the model within the <em>large world</em>, where <em>small world</em> success does not necessarily translate.</p>
+<p>Remember that a model’s assumptions are never 100% correct. Failure to disprove a model is therefore an error of science, not a sign of success.</p>
+</section>
+</section>
+<section id="components-of-the-model" class="level2">
+<h2 class="anchored" data-anchor-id="components-of-the-model">2.3: Components of the model</h2>
+<section id="variables" class="level3">
+<h3 class="anchored" data-anchor-id="variables">2.3.1: Variables</h3>
+<p>In the context of Bayesian models, <strong>variables</strong> refer to either <em>observable</em> <strong>data</strong> or <em>unobservable</em> <strong>parameters</strong>.</p>
+</section>
+<section id="definitions" class="level3">
+<h3 class="anchored" data-anchor-id="definitions">2.3.2: Definitions</h3>
+<p>The <strong>definitions</strong> of the relationships among <em>variables</em> constitute a <strong>model</strong>.</p>
+<section id="observed-variables" class="level4">
+<h4 class="anchored" data-anchor-id="observed-variables">2.3.2.1: Observed variables</h4>
+<p>To “count” an <strong>observed variable</strong>, we assign it a probability distribution, known as a <strong>likelihood</strong>.</p>
+</section>
+<section id="unobserved-variables" class="level4">
+<h4 class="anchored" data-anchor-id="unobserved-variables">2.3.2.2: Unobserved variables</h4>
 
 
+</section>
+</section>
 </section>
 </section>
 
