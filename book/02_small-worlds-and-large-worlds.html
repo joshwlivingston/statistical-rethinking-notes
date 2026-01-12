@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -367,9 +402,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#chapter-2-small-worlds-and-large-worlds" id="toc-chapter-2-small-worlds-and-large-worlds" class="nav-link active" data-scroll-target="#chapter-2-small-worlds-and-large-worlds">Chapter 2: Small Worlds and Large Worlds</a>
-  <ul class="collapse">
-  <li><a href="#the-garden-of-forking-data" id="toc-the-garden-of-forking-data" class="nav-link" data-scroll-target="#the-garden-of-forking-data">2.1: The garden of forking data</a></li>
+  <li><a href="#the-garden-of-forking-data" id="toc-the-garden-of-forking-data" class="nav-link active" data-scroll-target="#the-garden-of-forking-data">2.1: The garden of forking data</a></li>
   <li><a href="#building-a-model" id="toc-building-a-model" class="nav-link" data-scroll-target="#building-a-model">2.2: Building a model</a>
   <ul class="collapse">
   <li><a href="#a-data-story" id="toc-a-data-story" class="nav-link" data-scroll-target="#a-data-story">2.2.1: A data story</a></li>
@@ -385,24 +418,38 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#bayes-theorem" id="toc-bayes-theorem" class="nav-link" data-scroll-target="#bayes-theorem">2.4.1: Bayes’ theorem</a></li>
   <li><a href="#motors" id="toc-motors" class="nav-link" data-scroll-target="#motors">2.4.2: Motors</a></li>
+  <li><a href="#grid-approximation" id="toc-grid-approximation" class="nav-link" data-scroll-target="#grid-approximation">2.4.3: Grid approximation</a></li>
   </ul></li>
   <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a>
   <ul class="collapse">
   <li><a href="#a2.4.1-bayes-theorem" id="toc-a2.4.1-bayes-theorem" class="nav-link" data-scroll-target="#a2.4.1-bayes-theorem">A2.4.1: Bayes’ theorem</a></li>
   </ul></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Chapter 2: Small Worlds and Large Worlds</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
-<section id="chapter-2-small-worlds-and-large-worlds" class="level1">
-<h1>Chapter 2: Small Worlds and Large Worlds</h1>
+</header>
+
+
 <p>Statistical modeling exists dualistically, in a <strong>small world</strong> (contained by the model’s inherent logic) and a <strong>big world</strong> (the context in which the model will live).</p>
 <p>In the <em>small world</em>, it is important to make sure the model is valid, consistent, and well-behaved.</p>
 <p>The <em>large world</em> is the broader context in which the finalized model will exist. It is important to note that the statistical model <em>always</em> underrepresents the full context of the <em>large world</em>. Out of sample data emerge, and a model’s logical inconsistencies can surface.</p>
@@ -410,7 +457,7 @@ window.Quarto = {
 <p>Chapter 2 focuses on the <em>small world</em>.</p>
 <section id="the-garden-of-forking-data" class="level2">
 <h2 class="anchored" data-anchor-id="the-garden-of-forking-data">2.1: The garden of forking data</h2>
-<p>Bayesian analysis lends itself to continually exploring alternatives. In this sense, Bayesian analysis creates a series of data “forks” in its quest to deduce.</p>
+<p><em>Bayesian analysis</em> lends itself to continually exploring alternatives. In this sense, <em>Bayesian analysis</em> creates a series of data “forks” in its quest to deduce.</p>
 </section>
 <section id="building-a-model" class="level2">
 <h2 class="anchored" data-anchor-id="building-a-model">2.2: Building a model</h2>
@@ -469,8 +516,7 @@ window.Quarto = {
 <p><span class="math display">\[
 \Pr(A,B) = \Pr(B|A)\Pr(A) \tag{2.2}
 \]</span></p>
-<p>Both equations represent the joint probability space of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. <span class="math inline">\((2.1)\)</span> does so by first asking “what is the probability of <span class="math inline">\(B\)</span>?” Then, let’s suppose <span class="math inline">\(B\)</span> occurs. Now, <span class="math inline">\(B\)</span> having occurred, “what is the probability of <span class="math inline">\(A\)</span>?” Multiply the two results together.</p>
-<p><span class="math inline">\((2.2)\)</span> follows the same sequence but in reverse.</p>
+<p>Both equations represent the joint probability space of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. <span class="math inline">\((2.1)\)</span> does so by first asking “what is the probability of <span class="math inline">\(B\)</span>?” Then, let’s suppose <span class="math inline">\(B\)</span> occurs. Now, <span class="math inline">\(B\)</span> having occurred, “what is the probability of <span class="math inline">\(A\)</span>?” Multiply the two results together. <span class="math inline">\((2.2)\)</span> follows the same sequence but in reverse.</p>
 <p>The result is logical equivalence:</p>
 <p><span class="math display">\[
 \Pr(A|B)\Pr(B) = \Pr(B|A)\Pr(A) \tag{2.3}
@@ -480,7 +526,7 @@ window.Quarto = {
 <p><span class="math display">\[
 \Pr(B|A) = \frac{\Pr(A|B)\Pr(B)}{\Pr(A)} \tag{2.4}
 \]</span></p>
-<p>Why is the *Bayes’ theorem expression better? The answer lies in practice:</p>
+<p>Why is the <em>Bayes’ theorem</em> expression better? The answer lies in practice:</p>
 <ul>
 <li><span class="math inline">\(\Pr(B|A)\)</span> is difficult to measure directly.</li>
 <li><span class="math inline">\(\Pr(A|B)\)</span> is the modeled <em>likelihood</em>.</li>
@@ -490,25 +536,136 @@ window.Quarto = {
 <p><span class="math display">\[
 \Pr(B|A) \propto \Pr(A|B)\Pr(B) \tag{2.5}
 \]</span></p>
-<p>This means that the <em>posterior</em> is proportional to the <em>likelihood</em> multiplied by the <em>prior</em>. Since we choose the <em>prior</em>, we simply have to calculate the <em>likelihood</em> to find the shape of the <em>posterior</em>. We don’t need the exact density values; any needed estimation can be performed on the proportional density.</p>
+<p><span class="math inline">\((2.5)\)</span> says that the <em>posterior</em> is proportional to the <em>likelihood</em> multiplied by the <em>prior</em>. Since we choose the <em>prior</em>, we simply have to calculate the <em>likelihood</em> to find the shape of the <em>posterior</em>. We don’t need the exact density values; any needed estimation can be performed on the proportional density.</p>
+<p>While <em>Bayes’ theorem</em> is used by any probability-based inference, <em>Bayesian inference</em> concerns specifically the generalization of <em>Bayes’ theorem</em> to abstractions like <em>parameters</em> and <em>models</em>.</p>
 </section>
 <section id="motors" class="level3">
 <h3 class="anchored" data-anchor-id="motors">2.4.2: Motors</h3>
-<p>…</p>
+<p><em>Rethinking</em> introduces three <strong><em>motors</em></strong> that each approximate <em>Bayesian inference</em>:</p>
+<ol type="1">
+<li>Grid approximation</li>
+<li>Quadratic approximation</li>
+<li>Markov chain Monte Carlo (MCMC)</li>
+</ol>
+</section>
+<section id="grid-approximation" class="level3">
+<h3 class="anchored" data-anchor-id="grid-approximation">2.4.3: Grid approximation</h3>
+<p>Similar to grid search in machine learning, <strong>grid approximation</strong> in <em>Bayesian inference</em> achieves great performance in approximating the <em>posterior</em>, using a discrete set of possible <em>parameter</em> values.</p>
+<p><em>Grid approximation</em> follows 6 steps:</p>
+<ol type="1">
+<li>Define the <em>parameter</em> <strong>grid</strong>:</li>
+</ol>
+<div id="f295598b" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># change this to increase/decrease approximation precision</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>N_OUT <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>p_grid <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, N_OUT)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<ol start="2" type="1">
+<li>Compute the <em>likelihood</em> at each <em>parameter</em> value:</li>
+</ol>
+<div id="d26da7c4" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> st</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>likelihood <span class="op">=</span> st.binom.pmf(<span class="dv">6</span>, <span class="dv">9</span>, p_grid)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<ol start="3" type="1">
+<li>Define the <em>priors</em>:</li>
+</ol>
+<div id="a5da2b9c" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>priors <span class="op">=</span> [</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    np.repeat(<span class="fl">1.0</span>, <span class="bu">len</span>(p_grid)),  <span class="co"># uninformative prior</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    np.where(p_grid <span class="op">&lt;</span> <span class="fl">0.5</span>, <span class="fl">0.0</span>, <span class="fl">1.0</span>),  <span class="co"># 0 if x &lt; 0.5 else 1</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    np.exp(<span class="op">-</span><span class="dv">5</span> <span class="op">*</span> np.<span class="bu">abs</span>(p_grid <span class="op">-</span> <span class="fl">0.5</span>)),  <span class="co"># exponential peak centered at 0.5</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<ol start="4" type="1">
+<li>Compute the <em>posteriors</em> by multiplying the <em>priors</em> and the <em>likelihood</em>:</li>
+</ol>
+<div id="261cb63f" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>posteriors_unstd <span class="op">=</span> <span class="bu">list</span>()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> prior <span class="kw">in</span> priors:</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    posteriors_unstd.append(likelihood <span class="op">*</span> prior)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<ol start="5" type="1">
+<li>Standardize the <em>posteriors</em>:</li>
+</ol>
+<div id="333056b3" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>posteriors <span class="op">=</span> <span class="bu">list</span>()</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> posterior_unstd <span class="kw">in</span> posteriors_unstd:</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    posteriors.append(posterior_unstd <span class="op">/</span> <span class="bu">sum</span>(posterior_unstd))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<ol start="6" type="1">
+<li>Analyze the results. Notice the effect of the prior choice:</li>
+</ol>
+<div id="7d0e8172" class="cell" data-execution_count="6">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> posterior <span class="kw">in</span> posteriors:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create the plot</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    plt.plot(p_grid, posterior, <span class="st">"-o"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">"Probability of success"</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">"Posterior probability"</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="st">"Posterior distribution after 9 draws"</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02_small-worlds-and-large-worlds_files/figure-html/cell-7-output-1.png" width="672" height="449" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02_small-worlds-and-large-worlds_files/figure-html/cell-7-output-2.png" width="680" height="449" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02_small-worlds-and-large-worlds_files/figure-html/cell-7-output-3.png" width="680" height="449" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="appendix" class="level2">
 <h2 class="anchored" data-anchor-id="appendix">Appendix</h2>
 <section id="a2.4.1-bayes-theorem" class="level3">
 <h3 class="anchored" data-anchor-id="a2.4.1-bayes-theorem">A2.4.1: Bayes’ theorem</h3>
-<p>Note that <span class="math inline">\(\Pr(A)\)</span> measurable via the <a href="https://en.wikipedia.org/wiki/Law_of_total_probability">Law of Total Probability</a>:</p>
+<p>Note that <span class="math inline">\(\Pr(A)\)</span> is measurable via the <a href="https://en.wikipedia.org/wiki/Law_of_total_probability">Law of Total Probability</a>:</p>
 <p><span class="math display">\[
 \Pr(A) = \mathbb{E}[\Pr(A|B)] = \int{\Pr(A|B)\Pr(B)dB} \tag{A2.1}
 \]</span></p>
 <p><span class="math inline">\(\mathbb{E}[\Pr(A|B)]\)</span> is also referred to as the <strong>marginal likelihood</strong>.</p>
 
 
-</section>
 </section>
 </section>
 
