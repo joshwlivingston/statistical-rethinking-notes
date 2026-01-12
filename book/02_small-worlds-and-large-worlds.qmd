@@ -20,8 +20,8 @@ Chapter 2 focuses on the *small world*.
 
 ## 2.1: The garden of forking data
 
-Bayesian analysis lends itself to continually exploring alternatives. In this
-sense, Bayesian analysis creates a series of data "forks" in its quest to
+*Bayesian analysis* lends itself to continually exploring alternatives. In this
+sense, *Bayesian analysis* creates a series of data "forks" in its quest to
 deduce.
 
 ## 2.2: Building a model
@@ -108,9 +108,8 @@ $$
 Both equations represent the joint probability space of $A$ and $B$.
 $(2.1)$ does so by first asking "what is the probability of $B$?" Then, let's
 suppose $B$ occurs. Now, $B$ having occurred, "what is the probability of $A$?"
-Multiply the two results together.
-
-$(2.2)$ follows the same sequence but in reverse. 
+Multiply the two results together. $(2.2)$ follows the same sequence but in
+reverse. 
 
 The result is logical equivalence:
 
@@ -128,7 +127,7 @@ $$
 \Pr(B|A) = \frac{\Pr(A|B)\Pr(B)}{\Pr(A)} \tag{2.4}
 $$
 
-Why is the *Bayes' theorem expression better? The answer lies in practice:
+Why is the *Bayes' theorem* expression better? The answer lies in practice:
 
 - $\Pr(B|A)$ is difficult to measure directly.
 - $\Pr(A|B)$ is the modeled *likelihood*.
@@ -140,20 +139,94 @@ $$
 \Pr(B|A) \propto \Pr(A|B)\Pr(B) \tag{2.5}
 $$
 
-This means that the *posterior* is proportional to the *likelihood* multiplied
-by the *prior*. Since we choose the *prior*, we simply have to calculate the
-*likelihood* to find the shape of the *posterior*. We don't need the exact density values; any needed estimation can be performed on the proportional 
-density.
+$(2.5)$ says that the *posterior* is proportional to the *likelihood*
+multiplied by the *prior*. Since we choose the *prior*, we simply have to
+calculate the *likelihood* to find the shape of the *posterior*. We don't need
+the exact density values; any needed estimation can be performed on the
+proportional density.
+
+While *Bayes' theorem* is used by any probability-based inference,
+*Bayesian inference* concerns specifically the generalization of
+*Bayes' theorem* to abstractions like *parameters* and *models*.
 
 ### 2.4.2: Motors
 
-...
+*Rethinking* introduces three ***motors*** that each approximate
+*Bayesian inference*:
+
+1. Grid approximation
+2. Quadratic approximation
+3. Markov chain Monte Carlo (MCMC)
+
+### 2.4.3: Grid approximation
+
+Similar to grid search in machine learning, **grid approximation** in
+*Bayesian inference* achieves great performance in approximating the
+*posterior*, using a discrete set of possible *parameter* values.
+
+*Grid approximation* follows 6 steps:
+
+1. Define the *parameter* **grid**:
+```{python}
+import numpy as np
+
+# change this to increase/decrease approximation precision
+N_OUT = 20
+
+p_grid = np.linspace(0, 1, N_OUT)
+```
+
+2. Compute the *likelihood* at each *parameter* value:
+```{python}
+import scipy.stats as st
+
+likelihood = st.binom.pmf(6, 9, p_grid)
+```
+
+3. Define the *priors*:
+```{python}
+priors = [
+    np.repeat(1.0, len(p_grid)),  # uninformative prior
+    np.where(p_grid < 0.5, 0.0, 1.0),  # 0 if x < 0.5 else 1
+    np.exp(-5 * np.abs(p_grid - 0.5)),  # exponential peak centered at 0.5
+]
+```
+
+4. Compute the *posteriors* by multiplying the *priors* and the *likelihood*:
+```{python}
+posteriors_unstd = list()
+for prior in priors:
+    posteriors_unstd.append(likelihood * prior)
+```
+
+5. Standardize the *posteriors*:
+```{python}
+posteriors = list()
+for posterior_unstd in posteriors_unstd:
+    posteriors.append(posterior_unstd / sum(posterior_unstd))
+```
+
+6. Analyze the results. Notice the effect of the prior choice:
+```{python}
+for posterior in posteriors:
+    import matplotlib.pyplot as plt
+
+    # Create the plot
+    plt.figure(figsize=(8, 5))
+    plt.plot(p_grid, posterior, "-o")
+
+    plt.xlabel("Probability of success")
+    plt.ylabel("Posterior probability")
+    plt.title("Posterior distribution after 9 draws")
+
+    plt.show()
+```
 
 ## Appendix
 
 ### A2.4.1: Bayes' theorem
 
-Note that $\Pr(A)$ measurable via the 
+Note that $\Pr(A)$ is measurable via the 
 [Law of Total Probability](https://en.wikipedia.org/wiki/Law_of_total_probability):
 
 $$
