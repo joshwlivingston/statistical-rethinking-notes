@@ -21,9 +21,7 @@ jobs:
         uses: astral-sh/setup-uv@v7
 
       - name: Install dependencies
-        run: uv pip install -r requirements.txt
-        env:
-          UV_SYSTEM_PYTHON: 1
+        run: uv pip install -r requirements.txt --system
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
