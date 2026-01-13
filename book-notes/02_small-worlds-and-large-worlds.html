@@ -328,12 +328,12 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../book/index.html" aria-current="page"> 
+    <a class="nav-link active" href="../book-notes/index.html" aria-current="page"> 
 <span class="menu-text">Book Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../course/index.html"> 
-<span class="menu-text">Course</span></a>
+    <a class="nav-link" href="../course-notes/index.html"> 
+<span class="menu-text">Course Notes</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../homework/index.html"> 
@@ -358,7 +358,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../book/02_small-worlds-and-large-worlds.html">Chapter 2: Small Worlds and Large Worlds</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../book-notes/02_small-worlds-and-large-worlds.html">Chapter 2: Small Worlds and Large Worlds</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -380,19 +380,19 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../book/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../book-notes/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Contents</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../book/01_the-golem-of-prague.html" class="sidebar-item-text sidebar-link">
+  <a href="../book-notes/01_the-golem-of-prague.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 1: The Golem of Prague</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../book/02_small-worlds-and-large-worlds.html" class="sidebar-item-text sidebar-link active">
+  <a href="../book-notes/02_small-worlds-and-large-worlds.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Chapter 2: Small Worlds and Large Worlds</span></a>
   </div>
 </li>
@@ -560,7 +560,7 @@ window.Quarto = {
 <ol type="1">
 <li>Define the <em>parameter</em> <strong>grid</strong>:</li>
 </ol>
-<div id="bdc43663" class="cell" data-execution_count="1">
+<div id="e5fe69b5" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -573,7 +573,7 @@ window.Quarto = {
 <ol start="2" type="1">
 <li>Compute the <em>likelihood</em> at each <em>parameter</em> value:</li>
 </ol>
-<div id="ec09469a" class="cell" data-execution_count="2">
+<div id="083075a7" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> st</span>
@@ -584,7 +584,7 @@ window.Quarto = {
 <ol start="3" type="1">
 <li>Define the <em>priors</em>:</li>
 </ol>
-<div id="7d235f51" class="cell" data-execution_count="3">
+<div id="360b6002" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>priors <span class="op">=</span> {</span>
@@ -597,7 +597,7 @@ window.Quarto = {
 <ol start="4" type="1">
 <li>Compute the <em>posteriors</em> by multiplying the <em>priors</em> and the <em>likelihood</em>:</li>
 </ol>
-<div id="b609c636" class="cell" data-execution_count="4">
+<div id="30dacc11" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>posteriors <span class="op">=</span> {</span>
@@ -609,7 +609,7 @@ window.Quarto = {
 <ol start="5" type="1">
 <li>Analyze the results. Notice the effect of the prior choice:</li>
 </ol>
-<div id="8940eb5c" class="cell" data-execution_count="5">
+<div id="18c84361" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -712,7 +712,7 @@ f''(\hat{\theta}) = H.
 \end{align}
 \]</span></p>
 <p>The <code>pymc</code> <a href="https://github.com/pymc-devs/pymc-resources/blob/main/Rethinking_2/Chp_02.ipynb">translation</a> provides an implementaiton of <em>quadratic approximation</em> that utilizes these special properties of the normal distribution.</p>
-<div id="4e21e233" class="cell" data-execution_count="6">
+<div id="8de7724f" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pymc <span class="im">as</span> pm</span>
@@ -755,7 +755,7 @@ For details and migration guidance, visit: https://python.arviz.org/en/latest/us
 </div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"6cb981d02f624260892fb5501332e8ec","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"87b4a6f7ec9e4c138baf19b5e4077bde","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 <div class="cell-output cell-output-display">
@@ -763,7 +763,7 @@ For details and migration guidance, visit: https://python.arviz.org/en/latest/us
 </div>
 </div>
 <p>We can use the final parameter values to analyze our distirbution</p>
-<div id="8c863fe9" class="cell" data-execution_count="7">
+<div id="5fa29058" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mu_map <span class="op">=</span> q_map[<span class="st">"mu"</span>]</span>
@@ -817,7 +817,7 @@ For details and migration guidance, visit: https://python.arviz.org/en/latest/us
 
 </main> <!-- /main -->
 <script type="application/vnd.jupyter.widget-state+json">
-{"state":{"6cb981d02f624260892fb5501332e8ec":{"model_module":"@jupyter-widgets/output","model_module_version":"1.0.0","model_name":"OutputModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/output","_model_module_version":"1.0.0","_model_name":"OutputModel","_view_count":null,"_view_module":"@jupyter-widgets/output","_view_module_version":"1.0.0","_view_name":"OutputView","layout":"IPY_MODEL_6f660c4cee094552baebef5621098b17","msg_id":"","outputs":[{"data":{"text/html":"<pre style=\"white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace\">MAP <span style=\"color: #3a3a3a; text-decoration-color: #3a3a3a\">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span style=\"color: #800080; text-decoration-color: #800080\">  0%</span> 0:00:02 logp = -9.359, ||grad|| = 20\n</pre>\n","text/plain":"MAP \u001b[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[35m  0%\u001b[0m 0:00:02 logp = -9.359, ||grad|| = 20\n"},"metadata":{},"output_type":"display_data"}],"tabbable":null,"tooltip":null}},"6f660c4cee094552baebef5621098b17":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}}},"version_major":2,"version_minor":0}
+{"state":{"351662ca9afb4df0a143051b6d7ef87b":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"87b4a6f7ec9e4c138baf19b5e4077bde":{"model_module":"@jupyter-widgets/output","model_module_version":"1.0.0","model_name":"OutputModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/output","_model_module_version":"1.0.0","_model_name":"OutputModel","_view_count":null,"_view_module":"@jupyter-widgets/output","_view_module_version":"1.0.0","_view_name":"OutputView","layout":"IPY_MODEL_351662ca9afb4df0a143051b6d7ef87b","msg_id":"","outputs":[{"data":{"text/html":"<pre style=\"white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace\">MAP <span style=\"color: #3a3a3a; text-decoration-color: #3a3a3a\">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span style=\"color: #800080; text-decoration-color: #800080\">  0%</span> 0:00:03 logp = -9.359, ||grad|| = 20\n</pre>\n","text/plain":"MAP \u001b[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[35m  0%\u001b[0m 0:00:03 logp = -9.359, ||grad|| = 20\n"},"metadata":{},"output_type":"display_data"}],"tabbable":null,"tooltip":null}}},"version_major":2,"version_minor":0}
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

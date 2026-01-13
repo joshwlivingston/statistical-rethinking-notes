@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Course Notes – Notes on Statistical Rethinking</title>
+<title>the-golem-of-prague – Notes on Statistical Rethinking</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -260,12 +260,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../book/index.html"> 
+    <a class="nav-link active" href="../book-notes/index.html" aria-current="page"> 
 <span class="menu-text">Book Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../course/index.html" aria-current="page"> 
-<span class="menu-text">Course</span></a>
+    <a class="nav-link" href="../course-notes/index.html"> 
+<span class="menu-text">Course Notes</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../homework/index.html"> 
@@ -290,7 +290,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../course/index.html">Course Notes</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../book-notes/01_the-golem-of-prague.html">Chapter 1: The Golem of Prague</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -312,8 +312,20 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Course Notes</span></a>
+  <a href="../book-notes/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contents</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../book-notes/01_the-golem-of-prague.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Chapter 1: The Golem of Prague</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../book-notes/02_small-worlds-and-large-worlds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 2: Small Worlds and Large Worlds</span></a>
   </div>
 </li>
     </ul>
@@ -321,36 +333,181 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#chapter-1-the-golem-of-prague" id="toc-chapter-1-the-golem-of-prague" class="nav-link active" data-scroll-target="#chapter-1-the-golem-of-prague">Chapter 1: The Golem of Prague</a>
+  <ul class="collapse">
+  <li><a href="#statistical-golems" id="toc-statistical-golems" class="nav-link" data-scroll-target="#statistical-golems">1.1: Statistical Golems</a></li>
+  <li><a href="#statistical-rethinking" id="toc-statistical-rethinking" class="nav-link" data-scroll-target="#statistical-rethinking">1.2: Statistical Rethinking</a>
+  <ul class="collapse">
+  <li><a href="#hypotheses-are-not-models" id="toc-hypotheses-are-not-models" class="nav-link" data-scroll-target="#hypotheses-are-not-models">1.2.1: Hypotheses are not models</a></li>
+  <li><a href="#measurement-matters" id="toc-measurement-matters" class="nav-link" data-scroll-target="#measurement-matters">1.2.2: Measurement matters</a></li>
+  <li><a href="#falsification-is-consensual" id="toc-falsification-is-consensual" class="nav-link" data-scroll-target="#falsification-is-consensual">1.2.3: Falsification is consensual</a></li>
+  </ul></li>
+  <li><a href="#tools-for-golem-engineering" id="toc-tools-for-golem-engineering" class="nav-link" data-scroll-target="#tools-for-golem-engineering">1.3: Tools for golem engineering</a>
+  <ul class="collapse">
+  <li><a href="#bayesian-data-analysis" id="toc-bayesian-data-analysis" class="nav-link" data-scroll-target="#bayesian-data-analysis">1.3.1: Bayesian data analysis</a></li>
+  <li><a href="#model-comparison-and-prediction" id="toc-model-comparison-and-prediction" class="nav-link" data-scroll-target="#model-comparison-and-prediction">1.3.2: Model comparison and prediction</a></li>
+  <li><a href="#multilevel-models" id="toc-multilevel-models" class="nav-link" data-scroll-target="#multilevel-models">1.3.3: Multilevel models</a></li>
+  <li><a href="#graphical-causal-models" id="toc-graphical-causal-models" class="nav-link" data-scroll-target="#graphical-causal-models">1.3.4: Graphical causal models</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">1.4: Summary</a>
+  <ul class="collapse">
+  <li><a href="#chapter-outline" id="toc-chapter-outline" class="nav-link" data-scroll-target="#chapter-outline">Chapter Outline</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Course Notes</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
+<section id="chapter-1-the-golem-of-prague" class="level1">
+<h1>Chapter 1: The Golem of Prague</h1>
+<section id="statistical-golems" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-golems">1.1: Statistical Golems</h2>
+<ul>
+<li>Scientistis frequently construct and use “statistical golems” - tools that know their own procedure, but have no inherent wisdom.
+<ul>
+<li>p-values, stat tests, etc</li>
+</ul></li>
+<li>Classical statistical tools may not be adaptable to all modern research scenarios.</li>
+<li>The golems are often <em>associative</em> rather than <em>causal</em>, leading to misuse.</li>
+</ul>
+</section>
+<section id="statistical-rethinking" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-rethinking">1.2: Statistical Rethinking</h2>
+<ul>
+<li>The classic approach is to use a “flow-chart” to determine the statistical procedure to use. However, this can lead to battles over picking the “correct” test.</li>
+<li>We also face epistemological issues, realized as conflation between causation and hypothesis falsification.
+<ul>
+<li>Karl Popper’s <em>The Myth of the Framework</em> (1996), his last book, covers this topic.</li>
+</ul></li>
+<li>McElreath posits that <em>“deductive falsification is impossible”</em>, given that:
+<ul>
+<li>Hypotheses are not models. So, falsifiying the hypothesis does not falsify the model.</li>
+<li>Measurement can invalidate models. If the measurement is wrong, falsification is not possible.</li>
+<li>Note that null hypothesis signficance testing (NHST) attempts to falsify the <em>null hypothesis</em>, not the actual research hypothesis.</li>
+</ul></li>
+</ul>
+<section id="hypotheses-are-not-models" class="level3">
+<h3 class="anchored" data-anchor-id="hypotheses-are-not-models">1.2.1: Hypotheses are not models</h3>
+<p>Hypotheses are not models; rather they are one of three pieces that constitute scientific understanding:</p>
+<ol type="1">
+<li><strong>Hypotheses</strong> are falsifiable, often vauge descriptions of evidence.</li>
+<li><strong>Process models</strong> are non-statistical understandings of a mechanisim which supports or refutes a hypothesis.</li>
+<li><strong>Statistical models</strong> are statistical understandings of process models.</li>
+</ol>
+<p>These pieces have special properties: - Since <strong>hypotheses</strong> are vague, they map to multiple <strong>process models</strong>. - Effectively similarly, <strong>statistical models</strong> can map to multiple <strong>process models</strong>. - Therefore, any <strong>statistical model</strong> can support/refute multiple <strong>hypotheses</strong>.</p>
+<p>This conundrum implies that if two models imply similar data, you should search for a description of the data under which the processes look different. Two process models can make similar predictions for field X, but vastly different predictions for Y.</p>
+</section>
+<section id="measurement-matters" class="level3">
+<h3 class="anchored" data-anchor-id="measurement-matters">1.2.2: Measurement matters</h3>
+<p>Two properties of statistical modeling complicate hypothesis falsification:</p>
+<ol type="1">
+<li>Observation error</li>
+<li>Continuous hypotheses</li>
+</ol>
+<section id="observation-error" class="level4">
+<h4 class="anchored" data-anchor-id="observation-error">1.2.2.1: Observation error</h4>
+<p>Difficulty of observation often leads to observed data mapping to multiple hypothetical conclusions. Or, the data can simply be measured incorrectly. Both instances can result in “spurious falsifications,” where the conclusions drawn are due to chance.</p>
+</section>
+<section id="continuous-hypotheses" class="level4">
+<h4 class="anchored" data-anchor-id="continuous-hypotheses">1.2.2.2: Continuous hypotheses</h4>
+<p>Continuous hypotheses, such as <em>“80% of swans are white”</em> are difficult to prove, since <a href="https://en.wikipedia.org/wiki/Modus_tollens">modus tollens</a> (“If P, then Q. Not Q. So, not P.”) does not apply.</p>
+</section>
+</section>
+<section id="falsification-is-consensual" class="level3">
+<h3 class="anchored" data-anchor-id="falsification-is-consensual">1.2.3: Falsification is consensual</h3>
+<p>In the scientific community, falsification of hypotheses is not strictly logical; rather, agreements on evidence are reached via <em>consensus</em>. Consequently, claims of science’s definitiveness are usually exaggerated and possibly societally harmful. Kitcher (2011), <em>Science in a Democratic Society</em>, is a good intro to the sociology of science.</p>
+</section>
+</section>
+<section id="tools-for-golem-engineering" class="level2">
+<h2 class="anchored" data-anchor-id="tools-for-golem-engineering">1.3: Tools for golem engineering</h2>
+<p>Scientific research is often broader in scope than testing alone; models fill this gap. In addition to serving testing, models can make predictions and communicate understandings.</p>
+<p><em>Rethinking</em> covers four tools for modeling:</p>
+<ol type="1">
+<li>Bayesian data analysis</li>
+<li>Model comparison</li>
+<li>Multilevel models</li>
+<li>Graphical causal models</li>
+</ol>
+<section id="bayesian-data-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="bayesian-data-analysis">1.3.1: Bayesian data analysis</h3>
+<blockquote class="blockquote">
+<p>We just use randomness to describe our uncertainty…</p>
+</blockquote>
+<p><strong>Bayseian data analysis</strong> is a highly generalizable probability-based tool for using data to learn about the world.</p>
+<p><em>Bayesian analysis</em> is intuitive:</p>
+<ol type="1">
+<li>Count* the number of possible explanations.</li>
+<li>Identify the most plausible explanations based on counts.</li>
+</ol>
+<p>*In Bayesian, “count” refers to calculus, since Bayesian is a practice of probability distributions.</p>
+<p>The frequentist approach, in contrast, imagines an infinte resampling of data to reach a probability distribution. Ironically, however, frequentist tests are often interpreted as Bayesian components (“95% likely that the value falls inside this confidence interval”, e.g).</p>
+<p>Further, in the frequentist approach, parameters are not random variables. Random variables are useful when the measurement leads to a uniform sampling distribution. In the case of image analysis, bayesian analysis is often used, allowing noisy images to be reconstructed using modeled probabilities.</p>
+</section>
+<section id="model-comparison-and-prediction" class="level3">
+<h3 class="anchored" data-anchor-id="model-comparison-and-prediction">1.3.2: Model comparison and prediction</h3>
+<blockquote class="blockquote">
+<p>Fitting is easy; prediction is hard.</p>
+</blockquote>
+<p><strong>Cross-validation</strong> and <strong>information criteria</strong> are two metrics used to estimate predictive accuracy and evaluate possibility of overfitting:</p>
+<ul>
+<li><strong>Cross-validation</strong> provides provide fit estimates over different resamples of the data.</li>
+<li><strong>Information criteria</strong> are measures that <a href="https://bookdown.org/mike/data_analysis/information-criteria-for-model-selection.html#information-criteria-for-model-selection">“balance model fit with model complexity”</a>.</li>
+</ul>
+<p>Recall that multiple process models can exist for a statistical model. Thus, it is always necessary to compare multiple statistical models for a given problem.</p>
+</section>
+<section id="multilevel-models" class="level3">
+<h3 class="anchored" data-anchor-id="multilevel-models">1.3.3: Multilevel models</h3>
+<p><strong>Multilevel models</strong> are hierarchical bayesian models that utilize <strong>partial pooling</strong>, a statistical technique that uses information across levels of the hierarchy to produce better estimates for units within a level.</p>
+<p>Four common applications of partial pooling:</p>
+<ol type="1">
+<li>Adjust for repeat sampling (multiple observations from the same unit)</li>
+<li>Adjust for imbalanced sampling (observation X sampled 10x more than Y)</li>
+<li>Study variation (useful when question includes variations among a level within the hierarchy)</li>
+<li>Avoid averaging (features are often pre-averaged for traditional models, destorying the data’s variation)</li>
+</ol>
+<p>McElreath argues that “multilevel regression deserves to be the default form of regression,” and that research involving single-level models must justify the decision to <em>not</em> use a multilevel model. Particularly, the researcher must demonstrate lack of variation in treatment effects among observations.</p>
+<p>Multilevel models are not new! From 1960 to 1978 John Tukey developed multilevel models for NBC from that were used for election forecasting.</p>
+</section>
+<section id="graphical-causal-models" class="level3">
+<h3 class="anchored" data-anchor-id="graphical-causal-models">1.3.4: Graphical causal models</h3>
+<blockquote class="blockquote">
+<p>A statistical model is an amazing assocation engine</p>
+</blockquote>
+<p>Flawed causal models and confounding variables can often lead to better <em>prediction</em>, due to assocation’s predictive power. This often means that scientists can be systematically miseld by predictive accuracy.</p>
+<p>Thus, being mindful of the underlying causal assumptions is a mandatory component of statistical modeling. This is most often achieved through construction of a causal model, from which multiple statistical models can be developed.</p>
+<p><strong>Graphical causal models</strong>, such as <strong>directed acyclic graphs</strong> (DAGs), are helpful tools allowing for the visualization of causal relationships. DAGs are developed outside of the data, usually in deep consulation with domain experts.</p>
+<p>Today’s dominating method of causal inference is the <strong>causal salad</strong>, wherein control variables are carefully <em>tossed</em> into the models, toward the aim of developing a causal narrative. When designing a model to be later used for interventions, it is important that the causal relationships, especially the controlling effects, are explainable.</p>
+</section>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">1.4: Summary</h2>
+<p>McElreath makes the argument that instead of working with a plethora of black-box models, we should aim to develop the skills to analyze null hypotheses. The tools introduced – Bayesian data analysis, model comparison, multilevel modeling, and graphical causal models – serve this aim.</p>
+<section id="chapter-outline" class="level3">
+<h3 class="anchored" data-anchor-id="chapter-outline">Chapter Outline</h3>
+<ul>
+<li>Chapters 2-3: Intro to Bayesian inference</li>
+<li>Chapters 4-8: Multiple linear regression</li>
+<li>Chapters 9-12: Generalized linear models</li>
+<li>Chapters 13-16: Multilevel models</li>
+<li>Chapter 17: Address issues from 1st edition</li>
+</ul>
+<p>Each chapter ends with exercises across difficulty levels. The more difficult problems introduce new material and challenges.</p>
 
 
-<p>This section contains notes from the pre-recorded lectures and slides.</p>
-<p><em>Course content will be added as lectures are completed.</em></p>
-
-
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
