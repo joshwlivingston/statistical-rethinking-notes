@@ -58,7 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -107,6 +107,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -419,6 +423,7 @@ window.Quarto = {
   <li><a href="#bayes-theorem" id="toc-bayes-theorem" class="nav-link" data-scroll-target="#bayes-theorem">2.4.1: Bayes’ theorem</a></li>
   <li><a href="#motors" id="toc-motors" class="nav-link" data-scroll-target="#motors">2.4.2: Motors</a></li>
   <li><a href="#grid-approximation" id="toc-grid-approximation" class="nav-link" data-scroll-target="#grid-approximation">2.4.3: Grid approximation</a></li>
+  <li><a href="#quadratic-approximation" id="toc-quadratic-approximation" class="nav-link" data-scroll-target="#quadratic-approximation">2.4.4: Quadratic approximation</a></li>
   </ul></li>
   <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a>
   <ul class="collapse">
@@ -555,7 +560,7 @@ window.Quarto = {
 <ol type="1">
 <li>Define the <em>parameter</em> <strong>grid</strong>:</li>
 </ol>
-<div id="3faea744" class="cell" data-execution_count="1">
+<div id="bdc43663" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -568,7 +573,7 @@ window.Quarto = {
 <ol start="2" type="1">
 <li>Compute the <em>likelihood</em> at each <em>parameter</em> value:</li>
 </ol>
-<div id="c6c26569" class="cell" data-execution_count="2">
+<div id="ec09469a" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> st</span>
@@ -579,7 +584,7 @@ window.Quarto = {
 <ol start="3" type="1">
 <li>Define the <em>priors</em>:</li>
 </ol>
-<div id="4c69e316" class="cell" data-execution_count="3">
+<div id="7d235f51" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>priors <span class="op">=</span> {</span>
@@ -592,7 +597,7 @@ window.Quarto = {
 <ol start="4" type="1">
 <li>Compute the <em>posteriors</em> by multiplying the <em>priors</em> and the <em>likelihood</em>:</li>
 </ol>
-<div id="34b40d49" class="cell" data-execution_count="4">
+<div id="b609c636" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>posteriors <span class="op">=</span> {</span>
@@ -604,7 +609,7 @@ window.Quarto = {
 <ol start="5" type="1">
 <li>Analyze the results. Notice the effect of the prior choice:</li>
 </ol>
-<div id="e5cc2b86" class="cell" data-execution_count="5">
+<div id="8940eb5c" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -629,6 +634,172 @@ window.Quarto = {
 </div>
 </div>
 </section>
+<section id="quadratic-approximation" class="level3">
+<h3 class="anchored" data-anchor-id="quadratic-approximation">2.4.4: Quadratic approximation</h3>
+<p>Generally, the area near the peak of the <em>posterior</em> will be nearly Gaussian. So, the <em>posterior</em> can be approximated by a Gaussian distribution.</p>
+<p>This Gaussian approximation is known as <strong>quadratic approximation</strong> becuase the logarithm of a normal distribution is a parabola. <em>Quadratic approximation</em> is also referred to as:</p>
+<ul>
+<li>Gaussian approximation</li>
+<li>Laplace approximation</li>
+</ul>
+<p><em>Quadratic approximation</em> is convenient because you only ever need to estimate two parameters: mean and variance. <em>Grid search</em>, in contrast, scales exponentially with the number of <em>parameters</em>.</p>
+<p><em>Quadratic approximation</em> is comprised of two steps:</p>
+<ol type="1">
+<li>Find the <strong>maximum a posteriori (MAP)</strong>.</li>
+<li>Estimate the distribution near the <em>MAP</em>.</li>
+</ol>
+<section id="implementation-via-hessian" class="level4">
+<h4 class="anchored" data-anchor-id="implementation-via-hessian">Implementation via Hessian</h4>
+<p>Suppose we are interested in estimating parameter <span class="math inline">\(\theta\)</span> via <em>quadratic approximation</em>. That is,</p>
+<p><span class="math display">\[
+\theta \sim \mathcal{N}(\mu, \sigma^2). \tag{2.6}
+\]</span></p>
+<p>The <em>posterior</em> of <span class="math inline">\(\theta\)</span> is thus provided by the pmf. <span class="math display">\[
+p(\theta) = \frac{1}{\sqrt{2\pi\sigma^2}}
+            \exp\left(-\frac{(\theta - \mu)^2}{2\sigma^2}\right).
+\tag{2.7}
+\]</span></p>
+<p>Taking the natural log provides the <strong>log-posterior</strong>.</p>
+<p><span class="math display">\[
+f(\theta) = \ln(p(\theta)) = -\frac{1}{2}\ln(2\pi\sigma^2)-
+                             \frac{(\theta - \mu)^2}{2\sigma^2}.
+\tag{2.8}
+\]</span></p>
+<p>We are interested in the shape of the distribution near the mode. We label this peak <span class="math inline">\(\hat{\theta}\)</span>.</p>
+<p>To approximate <span class="math inline">\(f(\theta)\)</span>, we use a taylor expansion.</p>
+<p><span class="math display">\[
+f(\theta) \approx f(\hat{\theta}) +
+                  f'(\hat{\theta})(\theta - \hat{\theta}) +
+                  \frac{1}{2}f''(\hat{\theta})(\theta - \hat{\theta})^2.
+\tag{2.9}
+\]</span></p>
+<p>Since <span class="math inline">\(\hat{\theta}\)</span> is the peak of the distribution, we know that <span class="math inline">\(f'(\hat{\theta})\)</span> equals 0. This simplifies <span class="math inline">\(f(\theta)\)</span>.</p>
+<p><span class="math display">\[
+f(\theta) \approx \text{const} +
+                  \frac{1}{2}f''(\hat{\theta})(\theta - \hat{\theta})^2.
+\tag{2.10}
+\]</span></p>
+<p>Since <span class="math inline">\(f(\theta)\)</span> equals <span class="math inline">\(\ln(p(\theta))\)</span>, we set the equations approximately equal to each other.</p>
+<p><span class="math display">\[
+-\frac{1}{2}\ln(2\pi\sigma^2)- \frac{(\theta - \mu)^2}{2\sigma^2}
+\approx
+\text{const} + \frac{1}{2}f''(\hat{\theta})(\theta - \hat{\theta})^2.
+\tag{2.11}
+\]</span></p>
+<p>Ignoring the constant terms shows us that</p>
+<p><span class="math display">\[
+-\frac{1}{2\sigma^2}(\theta - \mu)^2
+\approx
+\frac{1}{2}f''(\hat{\theta})(\theta - \hat{\theta})^2.
+\tag{2.12}
+\]</span></p>
+<p>Thus,</p>
+<p><span class="math display">\[
+-\frac{1}{\sigma^2} \approx f''(\hat{\theta}).
+\tag{2.13}
+\]</span></p>
+<p>The <a href="https://en.wikipedia.org/wiki/Hessian_matrix">Hessian</a>, <span class="math inline">\(H\)</span>, is the matrix of partial second derivatives. In other terms,</p>
+<p><span class="math display">\[
+f''(\hat{\theta}) = H.
+\tag{2.14}
+\]</span></p>
+<p>So, we can rewrite <span class="math inline">\(\sigma\)</span> in terms of the Hessian.</p>
+<p><span class="math display">\[
+\begin{align}
+-\frac{1}{\sigma^2} &amp;\approx H \tag{2.15} \\
+\sigma^2 &amp;\approx -\frac{1}{H} \tag{2.16} \\
+\sigma &amp;\approx \sqrt{-\frac{1}{H}}. \tag{2.17}
+\end{align}
+\]</span></p>
+<p>The <code>pymc</code> <a href="https://github.com/pymc-devs/pymc-resources/blob/main/Rethinking_2/Chp_02.ipynb">translation</a> provides an implementaiton of <em>quadratic approximation</em> that utilizes these special properties of the normal distribution.</p>
+<div id="4e21e233" class="cell" data-execution_count="6">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pymc <span class="im">as</span> pm</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.repeat((<span class="dv">0</span>, <span class="dv">1</span>), (<span class="dv">40</span>, <span class="dv">80</span>))</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> pm.Model() <span class="im">as</span> quadratic_approximation:</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">    Objective is to identify mu and sigma to fit the posterior normal </span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">    distribution.</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">    mu is a model parameter, the average probability of success. mu receives</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">    a uniform prior and its MAP will be used for inference</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">    sigma is obtained using the hessian at the MAP.</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">    Taken together, N(mu, sigma) represents the posterior distribution of the</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co">    probability of success.</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># parameters</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    <span class="co">## mu: prior: uniform over [0,1]</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    mu <span class="op">=</span> pm.Uniform(<span class="st">"mu"</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># likelihood: binomial</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> pm.Binomial(<span class="st">"x"</span>, n<span class="op">=</span><span class="bu">len</span>(data), p<span class="op">=</span>mu, observed<span class="op">=</span>data.<span class="bu">sum</span>())</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># find MAP</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    q_map <span class="op">=</span> pm.find_MAP()</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># estimate sigma at MAP</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>    hessian <span class="op">=</span> pm.find_hessian(q_map, <span class="bu">vars</span><span class="op">=</span>[mu], negate_output<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    q_std <span class="op">=</span> ((<span class="dv">1</span> <span class="op">/</span> <span class="op">-</span>hessian) <span class="op">**</span> <span class="fl">0.5</span>)[<span class="dv">0</span>][<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/arviz/__init__.py:39: FutureWarning: 
+ArviZ is undergoing a major refactor to improve flexibility and extensibility while maintaining a user-friendly interface.
+Some upcoming changes may be backward incompatible.
+For details and migration guidance, visit: https://python.arviz.org/en/latest/user_guide/migration_guide.html
+  warn(</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"6cb981d02f624260892fb5501332e8ec","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
+</div>
+</div>
+<p>We can use the final parameter values to analyze our distirbution</p>
+<div id="8c863fe9" class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mu_map <span class="op">=</span> q_map[<span class="st">"mu"</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>ci_lower <span class="op">=</span> st.norm.ppf(<span class="fl">0.055</span>, loc<span class="op">=</span>mu_map, scale<span class="op">=</span>q_std)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>ci_upper <span class="op">=</span> st.norm.ppf(<span class="fl">0.945</span>, loc<span class="op">=</span>mu_map, scale<span class="op">=</span>q_std)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 20%">
+<col style="width: 14%">
+<col style="width: 20%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Mean (MAP)</th>
+<th style="text-align: left;">Std Dev</th>
+<th style="text-align: left;">5.5% Credible Interval (CI)</th>
+<th style="text-align: left;">94.5% CI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(p\)</span></td>
+<td style="text-align: left;">0.67</td>
+<td style="text-align: left;">0.19</td>
+<td style="text-align: left;">0.36</td>
+<td style="text-align: left;">0.97</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
 </section>
 <section id="appendix" class="level2">
 <h2 class="anchored" data-anchor-id="appendix">Appendix</h2>
@@ -645,6 +816,9 @@ window.Quarto = {
 </section>
 
 </main> <!-- /main -->
+<script type="application/vnd.jupyter.widget-state+json">
+{"state":{"6cb981d02f624260892fb5501332e8ec":{"model_module":"@jupyter-widgets/output","model_module_version":"1.0.0","model_name":"OutputModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/output","_model_module_version":"1.0.0","_model_name":"OutputModel","_view_count":null,"_view_module":"@jupyter-widgets/output","_view_module_version":"1.0.0","_view_name":"OutputView","layout":"IPY_MODEL_6f660c4cee094552baebef5621098b17","msg_id":"","outputs":[{"data":{"text/html":"<pre style=\"white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace\">MAP <span style=\"color: #3a3a3a; text-decoration-color: #3a3a3a\">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span style=\"color: #800080; text-decoration-color: #800080\">  0%</span> 0:00:02 logp = -9.359, ||grad|| = 20\n</pre>\n","text/plain":"MAP \u001b[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[35m  0%\u001b[0m 0:00:02 logp = -9.359, ||grad|| = 20\n"},"metadata":{},"output_type":"display_data"}],"tabbable":null,"tooltip":null}},"6f660c4cee094552baebef5621098b17":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}}},"version_major":2,"version_minor":0}
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
