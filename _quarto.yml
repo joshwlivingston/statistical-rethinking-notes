@@ -10,9 +10,9 @@ website:
       - text: "Home"
         href: index.qmd
       - text: "Book Notes"
-        href: book/index.qmd
-      - text: "Course"
-        href: course/index.qmd
+        href: book-notes/index.qmd
+      - text: "Course Notes"
+        href: course-notes/index.qmd
       - text: "Homework"
         href: homework/index.qmd
     right:
@@ -24,12 +24,12 @@ website:
       style: "docked"
       search: true
       contents:
-        - book/index.qmd
-        - book/01_the-golem-of-prague.qmd
-        - book/02_small-worlds-and-large-worlds.qmd
-    - title: "Course"
+        - book-notes/index.qmd
+        - book-notes/01_the-golem-of-prague.qmd
+        - book-notes/02_small-worlds-and-large-worlds.qmd
+    - title: "Course Notes"
       contents:
-        - course/index.qmd
+        - course-notes/index.qmd
     - title: "Homework"
       contents:
         - homework/index.qmd
