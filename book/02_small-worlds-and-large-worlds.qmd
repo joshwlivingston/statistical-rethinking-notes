@@ -215,6 +215,163 @@ plt.tight_layout()
 plt.show()
 ```
 
+### 2.4.4: Quadratic approximation
+Generally, the area near the peak of the *posterior* will be nearly Gaussian.
+So, the *posterior* can be approximated by a Gaussian distribution.
+
+This Gaussian approximation is known as **quadratic approximation** becuase the
+logarithm of a normal distribution is a parabola. *Quadratic approximation* is
+also referred to as:
+
+- Gaussian approximation
+- Laplace approximation
+
+*Quadratic approximation* is convenient because you only ever need to estimate
+two parameters: mean and variance. *Grid search*, in contrast, scales
+exponentially with the number of *parameters*.
+
+*Quadratic approximation* is comprised of two steps:
+
+1. Find the **maximum a posteriori (MAP)**.
+2. Estimate the distribution near the *MAP*.
+
+#### Implementation via Hessian
+
+Suppose we are interested in estimating parameter $\theta$ via
+*quadratic approximation*. That is,
+
+$$
+\theta \sim \mathcal{N}(\mu, \sigma^2). \tag{2.6}
+$$
+
+The *posterior* of $\theta$ is thus provided by the pmf.
+$$
+p(\theta) = \frac{1}{\sqrt{2\pi\sigma^2}} 
+            \exp\left(-\frac{(\theta - \mu)^2}{2\sigma^2}\right).
+\tag{2.7}
+$$
+
+Taking the natural log provides the **log-posterior**.
+
+$$
+f(\theta) = \ln(p(\theta)) = -\frac{1}{2}\ln(2\pi\sigma^2)-
+                             \frac{(\theta - \mu)^2}{2\sigma^2}.
+\tag{2.8}
+$$
+
+We are interested in the shape of the distribution near the mode. We label this
+peak $\hat{\theta}$.
+
+To approximate $f(\theta)$, we use a taylor expansion.
+
+$$
+f(\theta) \approx f(\hat{\theta}) + 
+                  f'(\hat{\theta})(\theta - \hat{\theta}) + 
+                  \frac{1}{2}f''(\hat{\theta})(\theta - \hat{\theta})^2.
+\tag{2.9}
+$$
+
+Since $\hat{\theta}$ is the peak of the distribution, we know that
+$f'(\hat{\theta})$ equals 0. This simplifies $f(\theta)$.
+
+$$
+f(\theta) \approx \text{const} +
+                  \frac{1}{2}f''(\hat{\theta})(\theta - \hat{\theta})^2.
+\tag{2.10}
+$$
+
+Since $f(\theta)$ equals $\ln(p(\theta))$, we set the equations approximately
+equal to each other.
+
+$$
+-\frac{1}{2}\ln(2\pi\sigma^2)- \frac{(\theta - \mu)^2}{2\sigma^2} 
+\approx 
+\text{const} + \frac{1}{2}f''(\hat{\theta})(\theta - \hat{\theta})^2.
+\tag{2.11}
+$$
+
+Ignoring the constant terms shows us that
+
+$$
+-\frac{1}{2\sigma^2}(\theta - \mu)^2
+\approx 
+\frac{1}{2}f''(\hat{\theta})(\theta - \hat{\theta})^2.
+\tag{2.12}
+$$
+
+Thus,
+
+$$
+-\frac{1}{\sigma^2} \approx f''(\hat{\theta}).
+\tag{2.13}
+$$
+
+The [Hessian](https://en.wikipedia.org/wiki/Hessian_matrix), $H$, is the matrix
+of partial second derivatives. In other terms,
+
+$$
+f''(\hat{\theta}) = H.
+\tag{2.14}
+$$
+
+So, we can rewrite $\sigma$ in terms of the Hessian.
+
+$$
+\begin{align}
+-\frac{1}{\sigma^2} &\approx H \tag{2.15} \\
+\sigma^2 &\approx -\frac{1}{H} \tag{2.16} \\
+\sigma &\approx \sqrt{-\frac{1}{H}}. \tag{2.17}
+\end{align}
+$$
+
+The `pymc`
+[translation](https://github.com/pymc-devs/pymc-resources/blob/main/Rethinking_2/Chp_02.ipynb)
+provides an implementaiton of *quadratic approximation* that utilizes these special
+properties of the normal distribution.
+```{python}
+import pymc as pm
+
+data = np.repeat((0, 1), (40, 80))
+
+with pm.Model() as quadratic_approximation:
+    """
+    Objective is to identify mu and sigma to fit the posterior normal 
+    distribution.
+
+    mu is a model parameter, the average probability of success. mu receives
+    a uniform prior and its MAP will be used for inference
+
+    sigma is obtained using the hessian at the MAP.
+
+    Taken together, N(mu, sigma) represents the posterior distribution of the
+    probability of success.
+    """
+    # parameters
+    ## mu: prior: uniform over [0,1]
+    mu = pm.Uniform("mu", 0, 1)
+
+    # likelihood: binomial
+    x = pm.Binomial("x", n=len(data), p=mu, observed=data.sum())
+
+    # find MAP
+    q_map = pm.find_MAP()
+
+    # estimate sigma at MAP
+    hessian = pm.find_hessian(q_map, vars=[mu], negate_output=False)
+    q_std = ((1 / -hessian) ** 0.5)[0][0]
+```
+
+We can use the final parameter values to analyze our distirbution
+```{python}
+mu_map = q_map["mu"]
+ci_lower = st.norm.ppf(0.055, loc=mu_map, scale=q_std)
+ci_upper = st.norm.ppf(0.945, loc=mu_map, scale=q_std)
+```
+
+| Parameter | Mean (MAP)                | Std Dev                  | 5.5% Credible Interval (CI) | 94.5% CI                    |
+| :-------- | :---------                | :------                  | :---------                  | :------------               |
+| $p$       | `{python} f"{mu_map:.2}"` | `{python} f"{q_std:.2}"` |`{python} f"{ci_lower:.2}"`  | `{python} f"{ci_upper:.2}"` |
+
 ## Appendix
 
 ### A2.4.1: Bayes' theorem
