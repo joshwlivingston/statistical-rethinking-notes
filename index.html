@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -333,7 +298,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#notes-on-statistical-rethinking" id="toc-notes-on-statistical-rethinking" class="nav-link active" data-scroll-target="#notes-on-statistical-rethinking">Notes on Statistical Rethinking</a>
   <ul class="collapse">
   <li><a href="#organization" id="toc-organization" class="nav-link" data-scroll-target="#organization">Organization</a></li>
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a>
+  <ul class="collapse">
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">python</a></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">quarto</a></li>
+  </ul></li>
+  <li><a href="#build" id="toc-build" class="nav-link" data-scroll-target="#build">Build</a></li>
   <li><a href="#attribution" id="toc-attribution" class="nav-link" data-scroll-target="#attribution">Attribution</a></li>
   </ul></li>
   </ul>
@@ -357,18 +327,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>course-notes/</code>: contains notes from pre-recorded lecutres and slides</li>
 <li><code>homework/</code>: contains homework solutions</li>
 </ul>
-<p>To view the site locally, use the command line:</p>
-<pre><code>quarto preview</code></pre>
 </section>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<p>The examples in the book require installation of the <a href="https://github.com/rmcelreath/rethinking">{rethinking}</a> R package. Follow these steps to install:</p>
-<ol type="1">
-<li>Download <a href="https://discourse.mc-stan.org/t/what-is-the-difference-between-rstan-cmdstanr-and-bridgestan/39226/2"><code>{cmdstanr}</code></a> from <a href="https://mc-stan.org">mc-stan.org</a></li>
-<li>Download <code>{rethinking}</code>:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Experiemntal branch contains new tools for 2nd edition</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"rmcelreath/rethinking"</span>,<span class="at">ref=</span><span class="st">"Experimental"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="python" class="level3">
+<h3 class="anchored" data-anchor-id="python">python</h3>
+<p>While the original code in the book uses the custom R <code>rethinking</code> package, I have implemented the code examples and homework solutions using <code>pymc5</code>.</p>
+<p>First, create a virtual environment, using <a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a>:</p>
+<pre><code>uv venv</code></pre>
+<p>Then, install dependencies from <code>requirements.txt</code>:</p>
+<pre><code>uv pip install -r requirements.txt</code></pre>
+<p>Note: <code>pymc</code> compiles code at runtime, utilizing the <code>g++</code> compiler it finds in the PATH.</p>
+</section>
+<section id="quarto" class="level3">
+<h3 class="anchored" data-anchor-id="quarto">quarto</h3>
+<p>In addition to <a href="https://quarto.org/">Quarto</a>, you must install the following system depdencies:</p>
+<section id="hunspell" class="level4">
+<h4 class="anchored" data-anchor-id="hunspell">Hunspell</h4>
+<p><a href="https://github.com/hunspell/hunspell">Hunspell</a> is <em>the</em> open source spellchecking library. It is used by the <a href="https://github.com/christopherkenny/spellcheck">spellcheck</a> quarto extension.</p>
+<p><strong>Windows</strong>:</p>
+<pre class="pwsh"><code>choco install hunspell.portable</code></pre>
+<p><strong>Mac</strong>:</p>
+<pre><code>brew install hunspell</code></pre>
+<p><strong>Linux</strong>:</p>
+<pre><code>sudo apt-get install hunspell</code></pre>
+</section>
+<section id="en_us-dictionary" class="level4">
+<h4 class="anchored" data-anchor-id="en_us-dictionary">en_US dictionary</h4>
+<p>After installing Hunspell, you must install the <code>en_US</code> dictionary.</p>
+<p><strong>Windows</strong>/<strong>Mac</strong>: Download the <a href="https://github.com/wooorm/dictionaries/tree/main/dictionaries/en">dictionary</a> files (both files: <code>.dic</code> and <code>.aff</code>), and place them in hunspell’s dictionary SEARCH PATH.</p>
+<p>To view the search path, use the command line:</p>
+<pre><code>hunspell -D</code></pre>
+<p>To add a new directory to the search path, add the directory to the <code>DICPATH</code> environment variable.</p>
+<p><strong>Linux</strong>:</p>
+<pre><code>sudo apt-get install hunspell-en-us</code></pre>
+</section>
+</section>
+</section>
+<section id="build" class="level2">
+<h2 class="anchored" data-anchor-id="build">Build</h2>
+<p>After installing the necessary dependencies, build the project:</p>
+<pre><code>quarto preview</code></pre>
 </section>
 <section id="attribution" class="level2">
 <h2 class="anchored" data-anchor-id="attribution">Attribution</h2>
