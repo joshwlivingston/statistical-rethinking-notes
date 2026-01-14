@@ -375,7 +375,7 @@ with pm.Model() as model:
     MAP = pm.find_MAP(method="Powell")
 
     # estimate sigma at MAP
-    hessian = pm.find_hessian(p_map, vars=[p], negate_output=False)
+    hessian = pm.find_hessian(MAP, vars=[p], negate_output=False)
     sigma = np.sqrt(-np.linalg.inv(hessian))[0][0]
 
 mu = MAP["p"]
@@ -385,9 +385,9 @@ ci_upper = st.norm.ppf(0.945, loc=mu, scale=sigma)
 
 We can use the final parameter values to analyze our distribution
 
-| Parameter | Mean (MAP)                | Std Dev                  | 5.5% Credible Interval (CI) | 94.5% CI                    |
-| :-------- | :---------                | :------                  | :---------                  | :------------               |
-| $p$       | `{python} f"{mu_map:.2}"` | `{python} f"{q_std:.2}"` |`{python} f"{ci_lower:.2}"`  | `{python} f"{ci_upper:.2}"` |
+| Parameter | Mean (MAP)            | Std Dev                  | 5.5% Credible Interval (CI) | 94.5% CI                    |
+| :-------- | :---------            | :------                  | :---------                  | :------------               |
+| $p$       | `{python} f"{mu:.2}"` | `{python} f"{sigma:.2}"` |`{python} f"{ci_lower:.2}"`  | `{python} f"{ci_upper:.2}"` |
 
 We can compare the "true" *posterior* with the quadratic approximation:
 ```{python}
