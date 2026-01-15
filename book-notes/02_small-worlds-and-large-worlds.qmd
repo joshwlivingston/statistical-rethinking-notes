@@ -326,64 +326,118 @@ $$
 
 The `pymc`
 [translation](https://github.com/pymc-devs/pymc-resources/blob/main/Rethinking_2/Chp_02.ipynb)
-provides an implementaiton of *quadratic approximation* that utilizes these special
-properties of the normal distribution.
+provides an implementaiton of *quadratic approximation* that utilizes these
+special properties of the normal distribution. My class below organizies the
+fitting code together with the analysis and plotting.
 ```{python}
 import pymc as pm
 
-W = 6
-L = 3
 
-data = np.repeat((0, 1), (L, W))
+class BinomialQuadraticApproximation:
+    def __init__(self, W: int, L: int):
+        self.W = W
+        self.L = L
+        self._mu_last = None
+        self._sigma_last = None
 
-with pm.Model() as model:
-    """
-    Objective is to identify mu and sigma to fit the posterior normal
-    distribution.
+    @property
+    def n(self) -> int:
+        """
+        Number of trials. Equals W + L.
+        """
+        return self.W + self.L
 
-    mu is a model parameter, the average probability of success. mu receives
-    a uniform prior and its MAP will be used for inference
+    @property
+    def last_fit(self):
+        """
+        Returns mu, sigma (None, None if .fit() has not been called)
+        """
+        return self._mu_last, self._sigma_last
 
-    sigma is obtained using the hessian at the MAP.
+    def ci(self, q):
+        """
+        Given quantile, calcualtes credible interval for most recent fit
+        """
+        mu, sigma = self.last_fit
+        if mu is None or sigma is None:
+            raise ValueError("Run .fit() before computing credible intervals")
+        return st.norm.ppf(q, loc=mu, scale=sigma)
 
-    Taken together, N(mu, sigma) represents the posterior distribution of the
-    probability of success.
+    def plot(self, ax=None):
+        mu, sigma = self.last_fit
+        if mu is None or sigma is None:
+            raise ValueError("Run .fit() before plotting")
 
-    # Notes:
+        a = self.W + 1
+        b = self.L + 1
+        x = np.linspace(0, 1)
+        if ax is None:
+            fig, ax = plt.subplots(1, 1)
 
-    ## `default_transform=None`
-    - In pymc5, `default_transform=None` can be added to the parameter,
-      rather than as tags after the fact.
-      - Transformation to log-odds are performed by default on bounded
-        parameters
-      - We disable so that we may compute the hessian on the untransformed
-        space
+        ax.plot(x, st.beta.pdf(x, a, b), "r-", label="True Posterior")
+        ax.plot(x, st.norm.pdf(x, mu, sigma), "b-", label="Quadratic Approximation")
 
-    ## 'Powell' optimizer
-    - Contrary to the translation example, here, the default optimizer does
-        not move `p` when `default_transform=None`
-    - 'Powell' returns 0.67 as expected
-    """
-    # parameters
-    ## p: prior: uniform over [0,1]
-    p = pm.Uniform("p", 0, 1, default_transform=None)
+        ax.set_title(f"n = {self.n}")
+        ax.legend()
 
-    # likelihood: binomial
-    x = pm.Binomial("x", n=len(data), p=p, observed=data.sum())
+    def fit(self):
+        """
+        Objective is to identify mu and sigma to fit the posterior normal
+        distribution.
 
-    # find MAP
-    MAP = pm.find_MAP(method="Powell")
+        mu is a model parameter, the average probability of success. mu receives
+        a uniform prior and its MAP will be used for inference
 
-    # estimate sigma at MAP
-    hessian = pm.find_hessian(MAP, vars=[p], negate_output=False)
-    sigma = np.sqrt(-np.linalg.inv(hessian))[0][0]
+        sigma is obtained using the hessian at the MAP.
 
-mu = MAP["p"]
-ci_lower = st.norm.ppf(0.055, loc=mu, scale=sigma)
-ci_upper = st.norm.ppf(0.945, loc=mu, scale=sigma)
+        Taken together, N(mu, sigma) represents the posterior distribution of the
+        probability of success.
+
+        # Notes:
+
+        ## `default_transform=None`
+        - In pymc5, `default_transform=None` can be added to the parameter,
+          rather than as tags after the fact.
+          - Transformation to log-odds are performed by default on bounded
+            parameters
+          - We disable so that we may compute the hessian on the untransformed
+            space
+
+        ## 'Powell' optimizer
+        - Contrary to the translation example, here, the default optimizer does
+            not move `p` when `default_transform=None`
+        - 'Powell' returns 0.67 as expected
+        """
+        with pm.Model() as model:
+            # parameters
+            ## p: prior: uniform over [0,1]
+            p = pm.Uniform("p", 0, 1, default_transform=None)
+
+            # likelihood: binomial
+            x = pm.Binomial("x", n=self.n, p=p, observed=self.W)
+
+            # find MAP
+            MAP = pm.find_MAP(method="Powell")
+
+            # estimate sigma at MAP
+            hessian = pm.find_hessian(MAP, vars=[p], negate_output=False)
+            sigma = np.sqrt(-np.linalg.inv(hessian))[0][0]
+
+        self._set_last_fit(MAP["p"], sigma)
+        return self.last_fit
+
+    def _set_last_fit(self, mu, sigma):
+        self._mu_last = mu
+        self._sigma_last = sigma
 ```
 
-We can use the final parameter values to analyze our distribution
+We can use the final parameter values to analyze our distribution:
+```{python}
+model = BinomialQuadraticApproximation(6, 3)
+mu, sigma = model.fit()
+ci_lower = model.ci(0.055)
+ci_upper = model.ci(0.945)
+```
 
 | Parameter | Mean (MAP)            | Std Dev                  | 5.5% Credible Interval (CI) | 94.5% CI                    |
 | :-------- | :---------            | :------                  | :---------                  | :------------               |
@@ -391,16 +445,12 @@ We can use the final parameter values to analyze our distribution
 
 We can compare the "true" *posterior* with the quadratic approximation:
 ```{python}
-a = W + 1
-b = L + 1
-x = np.linspace(0, 1)
-
-fig, ax = plt.subplots(1, 1)
-
-ax.plot(x, st.beta.pdf(x, a, b), "r-", label="True Posterior")
-ax.plot(x, st.norm.pdf(x, mu, sigma), "b-", label="Quadratic Approximation")
-
-ax.legend()
+w_values = [6, 12, 24]
+fig, axes = plt.subplots(1, len(w_values), figsize=(5*len(w_values),5))
+for i, w in enumerate(w_values):
+    model = BinomialQuadraticApproximation(w, int(w * 0.5))
+    model.fit()
+    model.plot(ax=axes[i])
 plt.show()
 ```
 
@@ -416,6 +466,8 @@ distribution of the parameters.
 This `pymc5` implementation uses the **Metropolis Algorithm**, explained in
 Chapter 9.
 ```{python}
+W = 6
+L = 3
 N = 1000
 p = np.repeat(0.0, N)
 p[0] = 0.5
