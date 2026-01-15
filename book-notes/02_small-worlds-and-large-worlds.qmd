@@ -374,7 +374,7 @@ class BinomialQuadraticApproximation:
         if ax is None:
             fig, ax = plt.subplots(1, 1)
 
-        ax.plot(x, st.beta.pdf(x, a, b), "r-", label="True Posterior")
+        ax.plot(x, st.beta.pdf(x, a, b), "r-", label="Analytical Posterior")
         ax.plot(x, st.norm.pdf(x, mu, sigma), "b-", label="Quadratic Approximation")
 
         ax.set_title(f"n = {self.n}")
