@@ -5,5 +5,5 @@ This section contains my notes and exercises as I work through the
 
 ## Chapters
 
-1. [The Golem of Prague](01_the-golem-of-prague.qmd)
-2. [Small Worlds and Large Worlds](02_small-worlds-and-large-worlds.qmd)
+1. [The Golem of Prague](chapter-01.qmd)
+2. [Small Worlds and Large Worlds](chapter-02.qmd)

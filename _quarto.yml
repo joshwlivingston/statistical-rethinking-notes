@@ -25,8 +25,8 @@ website:
       search: true
       contents:
         - book-notes/index.qmd
-        - book-notes/01_the-golem-of-prague.qmd
-        - book-notes/02_small-worlds-and-large-worlds.qmd
+        - book-notes/chapter-01.qmd
+        - book-notes/chapter-02.qmd
     - title: "Course Notes"
       contents:
         - course-notes/index.qmd
