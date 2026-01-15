@@ -1,7 +1,7 @@
----
-title: "Course Notes"
----
+# Contents
 
 This section contains notes from the pre-recorded lectures and slides.
 
-*Course content will be added as lectures are completed.*
+## Lectures
+
+2. [The Garden of Forking Data](lecture-02.qmd)

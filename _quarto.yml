@@ -28,8 +28,11 @@ website:
         - book-notes/chapter-01.qmd
         - book-notes/chapter-02.qmd
     - title: "Course Notes"
+      style: "docked"
+      search: true
       contents:
         - course-notes/index.qmd
+        - course-notes/lecture-02.qmd
     - title: "Homework"
       contents:
         - homework/index.qmd
