@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,9 +37,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-969db0c3b0678638f718e7c8c8feefeb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -298,10 +298,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#notes-on-statistical-rethinking" id="toc-notes-on-statistical-rethinking" class="nav-link active" data-scroll-target="#notes-on-statistical-rethinking">Notes on Statistical Rethinking</a>
   <ul class="collapse">
   <li><a href="#organization" id="toc-organization" class="nav-link" data-scroll-target="#organization">Organization</a></li>
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a>
+  <li><a href="#dependencies" id="toc-dependencies" class="nav-link" data-scroll-target="#dependencies">Dependencies</a>
   <ul class="collapse">
-  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
   <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
+  <li><a href="#hunspell" id="toc-hunspell" class="nav-link" data-scroll-target="#hunspell">Hunspell</a></li>
   </ul></li>
   <li><a href="#build" id="toc-build" class="nav-link" data-scroll-target="#build">Build</a></li>
   <li><a href="#attribution" id="toc-attribution" class="nav-link" data-scroll-target="#attribution">Attribution</a></li>
@@ -328,30 +330,37 @@ ul.task-list li input[type="checkbox"] {
 <li><code>homework/</code>: contains homework solutions</li>
 </ul>
 </section>
-<section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<section id="dependencies" class="level2">
+<h2 class="anchored" data-anchor-id="dependencies">Dependencies</h2>
+<p>The quarto notebooks use both R and Python in their code.</p>
+<section id="quarto" class="level3">
+<h3 class="anchored" data-anchor-id="quarto">Quarto</h3>
+<p>First, install <a href="https://quarto.org/">Quarto</a>.</p>
+</section>
 <section id="python" class="level3">
 <h3 class="anchored" data-anchor-id="python">Python</h3>
-<p>While the original code in the book uses the custom R <code>rethinking</code> package, I have implemented the code examples and homework solutions using <code>pymc5</code>.</p>
-<p>First, create a virtual environment, using <a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a>:</p>
+<p>Create a virtual environment, using <a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a>:</p>
 <pre><code>uv venv</code></pre>
 <p>Then, install dependencies from <code>requirements.txt</code>:</p>
 <pre><code>uv pip install -r requirements.txt</code></pre>
 <p>Note: <code>pymc</code> compiles code at runtime, utilizing the <code>g++</code> compiler it finds in the PATH.</p>
 </section>
-<section id="quarto" class="level3">
-<h3 class="anchored" data-anchor-id="quarto">Quarto</h3>
-<p>In addition to <a href="https://quarto.org/">Quarto</a>, you must install the following system dependencies:</p>
-<section id="hunspell" class="level4">
-<h4 class="anchored" data-anchor-id="hunspell">Hunspell</h4>
-<p><a href="https://github.com/hunspell/hunspell">Hunspell</a> is <em>the</em> open source spellchecking library. It is used by the <a href="https://github.com/christopherkenny/spellcheck">spellcheck</a> quarto extension.</p>
+<section id="r" class="level3">
+<h3 class="anchored" data-anchor-id="r">R</h3>
+<p>This project uses R 4.5.2, which can be installed using <a href="https://github.com/r-lib/rig?tab=readme-ov-file#%EF%B8%8F-installing-rig-"><code>rig</code></a>:</p>
+<pre><code>rig add 4.5.2</code></pre>
+<p>Then, use <a href="https://a2-ai.github.io/rv-docs/intro/installation/"><code>rv</code></a> to install the R dependencies:</p>
+<pre><code>rv sync</code></pre>
+</section>
+<section id="hunspell" class="level3">
+<h3 class="anchored" data-anchor-id="hunspell">Hunspell</h3>
+<p>You’ll need to have <a href="https://github.com/hunspell/hunspell">Hunspell</a> installed for the <a href="https://github.com/christopherkenny/spellcheck">spellcheck</a> quarto extension to work.</p>
 <p>Windows:</p>
 <pre class="pwsh"><code>choco install hunspell.portable</code></pre>
 <p>Mac:</p>
 <pre><code>brew install hunspell</code></pre>
 <p>Linux:</p>
 <pre><code>sudo apt-get install hunspell</code></pre>
-</section>
 <section id="en_us-dictionary" class="level4">
 <h4 class="anchored" data-anchor-id="en_us-dictionary">en_US dictionary</h4>
 <p>After installing Hunspell, you must install the <code>en_US</code> dictionary.</p>
