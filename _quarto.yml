@@ -1,6 +1,13 @@
 project:
   type: website
   output-dir: _site
+  render:
+    - "README.md"
+    - "LICENSE.md"
+    - "index.qmd"
+    - "book-notes/"
+    - "course-notes/"
+    - "homework/"
 
 website:
   title: "Notes on Statistical Rethinking"
