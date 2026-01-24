@@ -20,13 +20,14 @@ together in `_quarto.yml`.
 - `course-notes/`: contains notes from pre-recorded lectures and slides
 - `homework/`: contains homework solutions
 
-## Setup
+## Dependencies
+The quarto notebooks use both R and Python in their code.
+
+### Quarto
+First, install [Quarto](https://quarto.org/).
 
 ### Python
-While the original code in the book uses the custom R `rethinking` package, I
-have implemented the code examples and homework solutions using `pymc5`.
-
-First, create a virtual environment, using
+Create a virtual environment, using
 [uv](https://docs.astral.sh/uv/getting-started/installation/):
 
 ```
@@ -42,15 +43,26 @@ uv pip install -r requirements.txt
 Note: `pymc` compiles code at runtime, utilizing the `g++` compiler it finds in
 the PATH.
 
-### Quarto
-In addition to [Quarto](https://quarto.org/), you must install the following
-system dependencies:
+### R
+This project uses R 4.5.2, which can be installed using
+[`rig`](https://github.com/r-lib/rig?tab=readme-ov-file#%EF%B8%8F-installing-rig-):
 
-#### Hunspell
+```
+rig add 4.5.2
+```
 
-[Hunspell](https://github.com/hunspell/hunspell) is *the* open source
-spellchecking library. It is used by the
-[spellcheck](https://github.com/christopherkenny/spellcheck) quarto extension.
+Then, use [`rv`](https://a2-ai.github.io/rv-docs/intro/installation/) to install
+the R dependencies:
+
+```
+rv sync
+```
+
+### Hunspell
+
+You'll need to have [Hunspell](https://github.com/hunspell/hunspell) installed
+for the [spellcheck](https://github.com/christopherkenny/spellcheck) quarto
+extension to work.
 
 Windows:
 ```pwsh
