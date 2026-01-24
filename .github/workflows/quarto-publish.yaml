@@ -33,6 +33,9 @@ jobs:
       - run: pip install jupyter
       - run: pip install -r requirements.txt
 
+      - name: Install Hunspell
+        run: sudo apt-get install hunspell
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
