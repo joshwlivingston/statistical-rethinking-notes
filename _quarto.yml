@@ -63,6 +63,7 @@ format:
     code-overflow: wrap
     
 execute:
+  engine: knitr
   freeze: auto
 
 filters:
