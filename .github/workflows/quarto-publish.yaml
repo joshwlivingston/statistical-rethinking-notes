@@ -32,6 +32,7 @@ jobs:
 
       - name: Install Python and dependencies
         run: uv venv
+        run: source .venv/Scripts/activate
         run: uv sync
 
       - name: Install system dependencies
