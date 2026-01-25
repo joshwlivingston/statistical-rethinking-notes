@@ -45,9 +45,9 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: ignore .Rprofile reticulate settings
-        shell: Rscript {0}
-        run: Sys.unsetenv("RETICULATE_PYTHON")
+      - name: Set reticulate path
+        run: |
+          echo "RETICULATE_PYTHON=${{ github.workspace }}/.venv/bin/python" >> $GITHUB_ENV
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
@@ -55,4 +55,3 @@ jobs:
           target: gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RETICULATE_PYTHON: ${{ github.workspace }}/.venv/bin/python
