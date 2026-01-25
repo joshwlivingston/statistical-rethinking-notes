@@ -61,9 +61,10 @@ format:
     code-fold: true
     code-summary: "Show code"
     code-overflow: wrap
+
+engine: jupyter
     
 execute:
-  engine: jupyter
   freeze: auto
 
 filters:
