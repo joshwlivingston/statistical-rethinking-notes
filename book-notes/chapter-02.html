@@ -560,7 +560,7 @@ window.Quarto = {
 <ol type="1">
 <li>Define the <em>parameter</em> <strong>grid</strong>:</li>
 </ol>
-<div id="de0745cd" class="cell" data-execution_count="1">
+<div id="86cd70ed" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -573,7 +573,7 @@ window.Quarto = {
 <ol start="2" type="1">
 <li>Compute the <em>likelihood</em> at each <em>parameter</em> value:</li>
 </ol>
-<div id="5f74c8ea" class="cell" data-execution_count="2">
+<div id="a771e4f4" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> st</span>
@@ -584,7 +584,7 @@ window.Quarto = {
 <ol start="3" type="1">
 <li>Define the <em>priors</em>:</li>
 </ol>
-<div id="a10b2a73" class="cell" data-execution_count="3">
+<div id="86bf86e2" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>priors <span class="op">=</span> {</span>
@@ -597,7 +597,7 @@ window.Quarto = {
 <ol start="4" type="1">
 <li>Compute the <em>posteriors</em> by multiplying the <em>priors</em> and the <em>likelihood</em>:</li>
 </ol>
-<div id="163211ef" class="cell" data-execution_count="4">
+<div id="4d89b066" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>posteriors <span class="op">=</span> {</span>
@@ -609,7 +609,7 @@ window.Quarto = {
 <ol start="5" type="1">
 <li>Analyze the results. Notice the effect of the prior choice:</li>
 </ol>
-<div id="4a751ee8" class="cell" data-execution_count="5">
+<div id="00453db8" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -712,7 +712,7 @@ f''(\hat{\theta}) = H.
 \end{align}
 \]</span></p>
 <p>The <code>pymc</code> <a href="https://github.com/pymc-devs/pymc-resources/blob/main/Rethinking_2/Chp_02.ipynb">translation</a> provides an implementation of <em>quadratic approximation</em> that utilizes these special properties of the normal distribution. My class below organizes the fitting code together with the analysis and plotting.</p>
-<div id="f6a92cc5" class="cell" data-execution_count="6">
+<div id="6d4d71e6" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pymc <span class="im">as</span> pm</span>
@@ -824,7 +824,7 @@ For details and migration guidance, visit: https://python.arviz.org/en/latest/us
 </div>
 </div>
 <p>We can use the final parameter values to analyze our distribution:</p>
-<div id="5d30222b" class="cell" data-execution_count="7">
+<div id="b5c2410c" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> BinomialQuadraticApproximation(<span class="dv">6</span>, <span class="dv">3</span>)</span>
@@ -876,7 +876,7 @@ RuntimeWarning: invalid value encountered in scalar multiply
 </tbody>
 </table>
 <p>We can compare the “true” <em>posterior</em> with the quadratic approximation:</p>
-<div id="75aa0be8" class="cell" data-execution_count="8">
+<div id="37bbf657" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>w_values <span class="op">=</span> [<span class="dv">6</span>, <span class="dv">12</span>, <span class="dv">24</span>]</span>
@@ -947,7 +947,7 @@ RuntimeWarning: invalid value encountered in scalar multiply
 <p>Since <em>grid approximation</em> scales poorly and <em>quadratic approximation</em> does not fit most scenarios, <strong>Markov chain Monte Carlo (MCMC)</strong>, along with other model fitting techniques, have been developed.</p>
 <p><em>MCMC</em> works by sampling from the posterior directly; the result is a sampling distribution of the parameters.</p>
 <p>This <code>pymc5</code> implementation uses the <strong>Metropolis Algorithm</strong>, explained in Chapter 9.</p>
-<div id="a762d583" class="cell" data-execution_count="9">
+<div id="a0af12f9" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>W <span class="op">=</span> <span class="dv">6</span></span>
@@ -978,7 +978,7 @@ RuntimeWarning: invalid value encountered in scalar multiply
 </details>
 </div>
 <p>The resulting sampling distribution can be visualized alongside its estimated density and the <strong>analytical posterior</strong>.</p>
-<div id="6965a555" class="cell" data-execution_count="10">
+<div id="f6b0edf2" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arviz <span class="im">as</span> az</span>
@@ -997,7 +997,7 @@ RuntimeWarning: invalid value encountered in scalar multiply
 <span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/tmp/ipykernel_6110/294223342.py:13: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+<pre><code>/tmp/ipykernel_5997/294223342.py:13: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
   ax.legend()</code></pre>
 </div>
 <div class="cell-output cell-output-display">

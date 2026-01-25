@@ -2,38 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://joshwlivingston.github.io/statistical-rethinking-notes/homework/index.html</loc>
-    <lastmod>2026-01-25T17:40:39.016Z</lastmod>
+    <lastmod>2026-01-25T19:08:34.001Z</lastmod>
   </url>
   <url>
-    <loc>https://joshwlivingston.github.io/statistical-rethinking-notes/course-notes/index.html</loc>
-    <lastmod>2026-01-25T17:40:39.016Z</lastmod>
-  </url>
-  <url>
-    <loc>https://joshwlivingston.github.io/statistical-rethinking-notes/book-notes/index.html</loc>
-    <lastmod>2026-01-25T17:40:39.016Z</lastmod>
-  </url>
-  <url>
-    <loc>https://joshwlivingston.github.io/statistical-rethinking-notes/index.html</loc>
-    <lastmod>2026-01-25T17:40:39.016Z</lastmod>
-  </url>
-  <url>
-    <loc>https://joshwlivingston.github.io/statistical-rethinking-notes/README.html</loc>
-    <lastmod>2026-01-25T17:40:39.015Z</lastmod>
-  </url>
-  <url>
-    <loc>https://joshwlivingston.github.io/statistical-rethinking-notes/LICENSE.html</loc>
-    <lastmod>2026-01-25T17:40:39.015Z</lastmod>
-  </url>
-  <url>
-    <loc>https://joshwlivingston.github.io/statistical-rethinking-notes/book-notes/chapter-02.html</loc>
-    <lastmod>2026-01-25T17:40:39.016Z</lastmod>
+    <loc>https://joshwlivingston.github.io/statistical-rethinking-notes/course-notes/lecture-02-r.html</loc>
+    <lastmod>2026-01-25T19:08:34.001Z</lastmod>
   </url>
   <url>
     <loc>https://joshwlivingston.github.io/statistical-rethinking-notes/book-notes/chapter-01.html</loc>
-    <lastmod>2026-01-25T17:40:39.016Z</lastmod>
+    <lastmod>2026-01-25T19:08:34.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://joshwlivingston.github.io/statistical-rethinking-notes/book-notes/chapter-02.html</loc>
+    <lastmod>2026-01-25T19:08:34.001Z</lastmod>
+  </url>
+  <url>
+    <loc>https://joshwlivingston.github.io/statistical-rethinking-notes/LICENSE.html</loc>
+    <lastmod>2026-01-25T19:08:34.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://joshwlivingston.github.io/statistical-rethinking-notes/README.html</loc>
+    <lastmod>2026-01-25T19:08:34.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://joshwlivingston.github.io/statistical-rethinking-notes/index.html</loc>
+    <lastmod>2026-01-25T19:08:34.001Z</lastmod>
+  </url>
+  <url>
+    <loc>https://joshwlivingston.github.io/statistical-rethinking-notes/book-notes/index.html</loc>
+    <lastmod>2026-01-25T19:08:34.001Z</lastmod>
+  </url>
+  <url>
+    <loc>https://joshwlivingston.github.io/statistical-rethinking-notes/course-notes/index.html</loc>
+    <lastmod>2026-01-25T19:08:34.001Z</lastmod>
   </url>
   <url>
     <loc>https://joshwlivingston.github.io/statistical-rethinking-notes/course-notes/lecture-02.html</loc>
-    <lastmod>2026-01-25T17:40:39.016Z</lastmod>
+    <lastmod>2026-01-25T19:08:34.001Z</lastmod>
   </url>
 </urlset>
