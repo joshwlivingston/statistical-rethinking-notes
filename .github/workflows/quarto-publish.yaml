@@ -31,7 +31,10 @@ jobs:
           enable-cache: true
 
       - name: Install Python and dependencies
-        run: uv sync
+        run: |
+          uv venv
+          source .venv/bin/activate
+          uv sync
 
       - name: Install system dependencies
         run: sudo apt-get install -y hunspell libglpk-dev
