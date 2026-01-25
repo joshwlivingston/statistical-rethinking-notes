@@ -23,7 +23,9 @@ jobs:
         uses: astral-sh/setup-uv@v7
 
       - name: Install Python dependencies
-        run: uv sync
+        run: |
+          uv sync
+          source .venv/bin/activate
 
       - name: Install R
         uses: r-lib/actions/setup-r@v2
