@@ -1,0 +1,33 @@
+```{r}
+#| message: FALSE
+#| eval: FALSE
+#| label: globe-tossing-dag
+library(ggdag)
+
+dag <-
+  dagify(
+    W ~ N + p,
+    L ~ N + p,
+    coords = time_ordered_coords()
+  )
+
+ggdag(dag) + theme_dag()
+```
+
+```{r}
+#| message: FALSE
+#| echo: FALSE
+library(ggdag)
+
+dag <-
+  dagify(
+    W ~ N + p,
+    L ~ N + p,
+    coords = time_ordered_coords()
+  ) |>
+  ggdag() +
+  theme_dag()
+
+library(ggplot2)
+ggsave("dag.embed.png", dag)
+```

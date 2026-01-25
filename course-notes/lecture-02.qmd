@@ -5,7 +5,8 @@
 The globe tossing example from chapter two presents an interesting example of
 causal influence.
 
-{{< include _lecture-02_DAG.qmd  >}}
+{{< embed lecture-02-r.qmd#globe-tossing-dag echo=TRUE >}}
+<img class="figure-img" src="dag.embed.png" height=500 width=700>
 
 Here, `N` represents the number of times a globe is tossed, with `W` being the
 number of times the globe is caught with your finger on water, and `L` being

@@ -47,10 +47,6 @@ jobs:
       - name: Install R dependencies
         run: rv sync
 
-      - name: Expose R to jupyter kernel
-        shell: Rscript {0}
-        run: IRkernel::installspec(user = FALSE)
-
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:

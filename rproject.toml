@@ -6,7 +6,7 @@ r_version = "4.5.2"
 # The alias is only used in this file if you want to specifically require a dependency to come from a certain repository.
 # Example: { alias = "PPM", url = "https://packagemanager.posit.co/cran/latest" },
 repositories = [
-    { alias = "CRAN", url = "https://packagemanager.posit.co/cran/latest" },
+  { alias = "CRAN", url = "https://packagemanager.posit.co/cran/latest" },
 ]
 
 # A list of packages to install and any additional configuration
@@ -14,8 +14,4 @@ repositories = [
 # "dplyr",
 # {name = "dplyr", repository = "CRAN"},
 # {name = "dplyr", git = "https://github.com/tidyverse/dplyr.git", tag = "v1.1.4"},
-dependencies = ["ggdag", "rmarkdown",
-    "IRkernel",
-    "reticulate",
-    "png",
-]
+dependencies = ["ggdag", "rmarkdown", "ggplot2"]

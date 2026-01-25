@@ -65,6 +65,8 @@ format:
 execute:
   freeze: auto
 
+notebook-links: false
+
 filters:
   - spellcheck
 
