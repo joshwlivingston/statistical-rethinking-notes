@@ -26,3 +26,11 @@ covered by water.
 The DAG says the "the proportion of the earth covered by water and the number
 of tosses influence the both number of water catches and the number of land
 catches," an obvious and profound result.
+
+## Bayesian Data Analysis
+
+>_For each possible explanation of the sample,_<br>
+>_Count all the ways the sample could happen._<br>
+>_Explanations with more ways to produce the sample are more plausible._
+
+[Statistical Rethinking 2023 - 02 - The Garden of Forking Data (9:22)](https://youtu.be/R1vcdhPBlXA?t=562)
