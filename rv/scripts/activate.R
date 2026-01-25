@@ -1,5 +1,10 @@
 local({
-	if (!nzchar(Sys.which("rv.exe"))) {
+	rv_command <- "rv"
+	sys <- Sys.info()
+	if (identical(sys[which(names(sys) == "sysname")[[1L]]], "Windows")) {
+		rv_command <- "rv.exe"
+	}
+	if (!nzchar(Sys.which(rv_command))) {
 		warning(
 			"rv is not installed! Install rv, then restart your R session",
 			call. = FALSE
@@ -7,7 +12,7 @@ local({
 		return()
 	}
 	rv_info <- system2(
-		"rv.exe",
+		rv_command,
 		c("info", "--library", "--r-version", "--repositories"),
 		stdout = TRUE
 	)
