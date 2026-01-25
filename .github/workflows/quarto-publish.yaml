@@ -20,9 +20,7 @@ jobs:
           r-version: '4.5.2'
 
       - name: Install rv
-        run: |
-          curl -sSL https://raw.githubusercontent.com/A2-ai/rv/refs/heads/main/scripts/install.sh | bash
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
+        run: curl -sSL https://raw.githubusercontent.com/A2-ai/rv/refs/heads/main/scripts/install.sh | bash
 
       - name: Install R dependencies
         run: rv sync
