@@ -34,7 +34,7 @@ jobs:
         uses: astral-sh/setup-uv@v7
 
       - name: Install Python dependencies
-        run: uv pip install .
+        run: uv pip sync uv.lock
         env:
           UV_SYSTEM_PYTHON: 1
 
