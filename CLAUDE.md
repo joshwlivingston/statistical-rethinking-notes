@@ -7,7 +7,7 @@ This document provides setup instructions and troubleshooting guidance for worki
 This is a Quarto-based documentation project containing notes, exercises, and homework solutions for Richard McElreath's Statistical Rethinking course. The project uses:
 - **Quarto** for rendering notebooks
 - **R 4.5.2** for R code chunks (managed by `rig` and `rv`)
-- **Python** for Python code chunks (using venv)
+- **Python** for Python code chunks (managed by `uv`)
 - **Hunspell** for spellchecking
 
 ## Repository Structure
@@ -22,7 +22,8 @@ This is a Quarto-based documentation project containing notes, exercises, and ho
 ├── rv/                  # R package management (rv)
 ├── rproject.toml        # R project configuration
 ├── rv.lock              # R dependency lock file
-├── requirements.txt     # Python dependencies
+├── pyproject.toml       # Python project configuration
+├── uv.lock              # Python dependency lock file
 └── _quarto.yml          # Quarto configuration
 ```
 
@@ -62,7 +63,14 @@ The R environment is managed by `rv` and configured in `rproject.toml`. The `.Rp
 
 ### Python Environment Setup
 
-**Activate the virtual environment:**
+**Install/sync Python dependencies:**
+```bash
+uv sync
+```
+
+This creates the virtual environment (`.venv/`) and installs packages from `uv.lock`.
+
+**Activate the virtual environment (if needed manually):**
 
 On Windows (Git Bash/MSYS):
 ```bash
@@ -77,16 +85,6 @@ On Windows (PowerShell):
 On macOS/Linux:
 ```bash
 source .venv/bin/activate
-```
-
-**Verify Python packages are installed:**
-```bash
-pip list | grep matplotlib
-```
-
-If packages are missing, install from requirements.txt:
-```bash
-pip install -r requirements.txt
 ```
 
 ## Rendering Workflow
@@ -138,9 +136,9 @@ ModuleNotFoundError: No module named 'matplotlib'
 ```
 
 **Solution:**
-1. Activate venv: `source .venv/Scripts/activate` (Windows) or `source .venv/bin/activate` (macOS/Linux)
-2. Verify packages: `pip list`
-3. Install if needed: `pip install -r requirements.txt`
+```bash
+uv sync
+```
 
 ### Issue: Matplotlib Object Output in Rendered HTML
 
@@ -190,8 +188,9 @@ Error in loadNamespace(x) : there is no package called 'rmarkdown'
    - `.Rprofile` handles automatic activation
 
 3. **Python package management**:
-   - Packages are defined in `requirements.txt`
-   - Use pip within activated venv
+   - Packages are defined in `pyproject.toml`
+   - Lock file is `uv.lock`
+   - Use `uv sync` to install/update
    - Reticulate (R package) bridges R and Python
 
 4. **Rendering behavior**:
@@ -209,23 +208,17 @@ R --version
 # List installed R versions
 rig list
 
-# Check rv environment status
-rv info
+# Sync R packages
+rv sync
 
-# Activate Python venv (Windows Git Bash)
-source .venv/Scripts/activate
-
-# Activate Python venv (macOS/Linux)
-source .venv/bin/activate
+# Sync Python packages
+uv sync
 
 # Render single file
 quarto render path/to/file.qmd
 
 # Preview entire site
 quarto preview
-
-# Sync R packages
-rv sync
 ```
 
 ## Key Files to Check When Troubleshooting
@@ -233,5 +226,6 @@ rv sync
 1. `rproject.toml` - R version and package requirements
 2. `rv.lock` - Locked R package versions
 3. `.Rprofile` - R startup script (activates rv)
-4. `requirements.txt` - Python package requirements
-5. `_quarto.yml` - Quarto configuration
+4. `pyproject.toml` - Python project configuration
+5. `uv.lock` - Locked Python package versions
+6. `_quarto.yml` - Quarto configuration

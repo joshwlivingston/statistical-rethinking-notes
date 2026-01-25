@@ -27,18 +27,13 @@ The quarto notebooks use both R and Python in their code.
 First, install [Quarto](https://quarto.org/).
 
 ### Python
-Create a virtual environment, using
-[uv](https://docs.astral.sh/uv/getting-started/installation/):
+Install dependencies using [uv](https://docs.astral.sh/uv/getting-started/installation/):
 
 ```
-uv venv
+uv sync
 ```
 
-Then, install dependencies from `requirements.txt`:
-
-```
-uv pip install -r requirements.txt
-```
+This creates a virtual environment and installs packages from the lock file.
 
 Note: `pymc` compiles code at runtime, utilizing the `g++` compiler it finds in
 the PATH.
