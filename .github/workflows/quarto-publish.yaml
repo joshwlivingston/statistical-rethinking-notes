@@ -30,7 +30,8 @@ jobs:
         with:
           enable-cache: true
 
-      - name: Install Python dependencies
+      - name: Install Python and dependencies
+        run: uv venv
         run: uv sync
 
       - name: Install system dependencies
