@@ -19,8 +19,10 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v7
 
-      - name: Install Python and dependencies
-        run: uv sync
+      - name: Setup python venv
+        run: |
+          uv sync
+          echo "${{ github.workspace }}/.venv/bin" >> $GITHUB_PATH
 
       - name: Install R
         uses: r-lib/actions/setup-r@v2
@@ -37,11 +39,7 @@ jobs:
         run: sudo apt-get install -y hunspell libglpk-dev
 
       - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Add venv to PATH
-        run: |
-          echo "${{ github.workspace }}/.venv/bin" >> $GITHUB_PATH
+        uses: quarto-dev/quarto-actions/setup@v2          
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
