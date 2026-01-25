@@ -110,7 +110,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -561,7 +560,7 @@ window.Quarto = {
 <ol type="1">
 <li>Define the <em>parameter</em> <strong>grid</strong>:</li>
 </ol>
-<div id="0e5e80d0" class="cell" data-execution_count="1">
+<div id="de0745cd" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -574,7 +573,7 @@ window.Quarto = {
 <ol start="2" type="1">
 <li>Compute the <em>likelihood</em> at each <em>parameter</em> value:</li>
 </ol>
-<div id="93274626" class="cell" data-execution_count="2">
+<div id="5f74c8ea" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> st</span>
@@ -585,7 +584,7 @@ window.Quarto = {
 <ol start="3" type="1">
 <li>Define the <em>priors</em>:</li>
 </ol>
-<div id="c34ce690" class="cell" data-execution_count="3">
+<div id="a10b2a73" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>priors <span class="op">=</span> {</span>
@@ -598,7 +597,7 @@ window.Quarto = {
 <ol start="4" type="1">
 <li>Compute the <em>posteriors</em> by multiplying the <em>priors</em> and the <em>likelihood</em>:</li>
 </ol>
-<div id="cd78b53b" class="cell" data-execution_count="4">
+<div id="163211ef" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>posteriors <span class="op">=</span> {</span>
@@ -610,7 +609,7 @@ window.Quarto = {
 <ol start="5" type="1">
 <li>Analyze the results. Notice the effect of the prior choice:</li>
 </ol>
-<div id="46b93724" class="cell" data-execution_count="5">
+<div id="4a751ee8" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -713,7 +712,7 @@ f''(\hat{\theta}) = H.
 \end{align}
 \]</span></p>
 <p>The <code>pymc</code> <a href="https://github.com/pymc-devs/pymc-resources/blob/main/Rethinking_2/Chp_02.ipynb">translation</a> provides an implementation of <em>quadratic approximation</em> that utilizes these special properties of the normal distribution. My class below organizes the fitting code together with the analysis and plotting.</p>
-<div id="5a614917" class="cell" data-execution_count="6">
+<div id="f6a92cc5" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pymc <span class="im">as</span> pm</span>
@@ -817,7 +816,7 @@ f''(\hat{\theta}) = H.
 <span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._sigma_last <span class="op">=</span> sigma</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/arviz/__init__.py:39: FutureWarning: 
+<pre><code>/opt/hostedtoolcache/Python/3.14.2/x64/lib/python3.14/site-packages/arviz/__init__.py:39: FutureWarning: 
 ArviZ is undergoing a major refactor to improve flexibility and extensibility while maintaining a user-friendly interface.
 Some upcoming changes may be backward incompatible.
 For details and migration guidance, visit: https://python.arviz.org/en/latest/user_guide/migration_guide.html
@@ -825,7 +824,7 @@ For details and migration guidance, visit: https://python.arviz.org/en/latest/us
 </div>
 </div>
 <p>We can use the final parameter values to analyze our distribution:</p>
-<div id="144f84bf" class="cell" data-execution_count="7">
+<div id="5d30222b" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> BinomialQuadraticApproximation(<span class="dv">6</span>, <span class="dv">3</span>)</span>
@@ -834,12 +833,13 @@ For details and migration guidance, visit: https://python.arviz.org/en/latest/us
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>ci_upper <span class="op">=</span> model.ci(<span class="fl">0.945</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"56601ffef0a84097a3ba261092a100d3","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
-</script>
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/opt/hostedtoolcache/Python/3.14.2/x64/lib/python3.14/site-packages/rich/live.py:260: UserWarning: install 
+"ipywidgets" for Jupyter support
+  warnings.warn('install "ipywidgets" for Jupyter support')
+</pre>
 </div>
 <div class="cell-output cell-output-display">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/scipy/optimize/_optimize.py:2540: 
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/opt/hostedtoolcache/Python/3.14.2/x64/lib/python3.14/site-packages/scipy/optimize/_optimize.py:2540: 
 RuntimeWarning: invalid value encountered in scalar multiply
   tmp2 = (x - v) * (fx - fw)
 </pre>
@@ -876,7 +876,7 @@ RuntimeWarning: invalid value encountered in scalar multiply
 </tbody>
 </table>
 <p>We can compare the “true” <em>posterior</em> with the quadratic approximation:</p>
-<div id="25fdd1cf" class="cell" data-execution_count="8">
+<div id="75aa0be8" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>w_values <span class="op">=</span> [<span class="dv">6</span>, <span class="dv">12</span>, <span class="dv">24</span>]</span>
@@ -888,12 +888,13 @@ RuntimeWarning: invalid value encountered in scalar multiply
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"b10da05d0d6240bb84503f1a0ec24ae7","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
-</script>
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/opt/hostedtoolcache/Python/3.14.2/x64/lib/python3.14/site-packages/rich/live.py:260: UserWarning: install 
+"ipywidgets" for Jupyter support
+  warnings.warn('install "ipywidgets" for Jupyter support')
+</pre>
 </div>
 <div class="cell-output cell-output-display">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/scipy/optimize/_optimize.py:2540: 
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/opt/hostedtoolcache/Python/3.14.2/x64/lib/python3.14/site-packages/scipy/optimize/_optimize.py:2540: 
 RuntimeWarning: invalid value encountered in scalar multiply
   tmp2 = (x - v) * (fx - fw)
 </pre>
@@ -902,12 +903,13 @@ RuntimeWarning: invalid value encountered in scalar multiply
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
 </div>
 <div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"81c16d5bcce04bdb8126c47edbea0365","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
-</script>
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/opt/hostedtoolcache/Python/3.14.2/x64/lib/python3.14/site-packages/rich/live.py:260: UserWarning: install 
+"ipywidgets" for Jupyter support
+  warnings.warn('install "ipywidgets" for Jupyter support')
+</pre>
 </div>
 <div class="cell-output cell-output-display">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/scipy/optimize/_optimize.py:2540: 
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/opt/hostedtoolcache/Python/3.14.2/x64/lib/python3.14/site-packages/scipy/optimize/_optimize.py:2540: 
 RuntimeWarning: invalid value encountered in scalar multiply
   tmp2 = (x - v) * (fx - fw)
 </pre>
@@ -916,12 +918,13 @@ RuntimeWarning: invalid value encountered in scalar multiply
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
 </div>
 <div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"b2a7d0b0f8b54d92af0fc0fb9c294f93","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
-</script>
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/opt/hostedtoolcache/Python/3.14.2/x64/lib/python3.14/site-packages/rich/live.py:260: UserWarning: install 
+"ipywidgets" for Jupyter support
+  warnings.warn('install "ipywidgets" for Jupyter support')
+</pre>
 </div>
 <div class="cell-output cell-output-display">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/scipy/optimize/_optimize.py:2540: 
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/opt/hostedtoolcache/Python/3.14.2/x64/lib/python3.14/site-packages/scipy/optimize/_optimize.py:2540: 
 RuntimeWarning: invalid value encountered in scalar multiply
   tmp2 = (x - v) * (fx - fw)
 </pre>
@@ -944,7 +947,7 @@ RuntimeWarning: invalid value encountered in scalar multiply
 <p>Since <em>grid approximation</em> scales poorly and <em>quadratic approximation</em> does not fit most scenarios, <strong>Markov chain Monte Carlo (MCMC)</strong>, along with other model fitting techniques, have been developed.</p>
 <p><em>MCMC</em> works by sampling from the posterior directly; the result is a sampling distribution of the parameters.</p>
 <p>This <code>pymc5</code> implementation uses the <strong>Metropolis Algorithm</strong>, explained in Chapter 9.</p>
-<div id="ce20b603" class="cell" data-execution_count="9">
+<div id="a762d583" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>W <span class="op">=</span> <span class="dv">6</span></span>
@@ -975,7 +978,7 @@ RuntimeWarning: invalid value encountered in scalar multiply
 </details>
 </div>
 <p>The resulting sampling distribution can be visualized alongside its estimated density and the <strong>analytical posterior</strong>.</p>
-<div id="3d90f2de" class="cell" data-execution_count="10">
+<div id="6965a555" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arviz <span class="im">as</span> az</span>
@@ -994,7 +997,7 @@ RuntimeWarning: invalid value encountered in scalar multiply
 <span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/tmp/ipykernel_5852/294223342.py:13: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+<pre><code>/tmp/ipykernel_6110/294223342.py:13: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
   ax.legend()</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -1022,9 +1025,6 @@ RuntimeWarning: invalid value encountered in scalar multiply
 </section>
 
 </main> <!-- /main -->
-<script type="application/vnd.jupyter.widget-state+json">
-{"state":{"56601ffef0a84097a3ba261092a100d3":{"model_module":"@jupyter-widgets/output","model_module_version":"1.0.0","model_name":"OutputModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/output","_model_module_version":"1.0.0","_model_name":"OutputModel","_view_count":null,"_view_module":"@jupyter-widgets/output","_view_module_version":"1.0.0","_view_name":"OutputView","layout":"IPY_MODEL_8e79ff59474840aea6e4920599b92a29","msg_id":"","outputs":[{"data":{"text/html":"<pre style=\"white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace\">MAP <span style=\"color: #3a3a3a; text-decoration-color: #3a3a3a\">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span style=\"color: #800080; text-decoration-color: #800080\">  0%</span> 0:00:01 logp = -1.2979\n</pre>\n","text/plain":"MAP \u001b[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[35m  0%\u001b[0m 0:00:01 logp = -1.2979\n"},"metadata":{},"output_type":"display_data"}],"tabbable":null,"tooltip":null}},"81c16d5bcce04bdb8126c47edbea0365":{"model_module":"@jupyter-widgets/output","model_module_version":"1.0.0","model_name":"OutputModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/output","_model_module_version":"1.0.0","_model_name":"OutputModel","_view_count":null,"_view_module":"@jupyter-widgets/output","_view_module_version":"1.0.0","_view_name":"OutputView","layout":"IPY_MODEL_89a8d26e371643f986858880d4a8ff13","msg_id":"","outputs":[{"data":{"text/html":"<pre style=\"white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace\">MAP <span style=\"color: #3a3a3a; text-decoration-color: #3a3a3a\">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span style=\"color: #800080; text-decoration-color: #800080\">  0%</span> 0:00:01 logp = -1.6285\n</pre>\n","text/plain":"MAP \u001b[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[35m  0%\u001b[0m 0:00:01 logp = -1.6285\n"},"metadata":{},"output_type":"display_data"}],"tabbable":null,"tooltip":null}},"89a8d26e371643f986858880d4a8ff13":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"8c7ea66bf3d142589d0fe9f21fc61eca":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"8e79ff59474840aea6e4920599b92a29":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"b10da05d0d6240bb84503f1a0ec24ae7":{"model_module":"@jupyter-widgets/output","model_module_version":"1.0.0","model_name":"OutputModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/output","_model_module_version":"1.0.0","_model_name":"OutputModel","_view_count":null,"_view_module":"@jupyter-widgets/output","_view_module_version":"1.0.0","_view_name":"OutputView","layout":"IPY_MODEL_c54315b7c757433895aab6042698d24b","msg_id":"","outputs":[{"data":{"text/html":"<pre style=\"white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace\">MAP <span style=\"color: #3a3a3a; text-decoration-color: #3a3a3a\">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span style=\"color: #800080; text-decoration-color: #800080\">  0%</span> 0:00:01 logp = -1.2979\n</pre>\n","text/plain":"MAP \u001b[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[35m  0%\u001b[0m 0:00:01 logp = -1.2979\n"},"metadata":{},"output_type":"display_data"}],"tabbable":null,"tooltip":null}},"b2a7d0b0f8b54d92af0fc0fb9c294f93":{"model_module":"@jupyter-widgets/output","model_module_version":"1.0.0","model_name":"OutputModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/output","_model_module_version":"1.0.0","_model_name":"OutputModel","_view_count":null,"_view_module":"@jupyter-widgets/output","_view_module_version":"1.0.0","_view_name":"OutputView","layout":"IPY_MODEL_8c7ea66bf3d142589d0fe9f21fc61eca","msg_id":"","outputs":[{"data":{"text/html":"<pre style=\"white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace\">MAP <span style=\"color: #3a3a3a; text-decoration-color: #3a3a3a\">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span style=\"color: #800080; text-decoration-color: #800080\">  0%</span> 0:00:01 logp = -1.9672\n</pre>\n","text/plain":"MAP \u001b[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[35m  0%\u001b[0m 0:00:01 logp = -1.9672\n"},"metadata":{},"output_type":"display_data"}],"tabbable":null,"tooltip":null}},"c54315b7c757433895aab6042698d24b":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}}},"version_major":2,"version_minor":0}
-</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
