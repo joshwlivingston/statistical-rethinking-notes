@@ -1,1 +1,28 @@
 # Lecture 2: The Garden of Forking Data
+
+## Globe Tossing DAG
+
+The globe tossing example from chapter two presents an interesting example of
+causal influence.
+
+```{r}
+#| message: FALSE
+library(ggdag)
+dag <-
+  dagify(
+    W ~ N + p,
+    L ~ N + p,
+    coords = time_ordered_coords()
+  )
+
+ggdag(dag) + theme_dag()
+```
+
+Here, `N` represents the number of times a globe is tossed, with `W` being the
+number of times the globe is caught with your finger on water, and `L` being
+the catches on land. `p` represents the proportion of the earth's surface
+covered by water.
+
+The DAG says the "the proportion of the earth covered by water and the number
+of tosses influence the both number of water catches and the number of land
+catches," an obvious and profound result.
