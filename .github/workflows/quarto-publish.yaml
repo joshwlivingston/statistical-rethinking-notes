@@ -25,6 +25,10 @@ jobs:
       - name: Install R dependencies
         run: rv sync
 
+      - name: Expose R to jupyter kernel
+        shell: Rscript {0}
+        run: IRkernel::installspec(user = FALSE)
+
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
