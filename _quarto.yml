@@ -61,8 +61,6 @@ format:
     code-fold: true
     code-summary: "Show code"
     code-overflow: wrap
-
-engine: jupyter
     
 execute:
   freeze: auto

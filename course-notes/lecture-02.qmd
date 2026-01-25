@@ -1,3 +1,7 @@
+---
+engine: jupyter
+---
+
 # Lecture 2: The Garden of Forking Data
 
 ## Globe Tossing DAG
