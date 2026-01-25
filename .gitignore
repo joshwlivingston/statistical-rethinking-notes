@@ -2,7 +2,6 @@
 _site/
 .quarto/
 index.html
-*.embed.*
 
 # R/RStudio files
 .Rproj.user

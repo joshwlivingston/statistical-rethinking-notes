@@ -61,6 +61,8 @@ format:
     code-fold: true
     code-summary: "Show code"
     code-overflow: wrap
+
+engine: knitr
     
 execute:
   freeze: auto
