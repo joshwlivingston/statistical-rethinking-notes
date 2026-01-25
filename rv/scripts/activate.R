@@ -1,7 +1,6 @@
 local({
 	rv_command <- "rv"
-	sys <- Sys.info()
-	if (identical(sys[which(names(sys) == "sysname")[[1L]]], "Windows")) {
+	if (identical(.Platform$OS.type, "Windows")) {
 		rv_command <- "rv.exe"
 	}
 	if (!nzchar(Sys.which(rv_command))) {
