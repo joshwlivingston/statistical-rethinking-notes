@@ -1,15 +1,13 @@
 # License
 
-The original prose, notes, and summaries created by Josh Livingston are licensed 
-under CC0 1.0 Universal. All original source code and code examples are 
-licensed under the MIT License.
+Copyright (c) 2026 Josh Livingston
 
-## Attribution Notice
-This project is an independent, unofficial study resource based on the book and
-course *"Statistical Rethinking"* by Richard McElreath. 
+- **Written notes**: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+- **Code**: [MIT License](https://opensource.org/licenses/MIT)
 
-- The intellectual framework, terminology, pedagogical structure, and original
-  examples belong to Richard McElreath.
-- This project is intended to complement, not replace, the original text.
-  Users are strongly encouraged to purchase the book at 
-  [https://xcelab.net/rm/](https://xcelab.net/rm/).
+## Acknowledgment
+
+Unofficial companion to [*Statistical Rethinking*](https://xcelab.net/rm/)
+by Richard McElreath. My notes and code are meant to complement the book, not
+replace it. If you find these notes helpful, consider
+[buying the book](https://xcelab.net/rm/).
