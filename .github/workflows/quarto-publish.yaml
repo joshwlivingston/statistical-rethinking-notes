@@ -31,11 +31,7 @@ jobs:
           enable-cache: true
 
       - name: Install Python and dependencies
-        run: |
-          uv venv r-reticulate
-          source r-reticulate/bin/activate
-          uv sync
-          echo "RETICULATE_PYTHON=$(pwd)/r-reticulate/bin/python" >> $GITHUB_ENV
+        run: uv sync
 
       - name: Install system dependencies
         run: sudo apt-get install -y hunspell libglpk-dev

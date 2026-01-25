@@ -14,7 +14,4 @@ repositories = [
 # "dplyr",
 # {name = "dplyr", repository = "CRAN"},
 # {name = "dplyr", git = "https://github.com/tidyverse/dplyr.git", tag = "v1.1.4"},
-dependencies = ["ggdag",
-    "reticulate",
-    "rmarkdown",
-]
+dependencies = ["ggdag", "rmarkdown"]

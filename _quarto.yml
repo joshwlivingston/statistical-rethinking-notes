@@ -63,7 +63,7 @@ format:
     code-overflow: wrap
     
 execute:
-  engine: knitr
+  engine: jupyter
   freeze: auto
 
 filters:
