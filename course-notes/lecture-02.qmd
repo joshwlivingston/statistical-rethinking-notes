@@ -9,14 +9,14 @@ causal influence.
 #| message: FALSE
 library(ggdag)
 
-dag <-
+dag_demo <-
   dagify(
     W ~ N + p,
     L ~ N + p,
     coords = time_ordered_coords()
   )
 
-ggdag(dag) + theme_dag()
+ggdag(dag_demo) + theme_dag()
 ```
 
 Here, `N` represents the number of times a globe is tossed, with `W` being the
@@ -136,3 +136,78 @@ ani = animation.FuncAnimation(fig=fig, func=hmcmc, frames=100, interval=50)
 plt.close()
 HTML(ani.to_jshtml())
 ```
+
+## Misclassification
+```{r}
+set.seed(13)
+dag <-
+  dagify(
+    W ~ p + N,
+    W_ ~ W + M,
+    latent = c("p"),
+    labels = c(
+      p = " "
+    )
+  )
+
+ggdag(dag, use_labels = "label") + ggdag::theme_dag()
+```
+
+We can model M, our measurement error. In lecture 2, this was modeled as the
+acceptance criteria for the sampler.
+
+```{python}
+W = 6
+L = 3
+N = 1000
+p = np.repeat(0.0, N)
+p[0] = 0.5
+p_unadjusted = p.copy()
+q0 = st.binom.pmf(W, W + L, p[0])
+for i in range(1, N):
+    # Propose a value
+    p_new = st.norm.rvs(p[i - 1], 0.1)
+
+    # Enforce [0, 1]
+    while p_new < 0:
+        p_new = np.abs(p_new)
+        while p_new > 1:
+            p_new = 2 - p_new
+
+    # Keep unadjusted sample
+    p_unadjusted[i] = p_new
+
+    # Simulate unobserved misclassification rate
+    q1 = st.binom.pmf(W, W + L, p_new)
+    if st.uniform.rvs(0, 1) < q1 / q0:
+        # Accept
+        p[i] = p_new
+        q0 = q1
+    else:
+        # Reject
+        p[i] = p[i - 1]
+
+import arviz as az
+
+x = np.linspace(0, 1)
+fig, ax = plt.subplots(1, 1)
+ax2 = ax.twinx()
+
+ax2.plot(x, st.beta.pdf(x, W + 1, L + 1), "r-", label="Analytical posterior")
+
+az.plot_kde(p, label="Metropolis approximation")
+az.plot_kde(
+    p_unadjusted,
+    label="Metropolis approximation (unadjusted)",
+    plot_kwargs={"color": "purple"},
+)
+
+fig.tight_layout()
+ax.legend()
+plt.show()
+```
+
+This plot compares the density estimates for the unadjusted posterior,
+alongside the "misclassification"-adjusted posterior. Notice the increased
+resemblance to the analytical posterior and the increased steepness of the
+adjusted posterior - more precision around the parameter!
