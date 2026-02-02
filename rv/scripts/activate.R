@@ -3,13 +3,16 @@ local({
 	if (identical(.Platform$OS.type, "Windows")) {
 		rv_command <- "rv.exe"
 	}
-	if (!nzchar(Sys.which(rv_command))) {
-		warning(
+  tryCatch(
+		rv_ver <- system(sprintf("%s --version", rv_command), intern = TRUE),
+		error = function(e) {
+    	warning(
 			"rv is not installed! Install rv, then restart your R session",
 			call. = FALSE
 		)
 		return()
-	}
+		}
+	)
 	rv_info <- system2(
 		rv_command,
 		c("info", "--library", "--r-version", "--repositories"),
