@@ -1,0 +1,67 @@
+# Chapter 3: Sampling the Imaginary
+
+Suppose we have a test for condition $X$. The test correctly detect $X$ $95\%$
+of the time. In mathematical notation, $\Pr(\text{positive} \mid X)=0.95$. We
+also know that $1\%$ of the time, the test records a false positive, i.e.
+$\Pr(\text{positive} \mid \neg X)=0.01$.
+
+To determine the probability of $X$, given a positive test result, we can use
+Bayes' theorem:
+
+$$
+\Pr(X \mid \text{positive})=\frac{\Pr(\text{positive} \mid X)\Pr(X)}{\Pr(\text{positive})}
+$$
+
+$\Pr(X)$ is the incidence of $X$, which is known to be $0.1\%$.
+
+```{python}
+pr_p_x = 0.95
+pr_p_negx = 0.01
+pr_x = 0.001
+pr_p = pr_p_x * pr_x + pr_p_negx * (1 - pr_x) # marginal likelihood
+pr_x_p = pr_p_x * pr_x / pr_p
+print(f"Probability of X: {pr_x_p:.4f}")
+```
+
+This means that the probability $X$ _with one positive test_ is only 0.868.
+
+With two positive tests, the probability soars to > 90%, demonstrating why
+many medical test require two positive results:
+```{python}
+pr_pp = pr_p_x ** 2 * pr_x + pr_p_negx ** 2 * (1 - pr_x) # marginal likelihood
+pr_x_pp = pr_p_x ** 2 * pr_x / pr_pp
+print(f"Probability of X: {pr_x_pp:.4f}")
+```
+
+But that was mathy, and we can get more intuitive by thinking in counts:
+
+* **100,000** people exist in the population
+* So, **100** have $X$ ($0.1\%$).
+* Of the 100 that have $X$, **95** will test positive ($95\%$).
+* Of the 99,900 people that do *not* have $X$, **999** will test positive for $X$ ($1\%$)
+
+This simplifies the math wonderfully:
+
+$$
+\Pr(X \mid \text{positive}) = \frac{95}{95+999} = \frac{95}{1094} \approx 0.0868
+$$
+
+And for two positive tests, we can follow a similar counting pattern:
+
+* Of the 95 people with $X$ who tested positive, approximately **90** will test positive again.
+* Of the 999 people who do not have $X$ but tested positive, approximately **10** will test positive again.
+
+So, the math for two positive tests is:
+
+$$
+\Pr(X \mid \text{positive}) \approx \frac{90}{90+10} = \frac{90}{100} = 0.90
+$$
+
+Why counts?
+
+1. Counting is easier than calculus, even for statisticians
+2. *Bayesian analysis* involves sampling, and analysis of sampling *frequencies*
+   (counts). Frequencies are easy for humans to interpret - we encounter and
+   process counts *frequently*.
+
+## 3.1: Sampling from a grid-approximate posterior
