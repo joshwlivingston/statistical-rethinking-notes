@@ -74,29 +74,11 @@ import scipy.stats as st
 
 W = 6
 L = 3
-N = 1000
-p = np.repeat(0.0, N)
-p[0] = 0.5
-q0 = st.binom.pmf(W, W + L, p[0])
-for i in range(1, N):
-    # Propose a value
-    p_new = st.norm.rvs(p[i - 1], 0.1)
-
-    # Enforce [0, 1]
-    while p_new < 0:
-        p_new = np.abs(p_new)
-        while p_new > 1:
-            p_new = 2 - p_new
-
-    # Accept/Reject
-    q1 = st.binom.pmf(W, W + L, p_new)
-    if st.uniform.rvs(0, 1) < q1 / q0:
-        # Accept
-        p[i] = p_new
-        q0 = q1
-    else:
-        # Reject
-        p[i] = p[i - 1]
+p_grid = np.linspace(0, 1, num=1000)
+prob_p = np.repeat(1.0, 1000)
+prob_data = st.binom.pmf(W, W + L, p_grid)
+posterior = prob_data * prob_p
+posterior = posterior / np.sum(posterior)
 ```
 
 After running the sampler, we are left with `p`, representing the
@@ -105,7 +87,7 @@ After running the sampler, we are left with `p`, representing the
 We can sample from the posterior distribution to replicate a posterior density:
 ```{python}
 # Sample from the posterior
-p_sample = np.random.choice(p, 10000)
+p_sample = np.random.choice(p_grid, size=10000, replace=True, p=posterior)
 
 # Plot the results
 import arviz as az
@@ -128,3 +110,97 @@ plt.show()
 ```
 
 These samples can be used to further analyze the posterior.
+
+## 3.2: Sampling to summarize
+
+Summarizations of the posterior distribution can broadly be divided into three
+categories:
+
+1. Intervals of **defined boundaries**
+2. Intervals of **defined probability mass**
+3. **Point estimates**
+
+### 3.2.1: Intervals of defined boundaries
+
+An example of such a question is "What is the chance that less than 50% of the
+Earth is covered in water?" This question can be answered using samples of the
+posterior:
+
+```{python}
+prob = np.sum(posterior, where=p_grid < 0.5)
+print(f"Pr(p < 0.5) = {prob:.4f}")
+```
+
+Using the grid-approximation method, we see that 17% of the posterior
+distribution is below 0.5.
+
+Since grid-approximation is generally not practical, it's useful to see that
+a similar result can be achieved directly from the samples of the posterior:
+```{python}
+prob_from_samples = np.sum(p_sample < 0.5) / len(p_sample)
+print(f"Pr(p < 0.5) = {prob_from_samples:.4f}")
+```
+
+The takeaway here is that **sampling from the posterior** is both efficient and
+effective.
+
+### 3.2.2: Intervals of defined mass
+
+Sometimes you want to know the "bottom 25%" or "middle 50%." These are
+intervals of **defined mass**. 
+
+**Percentile intervals** are an example of intervals of defined mass:
+```{python}
+lower_bottom25 = np.quantile(p_sample, 0)
+upper_bottom25 = np.quantile(p_sample, 0.25)
+print(f"Bottom 25%: ({lower_bottom25:.4f} ,{upper_bottom25:.4f})")
+```
+
+```{python}
+lower_middle50 = np.quantile(p_sample, 0.25)
+upper_middle50 = np.quantile(p_sample, 0.75)
+print(f"Middle 50%: ({lower_middle50:.4f} ,{upper_middle50:.4f})")
+```
+
+You can also compute the **highest posterior density interval** (**HPDI**),
+which captures the interval with the highest posterior probability. While
+percentile intervals are evenly spaced around the point estimates, HPDI's are
+not necessarily so.
+
+```{python}
+hpdi_50 = az.hdi(p_sample, hdi_prob=0.50)
+print(f"50% HPDI: ({hpdi_50[0]:.4f} ,{hpdi_50[1]:.4f})")
+```
+
+### 3.2.3: Point estimates
+
+There are several types of point estimates useful in Bayesian analysis.
+
+The parameter with the highest posterior probability is the
+**maximum a posteriori** (**MAP**) estimate.
+
+```{python}
+map_p = p_grid[np.argmax(posterior)]
+print(f"MAP: {map_p:.4f}")
+```
+
+This can be achieved on the samples from the posterior as well.
+
+```{python}
+map_p_sample = st.mode(p_sample)[0]
+print(f"MAP (sampled): {map_p_sample:.4f}")
+```
+
+Of course, mean and median are also available point estimates.
+```{python}
+print(f"mean: {np.mean(p_sample):.4f}")
+print(f"median: {np.median(p_sample):.4f}")
+```
+
+The choice of estimate is yours!
+
+One way to compare the point estimates is to use a **loss function**, which
+determines the *cost* of any one point estimate. It is important to note that
+different loss functions imply different estimates, so it is best to consider 
+multiple. Absolute loss implies the posterior median and quadratic loss 
+implies the posterior mean.
