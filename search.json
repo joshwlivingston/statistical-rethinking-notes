@@ -33,164 +33,6 @@
     ]
   },
   {
-    "objectID": "book-notes/index.html",
-    "href": "book-notes/index.html",
-    "title": "Contents",
-    "section": "",
-    "text": "This section contains my notes and exercises as I work through the Statistical Rethinking textbook.\n\n\n\nThe Golem of Prague\nSmall Worlds and Large Worlds",
-    "crumbs": [
-      "Book Notes",
-      "Contents"
-    ]
-  },
-  {
-    "objectID": "book-notes/index.html#chapters",
-    "href": "book-notes/index.html#chapters",
-    "title": "Contents",
-    "section": "",
-    "text": "The Golem of Prague\nSmall Worlds and Large Worlds",
-    "crumbs": [
-      "Book Notes",
-      "Contents"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Notes on Statistical Rethinking",
-    "section": "",
-    "text": "This website contains my notes and code as I work through Richard McElreath’s 2025 course on his book Statistical Rethinking. A course in Bayesian statistics, Rethinking is code-heavy and meant to be read sequentially, not as a reference. McElreath offers his flipped instruction course locally, also publishing the lectures online.\n\n\nThe repository is organized into separate quarto files, which are stitched together in _quarto.yml.\n\nbook-notes/: contains notes and exercises directly from the textbook\ncourse-notes/: contains notes from pre-recorded lectures and slides\nhomework/: contains homework solutions\n\n\n\n\nThe quarto notebooks use both R and Python in their code.\n\n\nFirst, install Quarto.\n\n\n\nInstall dependencies using uv:\nuv sync\nThis creates a virtual environment and installs packages from the lock file.\nNote: pymc compiles code at runtime, utilizing the g++ compiler it finds in the PATH.\n\n\n\nThis project uses R 4.5.2, which can be installed using rig:\nrig add 4.5.2\nThen, use rv to install the R dependencies:\nrv sync\n\n\n\nYou’ll need to have Hunspell installed for the spellcheck quarto extension to work.\nWindows:\nchoco install hunspell.portable\nMac:\nbrew install hunspell\nLinux:\nsudo apt-get install hunspell\n\n\nAfter installing Hunspell, you must install the en_US dictionary.\nWindows/Mac:\n\nDownload the dictionary files (both files: .dic and .aff).\nPlace them in hunspell’s dictionary SEARCH PATH.\n\n\nTo add a new directory to the search path, add the directory to the DICPATH environment variable.\nTo view the search path, use hunspell -D:\n\nLinux:\nsudo apt-get install hunspell-en-us\n\n\n\n\n\nAfter installing the necessary dependencies, build the project:\nquarto preview"
-  },
-  {
-    "objectID": "index.html#organization",
-    "href": "index.html#organization",
-    "title": "Notes on Statistical Rethinking",
-    "section": "",
-    "text": "The repository is organized into separate quarto files, which are stitched together in _quarto.yml.\n\nbook-notes/: contains notes and exercises directly from the textbook\ncourse-notes/: contains notes from pre-recorded lectures and slides\nhomework/: contains homework solutions"
-  },
-  {
-    "objectID": "index.html#dependencies",
-    "href": "index.html#dependencies",
-    "title": "Notes on Statistical Rethinking",
-    "section": "",
-    "text": "The quarto notebooks use both R and Python in their code.\n\n\nFirst, install Quarto.\n\n\n\nInstall dependencies using uv:\nuv sync\nThis creates a virtual environment and installs packages from the lock file.\nNote: pymc compiles code at runtime, utilizing the g++ compiler it finds in the PATH.\n\n\n\nThis project uses R 4.5.2, which can be installed using rig:\nrig add 4.5.2\nThen, use rv to install the R dependencies:\nrv sync\n\n\n\nYou’ll need to have Hunspell installed for the spellcheck quarto extension to work.\nWindows:\nchoco install hunspell.portable\nMac:\nbrew install hunspell\nLinux:\nsudo apt-get install hunspell\n\n\nAfter installing Hunspell, you must install the en_US dictionary.\nWindows/Mac:\n\nDownload the dictionary files (both files: .dic and .aff).\nPlace them in hunspell’s dictionary SEARCH PATH.\n\n\nTo add a new directory to the search path, add the directory to the DICPATH environment variable.\nTo view the search path, use hunspell -D:\n\nLinux:\nsudo apt-get install hunspell-en-us"
-  },
-  {
-    "objectID": "index.html#build",
-    "href": "index.html#build",
-    "title": "Notes on Statistical Rethinking",
-    "section": "",
-    "text": "After installing the necessary dependencies, build the project:\nquarto preview"
-  },
-  {
-    "objectID": "README.html",
-    "href": "README.html",
-    "title": "Notes on Statistical Rethinking",
-    "section": "",
-    "text": "This website contains my notes and code as I work through Richard McElreath’s 2025 course on his book Statistical Rethinking. A course in Bayesian statistics, Rethinking is code-heavy and meant to be read sequentially, not as a reference. McElreath offers his flipped instruction course locally, also publishing the lectures online.\n\n\nThe repository is organized into separate quarto files, which are stitched together in _quarto.yml.\n\nbook-notes/: contains notes and exercises directly from the textbook\ncourse-notes/: contains notes from pre-recorded lectures and slides\nhomework/: contains homework solutions\n\n\n\n\nThe quarto notebooks use both R and Python in their code.\n\n\nFirst, install Quarto.\n\n\n\nInstall dependencies using uv:\nuv sync\nThis creates a virtual environment and installs packages from the lock file.\nNote: pymc compiles code at runtime, utilizing the g++ compiler it finds in the PATH.\n\n\n\nThis project uses R 4.5.2, which can be installed using rig:\nrig add 4.5.2\nThen, use rv to install the R dependencies:\nrv sync\n\n\n\nYou’ll need to have Hunspell installed for the spellcheck quarto extension to work.\nWindows:\nchoco install hunspell.portable\nMac:\nbrew install hunspell\nLinux:\nsudo apt-get install hunspell\n\n\nAfter installing Hunspell, you must install the en_US dictionary.\nWindows/Mac:\n\nDownload the dictionary files (both files: .dic and .aff).\nPlace them in hunspell’s dictionary SEARCH PATH.\n\n\nTo add a new directory to the search path, add the directory to the DICPATH environment variable.\nTo view the search path, use hunspell -D:\n\nLinux:\nsudo apt-get install hunspell-en-us\n\n\n\n\n\nAfter installing the necessary dependencies, build the project:\nquarto preview"
-  },
-  {
-    "objectID": "README.html#organization",
-    "href": "README.html#organization",
-    "title": "Notes on Statistical Rethinking",
-    "section": "",
-    "text": "The repository is organized into separate quarto files, which are stitched together in _quarto.yml.\n\nbook-notes/: contains notes and exercises directly from the textbook\ncourse-notes/: contains notes from pre-recorded lectures and slides\nhomework/: contains homework solutions"
-  },
-  {
-    "objectID": "README.html#dependencies",
-    "href": "README.html#dependencies",
-    "title": "Notes on Statistical Rethinking",
-    "section": "",
-    "text": "The quarto notebooks use both R and Python in their code.\n\n\nFirst, install Quarto.\n\n\n\nInstall dependencies using uv:\nuv sync\nThis creates a virtual environment and installs packages from the lock file.\nNote: pymc compiles code at runtime, utilizing the g++ compiler it finds in the PATH.\n\n\n\nThis project uses R 4.5.2, which can be installed using rig:\nrig add 4.5.2\nThen, use rv to install the R dependencies:\nrv sync\n\n\n\nYou’ll need to have Hunspell installed for the spellcheck quarto extension to work.\nWindows:\nchoco install hunspell.portable\nMac:\nbrew install hunspell\nLinux:\nsudo apt-get install hunspell\n\n\nAfter installing Hunspell, you must install the en_US dictionary.\nWindows/Mac:\n\nDownload the dictionary files (both files: .dic and .aff).\nPlace them in hunspell’s dictionary SEARCH PATH.\n\n\nTo add a new directory to the search path, add the directory to the DICPATH environment variable.\nTo view the search path, use hunspell -D:\n\nLinux:\nsudo apt-get install hunspell-en-us"
-  },
-  {
-    "objectID": "README.html#build",
-    "href": "README.html#build",
-    "title": "Notes on Statistical Rethinking",
-    "section": "",
-    "text": "After installing the necessary dependencies, build the project:\nquarto preview"
-  },
-  {
-    "objectID": "LICENSE.html",
-    "href": "LICENSE.html",
-    "title": "License",
-    "section": "",
-    "text": "Copyright (c) 2026 Josh Livingston\n\nWritten notes: CC0 1.0 Universal\nCode: MIT License\n\n\n\nUnofficial companion to Statistical Rethinking by Richard McElreath. My notes and code are meant to complement the book, not replace it. If you find these notes helpful, consider buying the book."
-  },
-  {
-    "objectID": "LICENSE.html#acknowledgment",
-    "href": "LICENSE.html#acknowledgment",
-    "title": "License",
-    "section": "",
-    "text": "Unofficial companion to Statistical Rethinking by Richard McElreath. My notes and code are meant to complement the book, not replace it. If you find these notes helpful, consider buying the book."
-  },
-  {
-    "objectID": "book-notes/chapter-02.html",
-    "href": "book-notes/chapter-02.html",
-    "title": "Chapter 2: Small Worlds and Large Worlds",
-    "section": "",
-    "text": "Statistical modeling exists dualistically, in a small world (contained by the model’s inherent logic) and a big world (the context in which the model will live).\nIn the small world, it is important to make sure the model is valid, consistent, and well-behaved.\nThe large world is the broader context in which the finalized model will exist. It is important to note that the statistical model always underrepresents the full context of the large world. Out of sample data emerge, and a model’s logical inconsistencies can surface.\nAdapting to the large world is a straightforward process, for nature. For Bayesian models, the process is much more complex. It is difficult to beat natural heuristics once a model identifies what to look for.\nChapter 2 focuses on the small world.",
-    "crumbs": [
-      "Book Notes",
-      "Chapter 2: Small Worlds and Large Worlds"
-    ]
-  },
-  {
-    "objectID": "book-notes/chapter-02.html#the-garden-of-forking-data",
-    "href": "book-notes/chapter-02.html#the-garden-of-forking-data",
-    "title": "Chapter 2: Small Worlds and Large Worlds",
-    "section": "2.1: The garden of forking data",
-    "text": "2.1: The garden of forking data\nBayesian analysis lends itself to continually exploring alternatives. In this sense, Bayesian analysis creates a series of data “forks” in its quest to deduce.",
-    "crumbs": [
-      "Book Notes",
-      "Chapter 2: Small Worlds and Large Worlds"
-    ]
-  },
-  {
-    "objectID": "book-notes/chapter-02.html#building-a-model",
-    "href": "book-notes/chapter-02.html#building-a-model",
-    "title": "Chapter 2: Small Worlds and Large Worlds",
-    "section": "2.2: Building a model",
-    "text": "2.2: Building a model\nDevelopment of a Bayesian model is best done cyclically:\n\nCreate a data story\nUpdate\nEvaluate\nRepeat\n\n\n2.2.1: A data story\nThe first step is to develop a story, built on either associations or causality, about the data, particularly its variation. Data stories involve descriptions of the large world, as well as the small world sampling process. This story is then put into formal terms of probability.\nRecall that any model may map back to multiple stories. Thus, model success does not necessarily imply confirmation of the story.\n\n\n2.2.2: Bayesian updating\nYou create a Bayesian model with an initial estimate, your prior. Then, as you sample data, your model learns from the new data, updating itself.\n\n\n2.2.3: Evaluate\nThe nature of Bayesian models guarantees that, within the small world, the model will achieve perfect inference. This means that extra care must be taken to evaluate the model within the large world, where small world success does not necessarily translate.\nRemember that a model’s assumptions are never 100% correct. Failure to disprove a model is therefore an error of science, not a sign of success.",
-    "crumbs": [
-      "Book Notes",
-      "Chapter 2: Small Worlds and Large Worlds"
-    ]
-  },
-  {
-    "objectID": "book-notes/chapter-02.html#components-of-the-model",
-    "href": "book-notes/chapter-02.html#components-of-the-model",
-    "title": "Chapter 2: Small Worlds and Large Worlds",
-    "section": "2.3: Components of the model",
-    "text": "2.3: Components of the model\n\n2.3.1: Variables\nIn the context of Bayesian models, variables refer to either observable data or unobservable parameters.\n\n\n2.3.2: Definitions\nThe definitions of the relationships among variables constitute a model.\n\n2.3.2.1: Observed variables\nTo “count” an observed variable, we assign it a probability distribution, known as a likelihood.\n\n\n2.3.2.2: Unobserved variables\nTo “count” an unobserved variable (a parameter), assign it a prior, then update the prior as the model learns from the data.\nThe prior is part of the model; thus, it should be developed within the same cyclic development of the rest of the model.\nPriors are arbitrary, a choice made by the scientist. So, it is important to test many priors. This does not mean that the scientist has undue influence over the model. If the chosen prior is bad, the model will be bad.",
-    "crumbs": [
-      "Book Notes",
-      "Chapter 2: Small Worlds and Large Worlds"
-    ]
-  },
-  {
-    "objectID": "book-notes/chapter-02.html#making-the-model-go",
-    "href": "book-notes/chapter-02.html#making-the-model-go",
-    "title": "Chapter 2: Small Worlds and Large Worlds",
-    "section": "2.4: Making the model go",
-    "text": "2.4: Making the model go\nOnce the components have been established, the Bayesian model will update the prior distributions until the posterior distribution is determined. The posterior contains the probability distribution of different parameters, conditioned on the data and model.\n\n2.4.1: Bayes’ theorem\nNote that the following equations are equivalent:\n\\[\n\\Pr(A,B) = \\Pr(A|B)\\Pr(B) \\tag{2.1}\n\\]\n\\[\n\\Pr(A,B) = \\Pr(B|A)\\Pr(A) \\tag{2.2}\n\\]\nBoth equations represent the joint probability space of \\(A\\) and \\(B\\). \\((2.1)\\) does so by first asking “what is the probability of \\(B\\)?” Then, let’s suppose \\(B\\) occurs. Now, \\(B\\) having occurred, “what is the probability of \\(A\\)?” Multiply the two results together. \\((2.2)\\) follows the same sequence but in reverse.\nThe result is logical equivalence:\n\\[\n\\Pr(A|B)\\Pr(B) = \\Pr(B|A)\\Pr(A) \\tag{2.3}\n\\]\nNote that this equivalence can also be reached mathematically, via the definition of conditional probability (in the discrete case) or conditional density (continuous).\nBayes’ theorem wonderfully exploits this equivalence:\n\\[\n\\Pr(B|A) = \\frac{\\Pr(A|B)\\Pr(B)}{\\Pr(A)} \\tag{2.4}\n\\]\nWhy is the Bayes’ theorem expression better? The answer lies in practice:\n\n\\(\\Pr(B|A)\\) is difficult to measure directly.\n\\(\\Pr(A|B)\\) is the modeled likelihood.\n\\(\\Pr(B)\\) is simply the prior.\n\\(\\Pr(A)\\) (see appendix) is not needed, due to the implied proportionality:\n\n\\[\n\\Pr(B|A) \\propto \\Pr(A|B)\\Pr(B) \\tag{2.5}\n\\]\n\\((2.5)\\) says that the posterior is proportional to the likelihood multiplied by the prior. Since we choose the prior, we simply have to calculate the likelihood to find the shape of the posterior. We don’t need the exact density values; any needed estimation can be performed on the proportional density.\nWhile Bayes’ theorem is used by any probability-based inference, Bayesian inference concerns specifically the generalization of Bayes’ theorem to abstractions like parameters and models.\n\n\n2.4.2: Motors\nRethinking introduces three motors that each approximate Bayesian inference:\n\nGrid approximation\nQuadratic approximation\nMarkov chain Monte Carlo (MCMC)\n\n\n\n2.4.3: Grid approximation\nSimilar to grid search in machine learning, grid approximation in Bayesian inference achieves great performance in approximating the posterior, using a discrete set of possible parameter values.\nGrid approximation follows 5 steps:\n\nDefine the parameter grid:\n\n\n\nShow code\nimport numpy as np\n\n# change this to increase/decrease approximation precision\nN_OUT = 20\np_grid = np.linspace(0, 1, N_OUT)\n\n\n\nCompute the likelihood at each parameter value:\n\n\n\nShow code\nimport scipy.stats as st\n\nlikelihood = st.binom.pmf(6, 9, p_grid)\n\n\n\nDefine the priors:\n\n\n\nShow code\npriors = {\n    \"Uniform\": np.ones(N_OUT),\n    \"Step Function\": (p_grid &gt;= 0.5).astype(float),\n    \"Exponential Peak\": np.exp(-5 * np.abs(p_grid - 0.5)),\n}\n\n\n\nCompute the posteriors by multiplying the priors and the likelihood:\n\n\n\nShow code\nposteriors = {\n    name: (likelihood * prior) / (likelihood * prior).sum()\n    for name, prior in priors.items()\n}\n\n\n\nAnalyze the results. Notice the effect of the prior choice:\n\n\n\nShow code\nimport matplotlib.pyplot as plt\n\nfig, axes = plt.subplots(3, 1, figsize=(8, 15), sharey=True)\n\nfor ax, (name, posterior) in zip(axes, posteriors.items()):\n    ax.plot(p_grid, posterior, \"-o\")\n    ax.set_title(name)\n    ax.set_xlabel(\"Probability of success\")\n\naxes[0].set_ylabel(\"Posterior probability\")\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n2.4.4: Quadratic approximation\nGenerally, the area near the peak of the posterior will be nearly Gaussian. So, the posterior can be approximated by a Gaussian distribution.\nThis Gaussian approximation is known as quadratic approximation because the logarithm of a normal distribution is a parabola. Quadratic approximation is also referred to as:\n\nGaussian approximation\nLaplace approximation\n\nQuadratic approximation is convenient because you only ever need to estimate two parameters: mean and variance. Grid search, in contrast, scales exponentially with the number of parameters.\nQuadratic approximation is comprised of two steps:\n\nFind the maximum a posteriori (MAP).\nEstimate the distribution near the MAP.\n\n\nImplementation via Hessian\nSuppose we are interested in estimating parameter \\(\\theta\\) via quadratic approximation. That is,\n\\[\n\\theta \\sim \\mathcal{N}(\\mu, \\sigma^2). \\tag{2.6}\n\\]\nThe posterior of \\(\\theta\\) is thus provided by the pmf. \\[\np(\\theta) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}}\n            \\exp\\left(-\\frac{(\\theta - \\mu)^2}{2\\sigma^2}\\right).\n\\tag{2.7}\n\\]\nTaking the natural log provides the log-posterior.\n\\[\nf(\\theta) = \\ln(p(\\theta)) = -\\frac{1}{2}\\ln(2\\pi\\sigma^2)-\n                             \\frac{(\\theta - \\mu)^2}{2\\sigma^2}.\n\\tag{2.8}\n\\]\nWe are interested in the shape of the distribution near the mode. We label this peak \\(\\hat{\\theta}\\).\nTo approximate \\(f(\\theta)\\), we use a Taylor expansion.\n\\[\nf(\\theta) \\approx f(\\hat{\\theta}) +\n                  f'(\\hat{\\theta})(\\theta - \\hat{\\theta}) +\n                  \\frac{1}{2}f''(\\hat{\\theta})(\\theta - \\hat{\\theta})^2.\n\\tag{2.9}\n\\]\nSince \\(\\hat{\\theta}\\) is the peak of the distribution, we know that \\(f'(\\hat{\\theta})\\) equals 0. This simplifies \\(f(\\theta)\\).\n\\[\nf(\\theta) \\approx \\text{const} +\n                  \\frac{1}{2}f''(\\hat{\\theta})(\\theta - \\hat{\\theta})^2.\n\\tag{2.10}\n\\]\nSince \\(f(\\theta)\\) equals \\(\\ln(p(\\theta))\\), we set the equations approximately equal to each other.\n\\[\n-\\frac{1}{2}\\ln(2\\pi\\sigma^2)- \\frac{(\\theta - \\mu)^2}{2\\sigma^2}\n\\approx\n\\text{const} + \\frac{1}{2}f''(\\hat{\\theta})(\\theta - \\hat{\\theta})^2.\n\\tag{2.11}\n\\]\nIgnoring the constant terms shows us that\n\\[\n-\\frac{1}{2\\sigma^2}(\\theta - \\mu)^2\n\\approx\n\\frac{1}{2}f''(\\hat{\\theta})(\\theta - \\hat{\\theta})^2.\n\\tag{2.12}\n\\]\nThus,\n\\[\n-\\frac{1}{\\sigma^2} \\approx f''(\\hat{\\theta}).\n\\tag{2.13}\n\\]\nThe Hessian, \\(H\\), is the matrix of partial second derivatives. In other terms,\n\\[\nf''(\\hat{\\theta}) = H.\n\\tag{2.14}\n\\]\nSo, we can rewrite \\(\\sigma\\) in terms of the Hessian.\n\\[\n\\begin{align}\n-\\frac{1}{\\sigma^2} &\\approx H \\tag{2.15} \\\\\n\\sigma^2 &\\approx -\\frac{1}{H} \\tag{2.16} \\\\\n\\sigma &\\approx \\sqrt{-\\frac{1}{H}}. \\tag{2.17}\n\\end{align}\n\\]\nThe pymc translation provides an implementation of quadratic approximation that utilizes these special properties of the normal distribution. My class below organizes the fitting code together with the analysis and plotting.\n\n\nShow code\nimport pymc as pm\n\n\nclass BinomialQuadraticApproximation:\n    def __init__(self, W: int, L: int):\n        self.W = W\n        self.L = L\n        self._mu_last = None\n        self._sigma_last = None\n\n    @property\n    def n(self) -&gt; int:\n        \"\"\"\n        Number of trials. Equals W + L.\n        \"\"\"\n        return self.W + self.L\n\n    @property\n    def last_fit(self):\n        \"\"\"\n        Returns mu, sigma (None, None if .fit() has not been called)\n        \"\"\"\n        return self._mu_last, self._sigma_last\n\n    def ci(self, q):\n        \"\"\"\n        Given quantile, calcualtes credible interval for most recent fit\n        \"\"\"\n        mu, sigma = self.last_fit\n        if mu is None or sigma is None:\n            raise ValueError(\"Run .fit() before computing credible intervals\")\n        return st.norm.ppf(q, loc=mu, scale=sigma)\n\n    def plot(self, ax=None):\n        mu, sigma = self.last_fit\n        if mu is None or sigma is None:\n            raise ValueError(\"Run .fit() before plotting\")\n\n        a = self.W + 1\n        b = self.L + 1\n        x = np.linspace(0, 1)\n        if ax is None:\n            fig, ax = plt.subplots(1, 1)\n\n        ax.plot(x, st.beta.pdf(x, a, b), \"r-\", label=\"Analytical Posterior\")\n        ax.plot(x, st.norm.pdf(x, mu, sigma), \"b-\", label=\"Quadratic Approximation\")\n\n        ax.set_title(f\"n = {self.n}\")\n        ax.legend()\n\n    def fit(self):\n        \"\"\"\n        Objective is to identify mu and sigma to fit the posterior normal\n        distribution.\n\n        mu is a model parameter, the average probability of success. mu receives\n        a uniform prior and its MAP will be used for inference\n\n        sigma is obtained using the hessian at the MAP.\n\n        Taken together, N(mu, sigma) represents the posterior distribution of the\n        probability of success.\n\n        # Notes:\n\n        ## `default_transform=None`\n        - In pymc5, `default_transform=None` can be added to the parameter,\n          rather than as tags after the fact.\n          - Transformation to log-odds are performed by default on bounded\n            parameters\n          - We disable so that we may compute the hessian on the untransformed\n            space\n\n        ## 'Powell' optimizer\n        - Contrary to the translation example, here, the default optimizer does\n            not move `p` when `default_transform=None`\n        - 'Powell' returns 0.67 as expected\n        \"\"\"\n        with pm.Model() as model:\n            # parameters\n            ## p: prior: uniform over [0,1]\n            p = pm.Uniform(\"p\", 0, 1, default_transform=None)\n\n            # likelihood: binomial\n            x = pm.Binomial(\"x\", n=self.n, p=p, observed=self.W)\n\n            # find MAP\n            MAP = pm.find_MAP(method=\"Powell\")\n\n            # estimate sigma at MAP\n            hessian = pm.find_hessian(MAP, vars=[p], negate_output=False)\n            sigma = np.sqrt(-np.linalg.inv(hessian))[0][0]\n\n        self._set_last_fit(MAP[\"p\"], sigma)\n        return self.last_fit\n\n    def _set_last_fit(self, mu, sigma):\n        self._mu_last = mu\n        self._sigma_last = sigma\n\n\n/home/runner/work/statistical-rethinking-notes/statistical-rethinking-notes/.venv/lib/python3.12/site-packages/arviz/__init__.py:39: FutureWarning: \nArviZ is undergoing a major refactor to improve flexibility and extensibility while maintaining a user-friendly interface.\nSome upcoming changes may be backward incompatible.\nFor details and migration guidance, visit: https://python.arviz.org/en/latest/user_guide/migration_guide.html\n  warn(\n\n\nWe can use the final parameter values to analyze our distribution:\n\n\nShow code\nmodel = BinomialQuadraticApproximation(6, 3)\nmu, sigma = model.fit()\nci_lower = model.ci(0.055)\nci_upper = model.ci(0.945)\n\n\n/home/runner/work/statistical-rethinking-notes/statistical-rethinking-notes/.venv/lib/python3.12/site-packages/rich\n/live.py:260: UserWarning: install \"ipywidgets\" for Jupyter support\n  warnings.warn('install \"ipywidgets\" for Jupyter support')\n\n\n\n/home/runner/work/statistical-rethinking-notes/statistical-rethinking-notes/.venv/lib/python3.12/site-packages/scip\ny/optimize/_optimize.py:2540: RuntimeWarning: invalid value encountered in scalar multiply\n  tmp2 = (x - v) * (fx - fw)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nParameter\nMean (MAP)\nStd Dev\n5.5% Credible Interval (CI)\n94.5% CI\n\n\n\n\n\\(p\\)\n0.67\n0.16\n0.42\n0.92\n\n\n\nWe can compare the “true” posterior with the quadratic approximation:\n\n\nShow code\nw_values = [6, 12, 24]\nfig, axes = plt.subplots(1, len(w_values), figsize=(5*len(w_values),5))\nfor i, w in enumerate(w_values):\n    model = BinomialQuadraticApproximation(w, int(w * 0.5))\n    model.fit()\n    model.plot(ax=axes[i])\nplt.show()\n\n\n/home/runner/work/statistical-rethinking-notes/statistical-rethinking-notes/.venv/lib/python3.12/site-packages/rich\n/live.py:260: UserWarning: install \"ipywidgets\" for Jupyter support\n  warnings.warn('install \"ipywidgets\" for Jupyter support')\n\n\n\n/home/runner/work/statistical-rethinking-notes/statistical-rethinking-notes/.venv/lib/python3.12/site-packages/scip\ny/optimize/_optimize.py:2540: RuntimeWarning: invalid value encountered in scalar multiply\n  tmp2 = (x - v) * (fx - fw)\n\n\n\n\n\n\n/home/runner/work/statistical-rethinking-notes/statistical-rethinking-notes/.venv/lib/python3.12/site-packages/rich\n/live.py:260: UserWarning: install \"ipywidgets\" for Jupyter support\n  warnings.warn('install \"ipywidgets\" for Jupyter support')\n\n\n\n/home/runner/work/statistical-rethinking-notes/statistical-rethinking-notes/.venv/lib/python3.12/site-packages/scip\ny/optimize/_optimize.py:2540: RuntimeWarning: invalid value encountered in scalar multiply\n  tmp2 = (x - v) * (fx - fw)\n\n\n\n\n\n\n/home/runner/work/statistical-rethinking-notes/statistical-rethinking-notes/.venv/lib/python3.12/site-packages/rich\n/live.py:260: UserWarning: install \"ipywidgets\" for Jupyter support\n  warnings.warn('install \"ipywidgets\" for Jupyter support')\n\n\n\n/home/runner/work/statistical-rethinking-notes/statistical-rethinking-notes/.venv/lib/python3.12/site-packages/scip\ny/optimize/_optimize.py:2540: RuntimeWarning: invalid value encountered in scalar multiply\n  tmp2 = (x - v) * (fx - fw)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2.4.5: Markov chain Monte Carlo\nSince grid approximation scales poorly and quadratic approximation does not fit most scenarios, Markov chain Monte Carlo (MCMC), along with other model fitting techniques, have been developed.\nMCMC works by sampling from the posterior directly; the result is a sampling distribution of the parameters.\nThis pymc5 implementation uses the Metropolis Algorithm, explained in Chapter 9.\n\n\nShow code\nW = 6\nL = 3\nN = 1000\np = np.repeat(0.0, N)\np[0] = 0.5\nq0 = st.binom.pmf(W, W + L, p[0])\nfor i in range(1, N):\n    # Propose a value\n    p_new = st.norm.rvs(p[i - 1], 0.1)\n\n    # Enforce [0, 1]\n    while p_new &lt; 0:\n        p_new = np.abs(p_new)\n        while p_new &gt; 1:\n            p_new = 2 - p_new\n\n    # Accept/Reject\n    q1 = st.binom.pmf(W, W + L, p_new)\n    if st.uniform.rvs(0, 1) &lt; q1 / q0:\n        # Accept\n        p[i] = p_new\n        q0 = q1\n    else:\n        # Reject\n        p[i] = p[i - 1]\n\n\nThe resulting sampling distribution can be visualized alongside its estimated density and the analytical posterior.\n\n\nShow code\nimport arviz as az\n\nx = np.linspace(0, 1)\nfig, ax = plt.subplots(1, 1)\nax2 = ax.twinx()\n\nax2.plot(x, st.beta.pdf(x, W + 1, L + 1), \"r-\", label=\"Analytical posterior\")\n\naz.plot_kde(p, label=\"Metropolis approximation\")\nax.hist(p, bins=30)\n\nfig.tight_layout()\nax.legend()\nplt.show()\n\n\n/tmp/ipykernel_6030/294223342.py:13: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.\n  ax.legend()",
-    "crumbs": [
-      "Book Notes",
-      "Chapter 2: Small Worlds and Large Worlds"
-    ]
-  },
-  {
-    "objectID": "book-notes/chapter-02.html#appendix",
-    "href": "book-notes/chapter-02.html#appendix",
-    "title": "Chapter 2: Small Worlds and Large Worlds",
-    "section": "Appendix",
-    "text": "Appendix\n\nA2.4.1: Bayes’ theorem\nNote that \\(\\Pr(A)\\) is measurable via the Law of Total Probability:\n\\[\n\\Pr(A) = \\mathbb{E}[\\Pr(A|B)] = \\int{\\Pr(A|B)\\Pr(B)dB} \\tag{A2.1}\n\\]\n\\(\\mathbb{E}[\\Pr(A|B)]\\) is also referred to as the marginal likelihood.",
-    "crumbs": [
-      "Book Notes",
-      "Chapter 2: Small Worlds and Large Worlds"
-    ]
-  },
-  {
     "objectID": "book-notes/chapter-01.html",
     "href": "book-notes/chapter-01.html",
     "title": "Chapter 1: The Golem of Prague",
@@ -244,6 +86,185 @@
       "Book Notes",
       "Chapter 1: The Golem of Prague"
     ]
+  },
+  {
+    "objectID": "book-notes/chapter-02.html",
+    "href": "book-notes/chapter-02.html",
+    "title": "Chapter 2: Small Worlds and Large Worlds",
+    "section": "",
+    "text": "Statistical modeling exists dualistically, in a small world (contained by the model’s inherent logic) and a big world (the context in which the model will live).\nIn the small world, it is important to make sure the model is valid, consistent, and well-behaved.\nThe large world is the broader context in which the finalized model will exist. It is important to note that the statistical model always underrepresents the full context of the large world. Out of sample data emerge, and a model’s logical inconsistencies can surface.\nAdapting to the large world is a straightforward process, for nature. For Bayesian models, the process is much more complex. It is difficult to beat natural heuristics once a model identifies what to look for.\nChapter 2 focuses on the small world.",
+    "crumbs": [
+      "Book Notes",
+      "Chapter 2: Small Worlds and Large Worlds"
+    ]
+  },
+  {
+    "objectID": "book-notes/chapter-02.html#the-garden-of-forking-data",
+    "href": "book-notes/chapter-02.html#the-garden-of-forking-data",
+    "title": "Chapter 2: Small Worlds and Large Worlds",
+    "section": "2.1: The garden of forking data",
+    "text": "2.1: The garden of forking data\nBayesian analysis lends itself to continually exploring alternatives. In this sense, Bayesian analysis creates a series of data “forks” in its quest to deduce.",
+    "crumbs": [
+      "Book Notes",
+      "Chapter 2: Small Worlds and Large Worlds"
+    ]
+  },
+  {
+    "objectID": "book-notes/chapter-02.html#building-a-model",
+    "href": "book-notes/chapter-02.html#building-a-model",
+    "title": "Chapter 2: Small Worlds and Large Worlds",
+    "section": "2.2: Building a model",
+    "text": "2.2: Building a model\nDevelopment of a Bayesian model is best done cyclically:\n\nCreate a data story\nUpdate\nEvaluate\nRepeat\n\n\n2.2.1: A data story\nThe first step is to develop a story, built on either associations or causality, about the data, particularly its variation. Data stories involve descriptions of the large world, as well as the small world sampling process. This story is then put into formal terms of probability.\nRecall that any model may map back to multiple stories. Thus, model success does not necessarily imply confirmation of the story.\n\n\n2.2.2: Bayesian updating\nYou create a Bayesian model with an initial estimate, your prior. Then, as you sample data, your model learns from the new data, updating itself.\n\n\n2.2.3: Evaluate\nThe nature of Bayesian models guarantees that, within the small world, the model will achieve perfect inference. This means that extra care must be taken to evaluate the model within the large world, where small world success does not necessarily translate.\nRemember that a model’s assumptions are never 100% correct. Failure to disprove a model is therefore an error of science, not a sign of success.",
+    "crumbs": [
+      "Book Notes",
+      "Chapter 2: Small Worlds and Large Worlds"
+    ]
+  },
+  {
+    "objectID": "book-notes/chapter-02.html#components-of-the-model",
+    "href": "book-notes/chapter-02.html#components-of-the-model",
+    "title": "Chapter 2: Small Worlds and Large Worlds",
+    "section": "2.3: Components of the model",
+    "text": "2.3: Components of the model\n\n2.3.1: Variables\nIn the context of Bayesian models, variables refer to either observable data or unobservable parameters.\n\n\n2.3.2: Definitions\nThe definitions of the relationships among variables constitute a model.\n\n2.3.2.1: Observed variables\nTo “count” an observed variable, we assign it a probability distribution, known as a likelihood.\n\n\n2.3.2.2: Unobserved variables\nTo “count” an unobserved variable (a parameter), assign it a prior, then update the prior as the model learns from the data.\nThe prior is part of the model; thus, it should be developed within the same cyclic development of the rest of the model.\nPriors are arbitrary, a choice made by the scientist. So, it is important to test many priors. This does not mean that the scientist has undue influence over the model. If the chosen prior is bad, the model will be bad.",
+    "crumbs": [
+      "Book Notes",
+      "Chapter 2: Small Worlds and Large Worlds"
+    ]
+  },
+  {
+    "objectID": "book-notes/chapter-02.html#making-the-model-go",
+    "href": "book-notes/chapter-02.html#making-the-model-go",
+    "title": "Chapter 2: Small Worlds and Large Worlds",
+    "section": "2.4: Making the model go",
+    "text": "2.4: Making the model go\nOnce the components have been established, the Bayesian model will update the prior distributions until the posterior distribution is determined. The posterior contains the probability distribution of different parameters, conditioned on the data and model.\n\n2.4.1: Bayes’ theorem\nNote that the following equations are equivalent:\n\\[\n\\Pr(A,B) = \\Pr(A|B)\\Pr(B) \\tag{2.1}\n\\]\n\\[\n\\Pr(A,B) = \\Pr(B|A)\\Pr(A) \\tag{2.2}\n\\]\nBoth equations represent the joint probability space of \\(A\\) and \\(B\\). \\((2.1)\\) does so by first asking “what is the probability of \\(B\\)?” Then, let’s suppose \\(B\\) occurs. Now, \\(B\\) having occurred, “what is the probability of \\(A\\)?” Multiply the two results together. \\((2.2)\\) follows the same sequence but in reverse.\nThe result is logical equivalence:\n\\[\n\\Pr(A|B)\\Pr(B) = \\Pr(B|A)\\Pr(A) \\tag{2.3}\n\\]\nNote that this equivalence can also be reached mathematically, via the definition of conditional probability (in the discrete case) or conditional density (continuous).\nBayes’ theorem wonderfully exploits this equivalence:\n\\[\n\\Pr(B|A) = \\frac{\\Pr(A|B)\\Pr(B)}{\\Pr(A)} \\tag{2.4}\n\\]\nWhy is the Bayes’ theorem expression better? The answer lies in practice:\n\n\\(\\Pr(B|A)\\) is difficult to measure directly.\n\\(\\Pr(A|B)\\) is the modeled likelihood.\n\\(\\Pr(B)\\) is simply the prior.\n\\(\\Pr(A)\\) (see appendix) is not needed, due to the implied proportionality:\n\n\\[\n\\Pr(B|A) \\propto \\Pr(A|B)\\Pr(B) \\tag{2.5}\n\\]\n\\((2.5)\\) says that the posterior is proportional to the likelihood multiplied by the prior. Since we choose the prior, we simply have to calculate the likelihood to find the shape of the posterior. We don’t need the exact density values; any needed estimation can be performed on the proportional density.\nWhile Bayes’ theorem is used by any probability-based inference, Bayesian inference concerns specifically the generalization of Bayes’ theorem to abstractions like parameters and models.\n\n\n2.4.2: Motors\nRethinking introduces three motors that each approximate Bayesian inference:\n\nGrid approximation\nQuadratic approximation\nMarkov chain Monte Carlo (MCMC)\n\n\n\n2.4.3: Grid approximation\nSimilar to grid search in machine learning, grid approximation in Bayesian inference achieves great performance in approximating the posterior, using a discrete set of possible parameter values.\nGrid approximation follows 5 steps:\n\nDefine the parameter grid:\n\n\n\nShow code\nimport numpy as np\n\n# change this to increase/decrease approximation precision\nN_OUT = 20\np_grid = np.linspace(0, 1, N_OUT)\n\n\n\nCompute the likelihood at each parameter value:\n\n\n\nShow code\nimport scipy.stats as st\n\nlikelihood = st.binom.pmf(6, 9, p_grid)\n\n\n\nDefine the priors:\n\n\n\nShow code\npriors = {\n    \"Uniform\": np.ones(N_OUT),\n    \"Step Function\": (p_grid &gt;= 0.5).astype(float),\n    \"Exponential Peak\": np.exp(-5 * np.abs(p_grid - 0.5)),\n}\n\n\n\nCompute the posteriors by multiplying the priors and the likelihood:\n\n\n\nShow code\nposteriors = {\n    name: (likelihood * prior) / (likelihood * prior).sum()\n    for name, prior in priors.items()\n}\n\n\n\nAnalyze the results. Notice the effect of the prior choice:\n\n\n\nShow code\nimport matplotlib.pyplot as plt\n\nfig, axes = plt.subplots(3, 1, figsize=(8, 15), sharey=True)\n\nfor ax, (name, posterior) in zip(axes, posteriors.items()):\n    ax.plot(p_grid, posterior, \"-o\")\n    ax.set_title(name)\n    ax.set_xlabel(\"Probability of success\")\n\naxes[0].set_ylabel(\"Posterior probability\")\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n2.4.4: Quadratic approximation\nGenerally, the area near the peak of the posterior will be nearly Gaussian. So, the posterior can be approximated by a Gaussian distribution.\nThis Gaussian approximation is known as quadratic approximation because the logarithm of a normal distribution is a parabola. Quadratic approximation is also referred to as:\n\nGaussian approximation\nLaplace approximation\n\nQuadratic approximation is convenient because you only ever need to estimate two parameters: mean and variance. Grid search, in contrast, scales exponentially with the number of parameters.\nQuadratic approximation is comprised of two steps:\n\nFind the maximum a posteriori (MAP).\nEstimate the distribution near the MAP.\n\n\nImplementation via Hessian\nSuppose we are interested in estimating parameter \\(\\theta\\) via quadratic approximation. That is,\n\\[\n\\theta \\sim \\mathcal{N}(\\mu, \\sigma^2). \\tag{2.6}\n\\]\nThe posterior of \\(\\theta\\) is thus provided by the pmf. \\[\np(\\theta) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}}\n            \\exp\\left(-\\frac{(\\theta - \\mu)^2}{2\\sigma^2}\\right).\n\\tag{2.7}\n\\]\nTaking the natural log provides the log-posterior.\n\\[\nf(\\theta) = \\ln(p(\\theta)) = -\\frac{1}{2}\\ln(2\\pi\\sigma^2)-\n                             \\frac{(\\theta - \\mu)^2}{2\\sigma^2}.\n\\tag{2.8}\n\\]\nWe are interested in the shape of the distribution near the mode. We label this peak \\(\\hat{\\theta}\\).\nTo approximate \\(f(\\theta)\\), we use a Taylor expansion.\n\\[\nf(\\theta) \\approx f(\\hat{\\theta}) +\n                  f'(\\hat{\\theta})(\\theta - \\hat{\\theta}) +\n                  \\frac{1}{2}f''(\\hat{\\theta})(\\theta - \\hat{\\theta})^2.\n\\tag{2.9}\n\\]\nSince \\(\\hat{\\theta}\\) is the peak of the distribution, we know that \\(f'(\\hat{\\theta})\\) equals 0. This simplifies \\(f(\\theta)\\).\n\\[\nf(\\theta) \\approx \\text{const} +\n                  \\frac{1}{2}f''(\\hat{\\theta})(\\theta - \\hat{\\theta})^2.\n\\tag{2.10}\n\\]\nSince \\(f(\\theta)\\) equals \\(\\ln(p(\\theta))\\), we set the equations approximately equal to each other.\n\\[\n-\\frac{1}{2}\\ln(2\\pi\\sigma^2)- \\frac{(\\theta - \\mu)^2}{2\\sigma^2}\n\\approx\n\\text{const} + \\frac{1}{2}f''(\\hat{\\theta})(\\theta - \\hat{\\theta})^2.\n\\tag{2.11}\n\\]\nIgnoring the constant terms shows us that\n\\[\n-\\frac{1}{2\\sigma^2}(\\theta - \\mu)^2\n\\approx\n\\frac{1}{2}f''(\\hat{\\theta})(\\theta - \\hat{\\theta})^2.\n\\tag{2.12}\n\\]\nThus,\n\\[\n-\\frac{1}{\\sigma^2} \\approx f''(\\hat{\\theta}).\n\\tag{2.13}\n\\]\nThe Hessian, \\(H\\), is the matrix of partial second derivatives. In other terms,\n\\[\nf''(\\hat{\\theta}) = H.\n\\tag{2.14}\n\\]\nSo, we can rewrite \\(\\sigma\\) in terms of the Hessian.\n\\[\n\\begin{align}\n-\\frac{1}{\\sigma^2} &\\approx H \\tag{2.15} \\\\\n\\sigma^2 &\\approx -\\frac{1}{H} \\tag{2.16} \\\\\n\\sigma &\\approx \\sqrt{-\\frac{1}{H}}. \\tag{2.17}\n\\end{align}\n\\]\nThe pymc translation provides an implementation of quadratic approximation that utilizes these special properties of the normal distribution. My class below organizes the fitting code together with the analysis and plotting.\n\n\nShow code\nimport pymc as pm\n\n\nclass BinomialQuadraticApproximation:\n    def __init__(self, W: int, L: int):\n        self.W = W\n        self.L = L\n        self._mu_last = None\n        self._sigma_last = None\n\n    @property\n    def n(self) -&gt; int:\n        \"\"\"\n        Number of trials. Equals W + L.\n        \"\"\"\n        return self.W + self.L\n\n    @property\n    def last_fit(self):\n        \"\"\"\n        Returns mu, sigma (None, None if .fit() has not been called)\n        \"\"\"\n        return self._mu_last, self._sigma_last\n\n    def ci(self, q):\n        \"\"\"\n        Given quantile, calcualtes credible interval for most recent fit\n        \"\"\"\n        mu, sigma = self.last_fit\n        if mu is None or sigma is None:\n            raise ValueError(\"Run .fit() before computing credible intervals\")\n        return st.norm.ppf(q, loc=mu, scale=sigma)\n\n    def plot(self, ax=None):\n        mu, sigma = self.last_fit\n        if mu is None or sigma is None:\n            raise ValueError(\"Run .fit() before plotting\")\n\n        a = self.W + 1\n        b = self.L + 1\n        x = np.linspace(0, 1)\n        if ax is None:\n            fig, ax = plt.subplots(1, 1)\n\n        ax.plot(x, st.beta.pdf(x, a, b), \"r-\", label=\"Analytical Posterior\")\n        ax.plot(x, st.norm.pdf(x, mu, sigma), \"b-\", label=\"Quadratic Approximation\")\n\n        ax.set_title(f\"n = {self.n}\")\n        ax.legend()\n\n    def fit(self):\n        \"\"\"\n        Objective is to identify mu and sigma to fit the posterior normal\n        distribution.\n\n        mu is a model parameter, the average probability of success. mu receives\n        a uniform prior and its MAP will be used for inference\n\n        sigma is obtained using the hessian at the MAP.\n\n        Taken together, N(mu, sigma) represents the posterior distribution of the\n        probability of success.\n\n        # Notes:\n\n        ## `default_transform=None`\n        - In pymc5, `default_transform=None` can be added to the parameter,\n          rather than as tags after the fact.\n          - Transformation to log-odds are performed by default on bounded\n            parameters\n          - We disable so that we may compute the hessian on the untransformed\n            space\n\n        ## 'Powell' optimizer\n        - Contrary to the translation example, here, the default optimizer does\n            not move `p` when `default_transform=None`\n        - 'Powell' returns 0.67 as expected\n        \"\"\"\n        with pm.Model() as model:\n            # parameters\n            ## p: prior: uniform over [0,1]\n            p = pm.Uniform(\"p\", 0, 1, default_transform=None)\n\n            # likelihood: binomial\n            x = pm.Binomial(\"x\", n=self.n, p=p, observed=self.W)\n\n            # find MAP\n            MAP = pm.find_MAP(method=\"Powell\")\n\n            # estimate sigma at MAP\n            hessian = pm.find_hessian(MAP, vars=[p], negate_output=False)\n            sigma = np.sqrt(-np.linalg.inv(hessian))[0][0]\n\n        self._set_last_fit(MAP[\"p\"], sigma)\n        return self.last_fit\n\n    def _set_last_fit(self, mu, sigma):\n        self._mu_last = mu\n        self._sigma_last = sigma\n\n\n/home/runner/work/statistical-rethinking-notes/statistical-rethinking-notes/.venv/lib/python3.12/site-packages/arviz/__init__.py:39: FutureWarning: \nArviZ is undergoing a major refactor to improve flexibility and extensibility while maintaining a user-friendly interface.\nSome upcoming changes may be backward incompatible.\nFor details and migration guidance, visit: https://python.arviz.org/en/latest/user_guide/migration_guide.html\n  warn(\n\n\nWe can use the final parameter values to analyze our distribution:\n\n\nShow code\nmodel = BinomialQuadraticApproximation(6, 3)\nmu, sigma = model.fit()\nci_lower = model.ci(0.055)\nci_upper = model.ci(0.945)\n\n\n/home/runner/work/statistical-rethinking-notes/statistical-rethinking-notes/.venv/lib/python3.12/site-packages/rich\n/live.py:260: UserWarning: install \"ipywidgets\" for Jupyter support\n  warnings.warn('install \"ipywidgets\" for Jupyter support')\n\n\n\n/home/runner/work/statistical-rethinking-notes/statistical-rethinking-notes/.venv/lib/python3.12/site-packages/scip\ny/optimize/_optimize.py:2540: RuntimeWarning: invalid value encountered in scalar multiply\n  tmp2 = (x - v) * (fx - fw)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nParameter\nMean (MAP)\nStd Dev\n5.5% Credible Interval (CI)\n94.5% CI\n\n\n\n\n\\(p\\)\n0.67\n0.16\n0.42\n0.92\n\n\n\nWe can compare the “true” posterior with the quadratic approximation:\n\n\nShow code\nw_values = [6, 12, 24]\nfig, axes = plt.subplots(1, len(w_values), figsize=(5*len(w_values),5))\nfor i, w in enumerate(w_values):\n    model = BinomialQuadraticApproximation(w, int(w * 0.5))\n    model.fit()\n    model.plot(ax=axes[i])\nplt.show()\n\n\n/home/runner/work/statistical-rethinking-notes/statistical-rethinking-notes/.venv/lib/python3.12/site-packages/rich\n/live.py:260: UserWarning: install \"ipywidgets\" for Jupyter support\n  warnings.warn('install \"ipywidgets\" for Jupyter support')\n\n\n\n/home/runner/work/statistical-rethinking-notes/statistical-rethinking-notes/.venv/lib/python3.12/site-packages/scip\ny/optimize/_optimize.py:2540: RuntimeWarning: invalid value encountered in scalar multiply\n  tmp2 = (x - v) * (fx - fw)\n\n\n\n\n\n\n/home/runner/work/statistical-rethinking-notes/statistical-rethinking-notes/.venv/lib/python3.12/site-packages/rich\n/live.py:260: UserWarning: install \"ipywidgets\" for Jupyter support\n  warnings.warn('install \"ipywidgets\" for Jupyter support')\n\n\n\n/home/runner/work/statistical-rethinking-notes/statistical-rethinking-notes/.venv/lib/python3.12/site-packages/scip\ny/optimize/_optimize.py:2540: RuntimeWarning: invalid value encountered in scalar multiply\n  tmp2 = (x - v) * (fx - fw)\n\n\n\n\n\n\n/home/runner/work/statistical-rethinking-notes/statistical-rethinking-notes/.venv/lib/python3.12/site-packages/rich\n/live.py:260: UserWarning: install \"ipywidgets\" for Jupyter support\n  warnings.warn('install \"ipywidgets\" for Jupyter support')\n\n\n\n/home/runner/work/statistical-rethinking-notes/statistical-rethinking-notes/.venv/lib/python3.12/site-packages/scip\ny/optimize/_optimize.py:2540: RuntimeWarning: invalid value encountered in scalar multiply\n  tmp2 = (x - v) * (fx - fw)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2.4.5: Markov chain Monte Carlo\nSince grid approximation scales poorly and quadratic approximation does not fit most scenarios, Markov chain Monte Carlo (MCMC), along with other model fitting techniques, have been developed.\nMCMC works by sampling from the posterior directly; the result is a sampling distribution of the parameters.\nThis pymc5 implementation uses the Metropolis Algorithm, explained in Chapter 9.\n\n\nShow code\nW = 6\nL = 3\nN = 1000\np = np.repeat(0.0, N)\np[0] = 0.5\nq0 = st.binom.pmf(W, W + L, p[0])\nfor i in range(1, N):\n    # Propose a value\n    p_new = st.norm.rvs(p[i - 1], 0.1)\n\n    # Enforce [0, 1]\n    while p_new &lt; 0:\n        p_new = np.abs(p_new)\n        while p_new &gt; 1:\n            p_new = 2 - p_new\n\n    # Accept/Reject\n    q1 = st.binom.pmf(W, W + L, p_new)\n    if st.uniform.rvs(0, 1) &lt; q1 / q0:\n        # Accept\n        p[i] = p_new\n        q0 = q1\n    else:\n        # Reject\n        p[i] = p[i - 1]\n\n\nThe resulting sampling distribution can be visualized alongside its estimated density and the analytical posterior.\n\n\nShow code\nimport arviz as az\n\nx = np.linspace(0, 1)\nfig, ax = plt.subplots(1, 1)\nax2 = ax.twinx()\n\nax2.plot(x, st.beta.pdf(x, W + 1, L + 1), \"r-\", label=\"Analytical posterior\")\n\naz.plot_kde(p, label=\"Metropolis approximation\")\nax.hist(p, bins=30)\n\nfig.tight_layout()\nax.legend()\nplt.show()\n\n\n/tmp/ipykernel_6063/294223342.py:13: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.\n  ax.legend()",
+    "crumbs": [
+      "Book Notes",
+      "Chapter 2: Small Worlds and Large Worlds"
+    ]
+  },
+  {
+    "objectID": "book-notes/chapter-02.html#appendix",
+    "href": "book-notes/chapter-02.html#appendix",
+    "title": "Chapter 2: Small Worlds and Large Worlds",
+    "section": "Appendix",
+    "text": "Appendix\n\nA2.4.1: Bayes’ theorem\nNote that \\(\\Pr(A)\\) is measurable via the Law of Total Probability:\n\\[\n\\Pr(A) = \\mathbb{E}[\\Pr(A|B)] = \\int{\\Pr(A|B)\\Pr(B)dB} \\tag{A2.1}\n\\]\n\\(\\mathbb{E}[\\Pr(A|B)]\\) is also referred to as the marginal likelihood.",
+    "crumbs": [
+      "Book Notes",
+      "Chapter 2: Small Worlds and Large Worlds"
+    ]
+  },
+  {
+    "objectID": "LICENSE.html",
+    "href": "LICENSE.html",
+    "title": "License",
+    "section": "",
+    "text": "Copyright (c) 2026 Josh Livingston\n\nWritten notes: CC0 1.0 Universal\nCode: MIT License\n\n\n\nUnofficial companion to Statistical Rethinking by Richard McElreath. My notes and code are meant to complement the book, not replace it. If you find these notes helpful, consider buying the book."
+  },
+  {
+    "objectID": "LICENSE.html#acknowledgment",
+    "href": "LICENSE.html#acknowledgment",
+    "title": "License",
+    "section": "",
+    "text": "Unofficial companion to Statistical Rethinking by Richard McElreath. My notes and code are meant to complement the book, not replace it. If you find these notes helpful, consider buying the book."
+  },
+  {
+    "objectID": "README.html",
+    "href": "README.html",
+    "title": "Notes on Statistical Rethinking",
+    "section": "",
+    "text": "This website contains my notes and code as I work through Richard McElreath’s 2025 course on his book Statistical Rethinking. A course in Bayesian statistics, Rethinking is code-heavy and meant to be read sequentially, not as a reference. McElreath offers his flipped instruction course locally, also publishing the lectures online.\n\n\nThe repository is organized into separate quarto files, which are stitched together in _quarto.yml.\n\nbook-notes/: contains notes and exercises directly from the textbook\ncourse-notes/: contains notes from pre-recorded lectures and slides\nhomework/: contains homework solutions\n\n\n\n\nThe quarto notebooks use both R and Python in their code.\n\n\nFirst, install Quarto.\n\n\n\nInstall dependencies using uv:\nuv sync\nThis creates a virtual environment and installs packages from the lock file.\nNote: pymc compiles code at runtime, utilizing the g++ compiler it finds in the PATH.\n\n\n\nThis project uses R 4.5.2, which can be installed using rig:\nrig add 4.5.2\nThen, use rv to install the R dependencies:\nrv sync\n\n\n\nYou’ll need to have Hunspell installed for the spellcheck quarto extension to work.\nWindows:\nchoco install hunspell.portable\nMac:\nbrew install hunspell\nLinux:\nsudo apt-get install hunspell\n\n\nAfter installing Hunspell, you must install the en_US dictionary.\nWindows/Mac:\n\nDownload the dictionary files (both files: .dic and .aff).\nPlace them in hunspell’s dictionary SEARCH PATH.\n\n\nTo add a new directory to the search path, add the directory to the DICPATH environment variable.\nTo view the search path, use hunspell -D:\n\nLinux:\nsudo apt-get install hunspell-en-us\n\n\n\n\n\nAfter installing the necessary dependencies, build the project:\nquarto preview"
+  },
+  {
+    "objectID": "README.html#organization",
+    "href": "README.html#organization",
+    "title": "Notes on Statistical Rethinking",
+    "section": "",
+    "text": "The repository is organized into separate quarto files, which are stitched together in _quarto.yml.\n\nbook-notes/: contains notes and exercises directly from the textbook\ncourse-notes/: contains notes from pre-recorded lectures and slides\nhomework/: contains homework solutions"
+  },
+  {
+    "objectID": "README.html#dependencies",
+    "href": "README.html#dependencies",
+    "title": "Notes on Statistical Rethinking",
+    "section": "",
+    "text": "The quarto notebooks use both R and Python in their code.\n\n\nFirst, install Quarto.\n\n\n\nInstall dependencies using uv:\nuv sync\nThis creates a virtual environment and installs packages from the lock file.\nNote: pymc compiles code at runtime, utilizing the g++ compiler it finds in the PATH.\n\n\n\nThis project uses R 4.5.2, which can be installed using rig:\nrig add 4.5.2\nThen, use rv to install the R dependencies:\nrv sync\n\n\n\nYou’ll need to have Hunspell installed for the spellcheck quarto extension to work.\nWindows:\nchoco install hunspell.portable\nMac:\nbrew install hunspell\nLinux:\nsudo apt-get install hunspell\n\n\nAfter installing Hunspell, you must install the en_US dictionary.\nWindows/Mac:\n\nDownload the dictionary files (both files: .dic and .aff).\nPlace them in hunspell’s dictionary SEARCH PATH.\n\n\nTo add a new directory to the search path, add the directory to the DICPATH environment variable.\nTo view the search path, use hunspell -D:\n\nLinux:\nsudo apt-get install hunspell-en-us"
+  },
+  {
+    "objectID": "README.html#build",
+    "href": "README.html#build",
+    "title": "Notes on Statistical Rethinking",
+    "section": "",
+    "text": "After installing the necessary dependencies, build the project:\nquarto preview"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Notes on Statistical Rethinking",
+    "section": "",
+    "text": "This website contains my notes and code as I work through Richard McElreath’s 2025 course on his book Statistical Rethinking. A course in Bayesian statistics, Rethinking is code-heavy and meant to be read sequentially, not as a reference. McElreath offers his flipped instruction course locally, also publishing the lectures online.\n\n\nThe repository is organized into separate quarto files, which are stitched together in _quarto.yml.\n\nbook-notes/: contains notes and exercises directly from the textbook\ncourse-notes/: contains notes from pre-recorded lectures and slides\nhomework/: contains homework solutions\n\n\n\n\nThe quarto notebooks use both R and Python in their code.\n\n\nFirst, install Quarto.\n\n\n\nInstall dependencies using uv:\nuv sync\nThis creates a virtual environment and installs packages from the lock file.\nNote: pymc compiles code at runtime, utilizing the g++ compiler it finds in the PATH.\n\n\n\nThis project uses R 4.5.2, which can be installed using rig:\nrig add 4.5.2\nThen, use rv to install the R dependencies:\nrv sync\n\n\n\nYou’ll need to have Hunspell installed for the spellcheck quarto extension to work.\nWindows:\nchoco install hunspell.portable\nMac:\nbrew install hunspell\nLinux:\nsudo apt-get install hunspell\n\n\nAfter installing Hunspell, you must install the en_US dictionary.\nWindows/Mac:\n\nDownload the dictionary files (both files: .dic and .aff).\nPlace them in hunspell’s dictionary SEARCH PATH.\n\n\nTo add a new directory to the search path, add the directory to the DICPATH environment variable.\nTo view the search path, use hunspell -D:\n\nLinux:\nsudo apt-get install hunspell-en-us\n\n\n\n\n\nAfter installing the necessary dependencies, build the project:\nquarto preview"
+  },
+  {
+    "objectID": "index.html#organization",
+    "href": "index.html#organization",
+    "title": "Notes on Statistical Rethinking",
+    "section": "",
+    "text": "The repository is organized into separate quarto files, which are stitched together in _quarto.yml.\n\nbook-notes/: contains notes and exercises directly from the textbook\ncourse-notes/: contains notes from pre-recorded lectures and slides\nhomework/: contains homework solutions"
+  },
+  {
+    "objectID": "index.html#dependencies",
+    "href": "index.html#dependencies",
+    "title": "Notes on Statistical Rethinking",
+    "section": "",
+    "text": "The quarto notebooks use both R and Python in their code.\n\n\nFirst, install Quarto.\n\n\n\nInstall dependencies using uv:\nuv sync\nThis creates a virtual environment and installs packages from the lock file.\nNote: pymc compiles code at runtime, utilizing the g++ compiler it finds in the PATH.\n\n\n\nThis project uses R 4.5.2, which can be installed using rig:\nrig add 4.5.2\nThen, use rv to install the R dependencies:\nrv sync\n\n\n\nYou’ll need to have Hunspell installed for the spellcheck quarto extension to work.\nWindows:\nchoco install hunspell.portable\nMac:\nbrew install hunspell\nLinux:\nsudo apt-get install hunspell\n\n\nAfter installing Hunspell, you must install the en_US dictionary.\nWindows/Mac:\n\nDownload the dictionary files (both files: .dic and .aff).\nPlace them in hunspell’s dictionary SEARCH PATH.\n\n\nTo add a new directory to the search path, add the directory to the DICPATH environment variable.\nTo view the search path, use hunspell -D:\n\nLinux:\nsudo apt-get install hunspell-en-us"
+  },
+  {
+    "objectID": "index.html#build",
+    "href": "index.html#build",
+    "title": "Notes on Statistical Rethinking",
+    "section": "",
+    "text": "After installing the necessary dependencies, build the project:\nquarto preview"
+  },
+  {
+    "objectID": "book-notes/index.html",
+    "href": "book-notes/index.html",
+    "title": "Contents",
+    "section": "",
+    "text": "This section contains my notes and exercises as I work through the Statistical Rethinking textbook.\n\n\n\nThe Golem of Prague\nSmall Worlds and Large Worlds",
+    "crumbs": [
+      "Book Notes",
+      "Contents"
+    ]
+  },
+  {
+    "objectID": "book-notes/index.html#chapters",
+    "href": "book-notes/index.html#chapters",
+    "title": "Contents",
+    "section": "",
+    "text": "The Golem of Prague\nSmall Worlds and Large Worlds",
+    "crumbs": [
+      "Book Notes",
+      "Contents"
+    ]
+  },
+  {
+    "objectID": "book-notes/chapter-03.html",
+    "href": "book-notes/chapter-03.html",
+    "title": "Chapter 3: Sampling the Imaginary",
+    "section": "",
+    "text": "Suppose we have a test for condition \\(X\\). The test correctly detect \\(X\\) \\(95\\%\\) of the time. In mathematical notation, \\(\\Pr(\\text{positive} \\mid X)=0.95\\). We also know that \\(1\\%\\) of the time, the test records a false positive, i.e. \\(\\Pr(\\text{positive} \\mid \\neg X)=0.01\\).\nTo determine the probability of \\(X\\), given a positive test result, we can use Bayes’ theorem:\n\\[\n\\Pr(X \\mid \\text{positive})=\\frac{\\Pr(\\text{positive} \\mid X)\\Pr(X)}{\\Pr(\\text{positive})}\n\\]\n\\(\\Pr(X)\\) is the incidence of \\(X\\), which is known to be \\(0.1\\%\\).\nShow code\npr_p_x = 0.95\npr_p_negx = 0.01\npr_x = 0.001\npr_p = pr_p_x * pr_x + pr_p_negx * (1 - pr_x) # marginal likelihood\npr_x_p = pr_p_x * pr_x / pr_p\nprint(f\"Probability of X: {pr_x_p:.4f}\")\n\n\nProbability of X: 0.0868\nThis means that the probability \\(X\\) with one positive test is only 0.868.\nWith two positive tests, the probability soars to &gt; 90%, demonstrating why many medical test require two positive results:\nShow code\npr_pp = pr_p_x ** 2 * pr_x + pr_p_negx ** 2 * (1 - pr_x) # marginal likelihood\npr_x_pp = pr_p_x ** 2 * pr_x / pr_pp\nprint(f\"Probability of X: {pr_x_pp:.4f}\")\n\n\nProbability of X: 0.9003\nBut that was mathy, and we can get more intuitive by thinking in counts:\nThis simplifies the math wonderfully:\n\\[\n\\Pr(X \\mid \\text{positive}) = \\frac{95}{95+999} = \\frac{95}{1094} \\approx 0.0868\n\\]\nAnd for two positive tests, we can follow a similar counting pattern:\nSo, the math for two positive tests is:\n\\[\n\\Pr(X \\mid \\text{positive}) \\approx \\frac{90}{90+10} = \\frac{90}{100} = 0.90\n\\]\nWhy counts?"
+  },
+  {
+    "objectID": "book-notes/chapter-03.html#sampling-from-a-grid-approximate-posterior",
+    "href": "book-notes/chapter-03.html#sampling-from-a-grid-approximate-posterior",
+    "title": "Chapter 3: Sampling the Imaginary",
+    "section": "3.1: Sampling from a grid-approximate posterior",
+    "text": "3.1: Sampling from a grid-approximate posterior\nRecall the sampler from chapter 2:\n\n\nShow code\nimport numpy as np\nimport scipy.stats as st\n\nW = 6\nL = 3\np_grid = np.linspace(0, 1, num=1000)\nprob_p = np.repeat(1.0, 1000)\nprob_data = st.binom.pmf(W, W + L, p_grid)\nposterior = prob_data * prob_p\nposterior = posterior / np.sum(posterior)\n\n\nAfter running the sampler, we are left with p, representing the posterior distribution.\nWe can sample from the posterior distribution to replicate a posterior density:\n\n\nShow code\n# Sample from the posterior\np_sample = np.random.choice(p_grid, size=10000, replace=True, p=posterior)\n\n# Plot the results\nimport arviz as az\nfrom matplotlib import pyplot as plt\n\nx0 = np.linspace(0, len(p_sample), num=len(p_sample))\nx1 = np.linspace(0, 1)\nfig, (ax_samples, ax_density) = plt.subplots(1, 2, figsize=(9, 5))\n\nax_samples.scatter(x0, p_sample, alpha=0.25)\nax_samples.set_xlabel(\"Sample index\")\nax_samples.set_ylabel(\"p\")\n\naz.plot_kde(p_sample)\nax_density.set_xlabel(\"p\")\nax_density.set_ylabel(\"density\")\n\nfig.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\nThese samples can be used to further analyze the posterior."
+  },
+  {
+    "objectID": "book-notes/chapter-03.html#sampling-to-summarize",
+    "href": "book-notes/chapter-03.html#sampling-to-summarize",
+    "title": "Chapter 3: Sampling the Imaginary",
+    "section": "3.2: Sampling to summarize",
+    "text": "3.2: Sampling to summarize\nSummarizations of the posterior distribution can broadly be divided into three categories:\n\nIntervals of defined boundaries\nIntervals of defined probability mass\nPoint estimates\n\n\n3.2.1: Intervals of defined boundaries\nAn example of such a question is “What is the chance that less than 50% of the Earth is covered in water?” This question can be answered using samples of the posterior:\n\n\nShow code\nprob = np.sum(posterior, where=p_grid &lt; 0.5)\nprint(f\"Pr(p &lt; 0.5) = {prob:.4f}\")\n\n\nPr(p &lt; 0.5) = 0.1719\n\n\nUsing the grid-approximation method, we see that 17% of the posterior distribution is below 0.5.\nSince grid-approximation is generally not practical, it’s useful to see that a similar result can be achieved directly from the samples of the posterior:\n\n\nShow code\nprob_from_samples = np.sum(p_sample &lt; 0.5) / len(p_sample)\nprint(f\"Pr(p &lt; 0.5) = {prob_from_samples:.4f}\")\n\n\nPr(p &lt; 0.5) = 0.1726\n\n\nThe takeaway here is that sampling from the posterior is both efficient and effective.\n\n\n3.2.2: Intervals of defined mass\nSometimes you want to know the “bottom 25%” or “middle 50%.” These are intervals of defined mass.\nPercentile intervals are an example of intervals of defined mass:\n\n\nShow code\nlower_bottom25 = np.quantile(p_sample, 0)\nupper_bottom25 = np.quantile(p_sample, 0.25)\nprint(f\"Bottom 25%: ({lower_bottom25:.4f} ,{upper_bottom25:.4f})\")\n\n\nBottom 25%: (0.1491 ,0.5425)\n\n\n\n\nShow code\nlower_middle50 = np.quantile(p_sample, 0.25)\nupper_middle50 = np.quantile(p_sample, 0.75)\nprint(f\"Middle 50%: ({lower_middle50:.4f} ,{upper_middle50:.4f})\")\n\n\nMiddle 50%: (0.5425 ,0.7417)\n\n\nYou can also compute the highest posterior density interval (HPDI), which captures the interval with the highest posterior probability. While percentile intervals are evenly spaced around the point estimates, HPDI’s are not necessarily so.\n\n\nShow code\nhpdi_50 = az.hdi(p_sample, hdi_prob=0.50)\nprint(f\"50% HPDI: ({hpdi_50[0]:.4f} ,{hpdi_50[1]:.4f})\")\n\n\n50% HPDI: (0.5696 ,0.7658)\n\n\n\n\n3.2.3: Point estimates\nThere are several types of point estimates useful in Bayesian analysis.\nThe parameter with the highest posterior probability is the maximum a posteriori (MAP) estimate.\n\n\nShow code\nmap_p = p_grid[np.argmax(posterior)]\nprint(f\"MAP: {map_p:.4f}\")\n\n\nMAP: 0.6667\n\n\nThis can be achieved on the samples from the posterior as well.\n\n\nShow code\nmap_p_sample = st.mode(p_sample)[0]\nprint(f\"MAP (sampled): {map_p_sample:.4f}\")\n\n\nMAP (sampled): 0.6396\n\n\nOf course, mean and median are also available point estimates.\n\n\nShow code\nprint(f\"mean: {np.mean(p_sample):.4f}\")\nprint(f\"median: {np.median(p_sample):.4f}\")\n\n\nmean: 0.6383\nmedian: 0.6466\n\n\nThe choice of estimate is yours!\nOne way to compare the point estimates is to use a loss function, which determines the cost of any one point estimate. It is important to note that different loss functions imply different estimates, so it is best to consider multiple. Absolute loss implies the posterior median and quadratic loss implies the posterior mean."
   },
   {
     "objectID": "course-notes/lecture-02.html",
