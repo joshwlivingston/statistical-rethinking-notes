@@ -452,7 +452,7 @@ window.Quarto = {
 \Pr(X \mid \text{positive})=\frac{\Pr(\text{positive} \mid X)\Pr(X)}{\Pr(\text{positive})}
 \]</span></p>
 <p><span class="math inline">\(\Pr(X)\)</span> is the incidence of <span class="math inline">\(X\)</span>, which is known to be <span class="math inline">\(0.1\%\)</span>.</p>
-<div id="3198b0b7" class="cell" data-execution_count="1">
+<div id="42fcd315" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pr_p_x <span class="op">=</span> <span class="fl">0.95</span></span>
@@ -468,7 +468,7 @@ window.Quarto = {
 </div>
 <p>This means that the probability <span class="math inline">\(X\)</span> <em>with one positive test</em> is only 0.868.</p>
 <p>With two positive tests, the probability soars to &gt; 90%, demonstrating why many medical test require two positive results:</p>
-<div id="e1e716b4" class="cell" data-execution_count="2">
+<div id="ead451d7" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pr_pp <span class="op">=</span> pr_p_x <span class="op">**</span> <span class="dv">2</span> <span class="op">*</span> pr_x <span class="op">+</span> pr_p_negx <span class="op">**</span> <span class="dv">2</span> <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> pr_x) <span class="co"># marginal likelihood</span></span>
@@ -507,7 +507,7 @@ window.Quarto = {
 <section id="sampling-from-a-grid-approximate-posterior" class="level2">
 <h2 class="anchored" data-anchor-id="sampling-from-a-grid-approximate-posterior">3.1: Sampling from a grid-approximate posterior</h2>
 <p>Recall the sampler from chapter 2:</p>
-<div id="4ffaccdd" class="cell" data-execution_count="3">
+<div id="4ad6ebe5" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -524,7 +524,7 @@ window.Quarto = {
 </div>
 <p>After running the sampler, we are left with <code>p</code>, representing the <em>posterior distribution</em>.</p>
 <p>We can sample from the posterior distribution to replicate a posterior density:</p>
-<div id="91b43471" class="cell" data-execution_count="4">
+<div id="0cfe6021" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample from the posterior</span></span>
@@ -552,7 +552,7 @@ window.Quarto = {
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter-03_files/figure-html/cell-5-output-1.png" width="854" height="470" class="figure-img"></p>
+<p><img src="chapter-03_files/figure-html/cell-5-output-1.png" width="853" height="470" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -570,7 +570,7 @@ window.Quarto = {
 <section id="intervals-of-defined-boundaries" class="level3">
 <h3 class="anchored" data-anchor-id="intervals-of-defined-boundaries">3.2.1: Intervals of defined boundaries</h3>
 <p>An example of such a question is “What is the chance that less than 50% of the Earth is covered in water?” This question can be answered using samples of the posterior:</p>
-<div id="3791bec0" class="cell" data-execution_count="5">
+<div id="b532609f" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>prob <span class="op">=</span> np.<span class="bu">sum</span>(posterior, where<span class="op">=</span>p_grid <span class="op">&lt;</span> <span class="fl">0.5</span>)</span>
@@ -582,14 +582,14 @@ window.Quarto = {
 </div>
 <p>Using the grid-approximation method, we see that 17% of the posterior distribution is below 0.5.</p>
 <p>Since grid-approximation is generally not practical, it’s useful to see that a similar result can be achieved directly from the samples of the posterior:</p>
-<div id="4caf80cf" class="cell" data-execution_count="6">
+<div id="64d4469f" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>prob_from_samples <span class="op">=</span> np.<span class="bu">sum</span>(p_sample <span class="op">&lt;</span> <span class="fl">0.5</span>) <span class="op">/</span> <span class="bu">len</span>(p_sample)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Pr(p &lt; 0.5) = </span><span class="sc">{</span>prob_from_samples<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Pr(p &lt; 0.5) = 0.1759</code></pre>
+<pre><code>Pr(p &lt; 0.5) = 0.1809</code></pre>
 </div>
 </div>
 <p>The takeaway here is that <strong>sampling from the posterior</strong> is both efficient and effective.</p>
@@ -598,7 +598,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="intervals-of-defined-mass">3.2.2: Intervals of defined mass</h3>
 <p>Sometimes you want to know the “bottom 25%” or “middle 50%.” These are intervals of <strong>defined mass</strong>.</p>
 <p><strong>Percentile intervals</strong> are an example of intervals of defined mass:</p>
-<div id="15aaccaf" class="cell" data-execution_count="7">
+<div id="770877a5" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>lower_bottom25 <span class="op">=</span> np.quantile(p_sample, <span class="dv">0</span>)</span>
@@ -606,10 +606,10 @@ window.Quarto = {
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Bottom 25%: (</span><span class="sc">{</span>lower_bottom25<span class="sc">:.4f}</span><span class="ss"> ,</span><span class="sc">{</span>upper_bottom25<span class="sc">:.4f}</span><span class="ss">)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Bottom 25%: (0.1662 ,0.5415)</code></pre>
+<pre><code>Bottom 25%: (0.1221 ,0.5395)</code></pre>
 </div>
 </div>
-<div id="64f8b1e2" class="cell" data-execution_count="8">
+<div id="e82b77d4" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>lower_middle50 <span class="op">=</span> np.quantile(p_sample, <span class="fl">0.25</span>)</span>
@@ -617,18 +617,18 @@ window.Quarto = {
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Middle 50%: (</span><span class="sc">{</span>lower_middle50<span class="sc">:.4f}</span><span class="ss"> ,</span><span class="sc">{</span>upper_middle50<span class="sc">:.4f}</span><span class="ss">)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Middle 50%: (0.5415 ,0.7417)</code></pre>
+<pre><code>Middle 50%: (0.5395 ,0.7387)</code></pre>
 </div>
 </div>
 <p>You can also compute the <strong>highest posterior density interval</strong> (<strong>HPDI</strong>), which captures the interval with the highest posterior probability. While percentile intervals are evenly spaced around the point estimates, HPDI’s are not necessarily so.</p>
-<div id="c59922cb" class="cell" data-execution_count="9">
+<div id="a8aba7bd" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>hpdi_50 <span class="op">=</span> az.hdi(p_sample, hdi_prob<span class="op">=</span><span class="fl">0.50</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"50% HPDI: (</span><span class="sc">{</span>hpdi_50[<span class="dv">0</span>]<span class="sc">:.4f}</span><span class="ss"> ,</span><span class="sc">{</span>hpdi_50[<span class="dv">1</span>]<span class="sc">:.4f}</span><span class="ss">)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>50% HPDI: (0.5596 ,0.7568)</code></pre>
+<pre><code>50% HPDI: (0.5746 ,0.7698)</code></pre>
 </div>
 </div>
 </section>
@@ -636,7 +636,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="point-estimates">3.2.3: Point estimates</h3>
 <p>There are several types of point estimates useful in Bayesian analysis.</p>
 <p>The parameter with the highest posterior probability is the <strong>maximum a posteriori</strong> (<strong>MAP</strong>) estimate.</p>
-<div id="6f41c2e5" class="cell" data-execution_count="10">
+<div id="a75d438d" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>map_p <span class="op">=</span> p_grid[np.argmax(posterior)]</span>
@@ -647,26 +647,26 @@ window.Quarto = {
 </div>
 </div>
 <p>This can be achieved on the samples from the posterior as well.</p>
-<div id="ffb28fad" class="cell" data-execution_count="11">
+<div id="db4ef5d8" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>map_p_sample <span class="op">=</span> st.mode(p_sample)[<span class="dv">0</span>]</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"MAP (sampled): </span><span class="sc">{</span>map_p_sample<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>MAP (sampled): 0.6517</code></pre>
+<pre><code>MAP (sampled): 0.6286</code></pre>
 </div>
 </div>
 <p>Of course, mean and median are also available point estimates.</p>
-<div id="f8499c62" class="cell" data-execution_count="12">
+<div id="958fe36a" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"mean: </span><span class="sc">{</span>np<span class="sc">.</span>mean(p_sample)<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"median: </span><span class="sc">{</span>np<span class="sc">.</span>median(p_sample)<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>mean: 0.6373
-median: 0.6466</code></pre>
+<pre><code>mean: 0.6351
+median: 0.6446</code></pre>
 </div>
 </div>
 <p>The choice of estimate is yours!</p>
@@ -686,7 +686,7 @@ median: 0.6466</code></pre>
 <section id="dummy-data" class="level3">
 <h3 class="anchored" data-anchor-id="dummy-data">3.3.1: Dummy data</h3>
 <p>Your can “run simulations” directly on the posterior by sampling it:</p>
-<div id="d12a432c" class="cell" data-execution_count="13">
+<div id="a8ddcc4c" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run 100 simulations</span></span>
