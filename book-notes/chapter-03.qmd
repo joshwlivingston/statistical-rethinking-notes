@@ -258,5 +258,5 @@ we lose no information.
 When you take the full information of the parameters, and **propagate** it
 through to the full information of the observations, you arrive at the
 **posterior predictive distribution**, illustrated in the
-[graphic](../course-notes/lecture-02.qmd#sampling-from-the-posterior) from
+[animation](../course-notes/lecture-02.qmd#sampling-from-the-posterior) from
 Lecture 2.
