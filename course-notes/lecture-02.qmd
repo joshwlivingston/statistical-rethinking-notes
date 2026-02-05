@@ -103,7 +103,6 @@ def hmcmc(frame, W=6, L=3):
 
     # Sample from Posterior
     sample = st.beta.rvs(W + 1, L + 1)
-    post_preds.append(sample * (W + L))
 
     # Plot 1: The Beta PDF + Current Sample
     ax[0].plot(x, st.beta.pdf(x, W + 1, L + 1), "b-")
@@ -122,6 +121,7 @@ def hmcmc(frame, W=6, L=3):
     ax[1].set_ylim(0, 350)
 
     # Plot 3: Posterior Predictive
+    post_preds.append(np.median(pred_samples))
     ax[2].hist(
         post_preds,
         bins=np.arange(W + L + 2) - 0.5,
