@@ -204,3 +204,59 @@ determines the *cost* of any one point estimate. It is important to note that
 different loss functions imply different estimates, so it is best to consider 
 multiple. Absolute loss implies the posterior median and quadratic loss 
 implies the posterior mean.
+
+## 3.3: Sampling to simulate prediction
+
+Simulating data and scenarios using a model has several benefits:
+
+1. Model design
+2. Model checking
+3. Software validation
+4. Research design
+5. Forecasting
+
+### 3.3.1: Dummy data
+
+Your can "run simulations" directly on the posterior by sampling it:
+```{python}
+# run 100 simulations
+size = 100
+n = 9
+p = 0.71
+samples = st.binom.rvs(n=n, p=p, size=size)
+fig, ax = plt.subplots(1, 1)
+ax.hist(samples, bins=7, edgecolor="black")
+ax.set_title(f"Results from {n} globe tosses ({size} simulations)")
+```
+
+### 3.3.2: Model checking
+
+Model checking involves two parts:
+
+1. Ensuring the model properly fit
+2. Ensuring the model's usefulness
+
+#### 3.3.2.1: Did the software work?
+
+One way to check model fit is through **retrodictions**, which involve using
+the original source data to generate predictions, and checking the resulting
+data for likeness.
+
+#### 3.3.2.2: Is the model adequate?
+
+In this step, the goal is to determine *how* the model fails to describe the
+data, keeping in mind that all models are false.
+
+**Information loss** is so incredibly tempting when evaluating model adequacy. The
+allure of a point estimate like rmse ("Look, boss! Number down!") is almost
+inescapable.
+
+Not in Bayesian analysis. Bayesian analysis utilizes the entire posterior, for
+not only all observations, but all samples also. If we use the entire posterior,
+we lose no information.
+
+When you take the full information of the parameters, and **propagate** it
+through to the full information of the observations, you arrive at the
+**posterior predictive distribution**, illustrated in the
+[graphic](../course-notes/lecture-02.qmd#sampling-from-the-posterior) from
+Lecture 2.

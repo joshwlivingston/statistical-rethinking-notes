@@ -34,6 +34,7 @@ website:
         - book-notes/index.qmd
         - book-notes/chapter-01.qmd
         - book-notes/chapter-02.qmd
+        - book-notes/chapter-03.qmd
     - title: "Course Notes"
       style: "docked"
       search: true
@@ -108,3 +109,5 @@ spellcheck-ignore:
   - Summarizations
   - mathy
   - HPDI
+  - retrodictions
+  - rmse

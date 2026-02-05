@@ -7,3 +7,4 @@ This section contains my notes and exercises as I work through the
 
 1. [The Golem of Prague](chapter-01.qmd)
 2. [Small Worlds and Large Worlds](chapter-02.qmd)
+3. [Sampling the Imaginary](chapter-03.qmd)
